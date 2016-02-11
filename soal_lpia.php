@@ -327,7 +327,7 @@ include "+koneksi.php";
 				        							            <td>
 				                                                    <div class="radio mrg-del">
 				                                                        <label>
-				                                                            <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="A" /><?php echo $data_soal_pilgan['pil_b']; ?>
+				                                                            <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="B" /><?php echo $data_soal_pilgan['pil_b']; ?>
 				                                                        </label>
 				                                                    </div>
 				                                                </td>
@@ -336,7 +336,7 @@ include "+koneksi.php";
 				        							            <td>
 				                                                    <div class="radio mrg-del">
 				                                                        <label>
-				                                                            <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="A" /><?php echo $data_soal_pilgan['pil_c']; ?>
+				                                                            <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="C" /><?php echo $data_soal_pilgan['pil_c']; ?>
 				                                                        </label>
 				                                                    </div>
 				                                                </td>
@@ -345,7 +345,7 @@ include "+koneksi.php";
 				        							            <td>
 				                                                    <div class="radio mrg-del">
 				                                                        <label>
-				                                                            <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="A" /><?php echo $data_soal_pilgan['pil_d']; ?>
+				                                                            <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="D" /><?php echo $data_soal_pilgan['pil_d']; ?>
 				                                                        </label>
 				                                                    </div>
 				                                                </td>
@@ -354,7 +354,7 @@ include "+koneksi.php";
 				        							            <td>
 				                                                    <div class="radio mrg-del">
 				                                                        <label>
-				                                                            <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="A" /><?php echo $data_soal_pilgan['pil_e']; ?>
+				                                                            <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="E" /><?php echo $data_soal_pilgan['pil_e']; ?>
 				                                                        </label>
 				                                                    </div>
 				                                                </td>
@@ -366,7 +366,6 @@ include "+koneksi.php";
 				    							</div>
 				    			            </div>
 				    			        </div>
-				    			        
 				                    <?php }?>
 				                    <?php if(mysqli_num_rows($sql_soal_pilgan) == 0) {?>
 				                    <div class="panel panel-default">

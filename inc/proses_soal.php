@@ -19,7 +19,7 @@ $uri = explode("/",$_SERVER['REQUEST_URI']);
               if($num_sudah_ada>0){
                 mysqli_query($db, "UPDATE tb_jawaban_pilgan_temp SET jawaban='$value' WHERE id_soal = {$key} AND id_peserta = {$id_siswa} AND id_tq = {$id_tq}") or die ($db->error);   
               }else{
-                mysqli_query($db, "INSERT INTO tb_jawaban_pilgan_temp (id_peserta,id_tq,id_soal,jawaban,id_group_soal)VALUES ('{$id_siswa}','{$id_tq}','{$key}','{$value}','{$id_group_soal}')") or die ($db->error);   
+                mysqli_query($db, "INSERT INTO tb_jawaban_pilgan_temp (id_peserta,id_tq,id_soal,jawaban,id_group_soal)VALUES ('{$id_siswa}','{$id_tq}','{$key}','{$value}')") or die ($db->error);   
               }          
       }
       echo '<script>window.location = "http://'.$redirect.'";</script>';
@@ -39,7 +39,7 @@ $uri = explode("/",$_SERVER['REQUEST_URI']);
       //ambil dari tabel temporary
       $result = mysqli_query($db, "SELECT jawaban,id_soal FROM tb_jawaban_pilgan_temp WHERE id_peserta = {$id_siswa} AND id_tq = {$id_tq} ") or die ($db->error);
       foreach($result as $key) {
-          $cek = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE level_group = {$key['id_group_soal']} AND id_pilgan = '".$key['id_soal']."'") or die ($db->error);
+          $cek = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_pilgan = '".$key['id_soal']."'") or die ($db->error);
           while($c = mysqli_fetch_array($cek)) {
               $jawaban = $c['kunci'];
           }
