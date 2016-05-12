@@ -110,11 +110,12 @@ if (empty($pilganda) AND !empty($esay)) {
 } */
 
 //if (!empty($pilganda) AND empty($esay)) {
-  if(!empty($_POST['soal_pilgan'])){ exit($_SERVER['PATH_INFO']);
+  if(!empty($_POST['soal_pilgan'])){ 
+      $uri = explode("/",$_SERVER['REQUEST_URI']);
       $id_siswa = $_SESSION['siswa'];
       foreach($_POST['soal_pilgan'] as $key => $value) {
               mysqli_query($db, "INSERT INTO tb_jawaban_pilgan_temp (id_peserta,id_soal,jawaban)VALUES ('{$id_siswa}','{$key}','{$value}')") or die ($db->error);             
-              header("Location: ".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."/soal.php?id_tq=1");
+              header("Location: ".$_SERVER['HTTP_HOST']."/".$uri[1]."/soal.php?id_tq=".$id_tq);
       }
 
   } else if(empty($_POST['soal_pilgan'])) {
