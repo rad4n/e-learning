@@ -169,7 +169,21 @@ if(@$_SESSION['siswa']) { ?>
 		    <div class="col-md-8">
 		    	<form action="inc/proses_soal.php" method="post">
 					<?php
-                    $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' ORDER BY rand() limit 1 ") or die ($db->error);
+                    $sql_soal_sudah = mysqli_query($db, "SELECT id_soal FROM tb_jawaban_pilgan_temp WHERE id_peserta = '".$_SESSION['siswa']."' AND id_tq = '{$id_tq}'") or die ($db->error);
+                    $no_sudah="";
+                    $n=1;
+                    while($soal_sudah = mysqli_fetch_assoc($sql_soal_sudah)) {
+                        if($n>1)$no_sudah .= ",";        
+                        $no_sudah .= $soal_sudah["id_soal"];
+                        $n++;
+                    }
+                    //print_r($no_sudah); exit();
+                    if(!empty($no_sudah)){
+                        $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' AND id_pilgan NOT IN ({$no_sudah}) ORDER BY rand() limit 1 ") or die ($db->error);
+                    }
+                    else{
+                        $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' ORDER BY rand() limit 1 ") or die ($db->error);
+                    }
 					if(mysqli_num_rows($sql_soal_pilgan) > 0) {
                     ?>
                         <div class="panel panel-default">
@@ -181,7 +195,7 @@ if(@$_SESSION['siswa']) { ?>
                                     <input type="hidden" name="id_pilgan" value="<?php echo $data_soal_pilgan['id_pilgan']; ?>">
         								<table class="table">
         							    	<tr>
-        							    		<td width="10%">( <?php echo $no++; ?> )</td>
+        							    		<td width="10%">( <?php echo $n; ?> )</td>
         							            <td><b><?php echo $data_soal_pilgan['pertanyaan']; ?></b></td>
         							        </tr>
                                             <?php if($data_soal_pilgan['gambar'] != '') { ?>
@@ -189,6 +203,30 @@ if(@$_SESSION['siswa']) { ?>
                                                     <td></td>
                                                     <td>
                                                         <img width="220px" src="admin/img/gambar_soal_pilgan/<?php echo $data_soal_pilgan['gambar']; ?>" />
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if($data_soal_pilgan['video'] != '') { ?>
+                                                <tr>
+                                                    <td></td>
+                                                    <td>
+                                                        <video width="220px" controls>
+                                                            <source src="admin/video/<?php echo $data_soal_pilgan['video']; ?>" type="video/mp4">
+                                                            <source src="admin/video/<?php echo $data_soal_pilgan['video']; ?>" type="video/ogg">
+                                                            Your browser does not support the video tag.
+                                                        </video>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if($data_soal_pilgan['audio'] != '') { ?>
+                                                <tr>
+                                                    <td></td>
+                                                    <td>
+                                                        <audio controls>
+                                                            <source src="admin/audio/<?php echo $data_soal_pilgan['audio']; ?>" type="audio/mpeg">
+                                                            <source src="admin/audio/<?php echo $data_soal_pilgan['audio']; ?>" type="audio/ogg">
+                                                            Your browser does not support the audio tag.
+                                                        </audio>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -256,37 +294,7 @@ if(@$_SESSION['siswa']) { ?>
                     $sql_soal_essay = mysqli_query($db, "SELECT * FROM tb_soal_essay WHERE id_tq = '$id_tq' ORDER BY rand()") or die ($db->error);
                     if(mysqli_num_rows($sql_soal_essay) > 0) {
                     ?>
-                        <div class="panel panel-default">
-                            <div class="panel-heading"><b>Soal Essay</b></div>
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <?php
-                                    while($data_soal_essay = mysqli_fetch_array($sql_soal_essay)) { ?>
-                                        <table class="table">
-                                            <tr>
-                                                <td width="10%">( <?php echo $no2++; ?> )</td>
-                                                <td><b><?php echo $data_soal_essay['pertanyaan']; ?></b></td>
-                                            </tr>
-                                            <?php if($data_soal_essay['gambar'] != '') { ?>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>
-                                                        <img width="220px" src="admin/img/gambar_soal_essay/<?php echo $data_soal_essay['gambar']; ?>" />
-                                                    </td>
-                                                </tr>
-                                            <?php } ?>
-                                            <tr>
-                                                <td>Jawab</td>
-                                                <td>
-                                                    <textarea name="soal_essay[<?php echo $data_soal_essay['id_essay']; ?>]" class="form-control" rows="3"></textarea>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    <?php
-                                    } ?>
-                                </div>
-                            </div>
-                        </div>
+                        
                     <?php
                     } ?>
                     
@@ -296,7 +304,7 @@ if(@$_SESSION['siswa']) { ?>
                         <div class="panel-heading">
                             <div>
                                 <a id="selesai" class="btn btn-info">Selesai</a>
-                                <input type="reset" value="Reset Jawaban" class="btn btn-danger" />
+                                <!-- <input type="reset" value="Reset Jawaban" class="btn btn-danger" /> -->
                             </div>
                             <div id="konfirm" style="display:none; margin-top:15px;">
                                 Apakah Anda yakin sudah selesai mengerjakan soal dan akan mengirim jawaban? &nbsp; <input onclick="selesai();" type="submit" id="kirim" value="Ya" class="btn btn-info btn-sm" />
@@ -319,7 +327,7 @@ if(@$_SESSION['siswa']) { ?>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                &copy; 2015 E-Learing SMK Indonesia | By : yukcoding.blogspot.com
+                &copy; 2015 E-Learing SMA Negeri 114 Jakarta | By : Kerendi Developers
             </div>
 
         </div>
