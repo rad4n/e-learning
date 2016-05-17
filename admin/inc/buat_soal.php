@@ -18,6 +18,15 @@
 if(@$_GET['hal'] == "soalpilgan") { ?>
 	<div class="row">
 		<div class="panel panel-default">
+			<div class="panel-heading">Upload Soal Pilihan Ganda</div>
+			<div class="panel-body">
+				<form method="post" enctype="multipart/form-data">
+					<input type="file" name="soal">
+					<input type="submit" value="upload"> 
+				</form>
+			</div>
+		</div>
+		<div class="panel panel-default">
 		    <div class="panel-heading">Buat Soal Pilihan Ganda</div>
 		    <div class="panel-body">
 		    	<?php $sql_jumlah_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id'") or die ($db->error); ?>
