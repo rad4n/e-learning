@@ -171,46 +171,36 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 			</div>
 			<?php
 	            if(@$_POST['upload']){
-	    //         	include "excel/excel_reader2.php";
-	    //         	$cell   = new Spreadsheet_Excel_Reader($_FILES['soal']['tmp_name']);
-					// $jumlah = $cell->rowcount($sheet_index=0);
-					require 'PHPExcel.php';
-					require_once 'PHPExcel/IOFactory.php';
-					$cell = PHPExcel_IOFactory::load($_FILES['soal']['tmp_name']);
-					$jumlah   = $cell->getWorksheetIterator()->getHighestRow();
-					$i = 2; // dimulai dari ke dua karena baris pertama berisi title
-					$gagal = 0;
-					$sukses = 0;
-					$no = 1;
-					while( $i<=$jumlah ){				 
-						//$cell->val( baris,kolom )
+	            	$target_dir = "../img/";
+					$target_file = $target_dir . basename($_FILES["soal"]["name"]);
+					move_uploaded_file($_FILES['soal']['tmp_name'],$target_file); 
 
-						// $pertanyaan  = $cell->val( $i,2 );
-						// $pilA = $cell->val( $i,3 );
-						// $pilB= $cell->val( $i,4 );
-						// $pilC = $cell->val( $i,5 );
-						// $pilD = $cell->val( $i,6 );
-						// $pilE = $cell->val( $i,7 );
-						// $kunci = $cell->val( $i,8 );
-						// $nama_gambar = $cell->val( $i,9 );
-						// $nama_video = $cell->val( $i,10 );
-						// $nama_audio = $cell->val( $i,11 );
-						//echo $id; exit;
+					require 'inc/PHPExcel.php';
+					require_once 'inc/PHPExcel/IOFactory.php';
+					$objPHPExcel = PHPExcel_IOFactory::load($target_file);
+					$allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null,true,true,true);
+					//print_r($allDataInSheet);exit;
+					//$arrayCount
+					$arrayCount = count($allDataInSheet);
+					$sql ="INSERT INTO tb_soal_pilgan (id_tq,pertanyaan,gambar,video,audio,pil_a,pil_b,pil_c,pil_d,pil_e,kunci,tgl_buat) VALUES";
+					for($i=2;$i<=$arrayCount;$i++){
+							$pertanyaan  	= trim($allDataInSheet[$i]["B"]);
+							$pilA 			= trim($allDataInSheet[$i]["C"]);
+							$pilB 			= trim($allDataInSheet[$i]["D"]);
+							$pilC 			= trim($allDataInSheet[$i]["E"]);
+							$pilD 			= trim($allDataInSheet[$i]["F"]);
+							$pilE 			= trim($allDataInSheet[$i]["G"]);
+							$kunci 			= trim($allDataInSheet[$i]["H"]);
+							$nama_gambar 	= trim($allDataInSheet[$i]["I"]);
+							$nama_video 	= trim($allDataInSheet[$i]["J"]);
+							$nama_audio 	= trim($allDataInSheet[$i]["K"]);
 
-						$pertanyaan = $cell->getWorksheetIterator()->getCellByColumnAndRow($i,2)->getValue();
-						$pilA = $cell->getWorksheetIterator()->getCellByColumnAndRow($i,3)->getValue();
-						$pilB = $cell->getWorksheetIterator()->getCellByColumnAndRow($i,4)->getValue();
-						$pilC = $cell->getWorksheetIterator()->getCellByColumnAndRow($i,5)->getValue();
-						$pilD = $cell->getWorksheetIterator()->getCellByColumnAndRow($i,6)->getValue();
-						$pilE = $cell->getWorksheetIterator()->getCellByColumnAndRow($i,7)->getValue();
-						$kunci = $cell->getWorksheetIterator()->getCellByColumnAndRow($i,8)->getValue();
-						$nama_gambar = $cell->getWorksheetIterator()->getCellByColumnAndRow($i,9)->getValue();
-						$nama_video = $cell->getWorksheetIterator()->getCellByColumnAndRow($i,10)->getValue();
-						$nama_audio = $cell->getWorksheetIterator()->getCellByColumnAndRow($i,11)->getValue();
 
-						$sql ="INSERT INTO tb_soal_pilgan (id_tq,pertanyaan,gambar,video,audio,pil_a,pil_b,pil_c,pil_d,pil_e,kunci,tgl_buat) VALUES ('$id', '$pertanyaan', '$nama_gambar','$nama_video','$nama_audio', '$pilA', '$pilB', '$pilC', '$pilD', '$pilE', '$kunci', now())";
-						$r = mysqli_query($db,$sql)or die ($db->error); 
-	            	}
+					$sql .= " ('$id', '$pertanyaan', '$nama_gambar','$nama_video','$nama_audio', '$pilA', '$pilB', '$pilC', '$pilD', '$pilE', '$kunci', now()),";
+					}
+					$sql = substr($sql,0,-1);
+					mysqli_query($db,$sql)or die ($db->error); 
+
 	            	echo '<script>window.location="?page=quiz&action=daftarsoal&hal=pilgan&id='.$id.'"</script>';
 	        	} 
 	        ?>
