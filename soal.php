@@ -164,6 +164,26 @@ if(@$_SESSION['siswa']) { ?>
 			            <h3 align="center"><span id="divwaktu"></span></h3>
 		            </div>
 		        </div>
+                <?php $sql_soal_sudah_jawab = mysqli_query($db, "SELECT 
+                    tb_jawaban_pilgan_temp.id_soal,
+                    tb_jawaban_pilgan_temp.jawaban
+                    FROM tb_jawaban_pilgan_temp 
+                    #LEFT JOIN tb_soal_pilgan ON tb_soal_pilgan.id_pilgan = tb_jawaban_pilgan_temp.id_soal
+                    WHERE id_peserta = '".$_SESSION['siswa']."' AND id_tq = '{$id_tq}'") or die ($db->error);
+                    $soal_sudah_jawab = mysqli_num_rows($sql_soal_sudah_jawab);
+                    if($soal_sudah_jawab>0) { 
+                ?>
+                <div class="panel panel-default">
+                    <div class="panel-heading"><b>Jawaban Soal sebelumnya</small></b></div>
+                    <div class="panel-body">
+                        <div class="list-group">
+                            <?php $no=1; foreach($sql_soal_sudah_jawab as $soal){?>
+                                <a href="soal.php?id_tq=<?php echo $id_tq;?>&revisi_soal=<?php echo $soal['id_soal'];?>&no_revisi=<?php echo $no;?>" class="list-group-item"><?php echo $no.")".$soal['jawaban'];?></a>
+                            <?php $no++;}?>
+                        </div>
+                    </div>
+                </div>
+                <?php }?>
 		    </div>
 
 		    <div class="col-md-8">
@@ -179,7 +199,13 @@ if(@$_SESSION['siswa']) { ?>
                     }
                     //print_r($no_sudah); exit();
                     if(!empty($no_sudah)){
-                        $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' AND id_pilgan NOT IN ({$no_sudah}) ORDER BY rand() limit 1 ") or die ($db->error);
+                        if(isset($_GET['revisi_soal'])){
+                        $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' AND id_pilgan='".$_GET['revisi_soal']."' limit 1 ") or die ($db->error);
+                        }else{
+                            $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' AND id_pilgan NOT IN ({$no_sudah}) ORDER BY rand() limit 1 ") or die ($db->error);
+                        }
+                    }elseif(isset($_GET['revisi_soal'])){
+                        $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' AND id_pilgan='".$_GET['revisi_soal']."' limit 1 ") or die ($db->error);
                     }
                     else{
                         $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' ORDER BY rand() limit 1 ") or die ($db->error);
@@ -195,7 +221,7 @@ if(@$_SESSION['siswa']) { ?>
                                     <input type="hidden" name="id_pilgan" value="<?php echo $data_soal_pilgan['id_pilgan']; ?>">
         								<table class="table">
         							    	<tr>
-        							    		<td width="10%">( <?php echo $n; ?> )</td>
+        							    		<td width="10%">( <?php echo (isset($_GET['no_revisi'])?$_GET['no_revisi']:$n); ?> )</td>
         							            <td><b><?php echo $data_soal_pilgan['pertanyaan']; ?></b></td>
         							        </tr>
                                             <?php if($data_soal_pilgan['gambar'] != '') { ?>

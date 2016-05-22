@@ -13,7 +13,13 @@ $id_siswa = $_SESSION['siswa'];
       $uri = explode("/",$_SERVER['REQUEST_URI']);
       $redirect = $_SERVER['HTTP_HOST']."/".$uri[1]."/soal.php?id_tq=".$id_tq;
       foreach($_POST['soal_pilgan'] as $key => $value) {
-              mysqli_query($db, "INSERT INTO tb_jawaban_pilgan_temp (id_peserta,id_tq,id_soal,jawaban)VALUES ('{$id_siswa}','{$id_tq}','{$key}','{$value}')") or die ($db->error);             
+              $sql_sudah_ada = mysqli_query($db, "SELECT * from tb_jawaban_pilgan_temp WHERE id_soal = {$key} AND id_peserta = {$id_siswa} AND id_tq = {$id_tq}") or die ($db->error);
+              $num_sudah_ada = mysqli_num_rows($sql_sudah_ada);
+              if($num_sudah_ada>0){
+                mysqli_query($db, "UPDATE tb_jawaban_pilgan_temp SET jawaban='$value' WHERE id_soal = {$key} AND id_peserta = {$id_siswa} AND id_tq = {$id_tq}") or die ($db->error);   
+              }else{
+                mysqli_query($db, "INSERT INTO tb_jawaban_pilgan_temp (id_peserta,id_tq,id_soal,jawaban)VALUES ('{$id_siswa}','{$id_tq}','{$key}','{$value}')") or die ($db->error);   
+              }          
       }
       echo '<script>window.location = "http://'.$redirect.'";</script>';
   }else{//bila selesai mengerjakan soal
