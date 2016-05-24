@@ -34,7 +34,8 @@ $uri = explode("/",$_SERVER['REQUEST_URI']);
       }
       
      $benar = 0;
-      $salah = 0;
+     $salah = 0;
+     $tidakjawab = 0;
       //ambil dari tabel temporary
       $result = mysqli_query($db, "SELECT jawaban,id_soal FROM tb_jawaban_pilgan_temp WHERE id_peserta = {$id_siswa} AND id_tq = {$id_tq}") or die ($db->error);
       foreach($result as $key) {
@@ -44,13 +45,14 @@ $uri = explode("/",$_SERVER['REQUEST_URI']);
           }
           if($key['jawaban'] == $jawaban) {
               $benar++;
-          } else {
+          }else if(empty($key['jawaban']) OR $key['jawaban'] == ""){
+            $tidakjawab++;
+          }else {
               $salah++;
           }
       }
       $jumlah1 = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq'") or die ($db->error);
       $jumlah = mysqli_num_rows($jumlah1);
-      $tidakjawab = $jumlah - $benar - $salah;
       $persen = $benar / $jumlah;
       $hasil = $persen * 100;
       $masuk_tbl_nilai = mysqli_query($db, "INSERT INTO tb_nilai_pilgan VALUES('', '$id_tq', '$_SESSION[siswa]', '$benar', '$salah', '$tidakjawab', '$hasil')") or die ($db->error);
