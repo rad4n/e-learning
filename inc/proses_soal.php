@@ -7,11 +7,12 @@ $id_tq = mysqli_real_escape_string($db, $_POST['id_tq']);
 $soal = mysqli_query($db, "SELECT * FROM tb_soal_pilgan where id_tq = '$id_tq'") or die ($db->error);
 $pilganda = mysqli_num_rows($soal);
 $id_siswa = $_SESSION['siswa'];
-
+$uri = explode("/",$_SERVER['REQUEST_URI']);
+ $redirect = $_SERVER['HTTP_HOST']."/".$uri[1]."/soal.php?id_tq=".$id_tq;
 
   if(!empty($_POST['soal_pilgan'])){ 
-      $uri = explode("/",$_SERVER['REQUEST_URI']);
-      $redirect = $_SERVER['HTTP_HOST']."/".$uri[1]."/soal.php?id_tq=".$id_tq;
+      
+     
       foreach($_POST['soal_pilgan'] as $key => $value) {
               $sql_sudah_ada = mysqli_query($db, "SELECT * from tb_jawaban_pilgan_temp WHERE id_soal = {$key} AND id_peserta = {$id_siswa} AND id_tq = {$id_tq}") or die ($db->error);
               $num_sudah_ada = mysqli_num_rows($sql_sudah_ada);
@@ -23,6 +24,15 @@ $id_siswa = $_SESSION['siswa'];
       }
       echo '<script>window.location = "http://'.$redirect.'";</script>';
   }else{//bila selesai mengerjakan soal
+    
+      if(isset($_POST['jumlahsoalpilgan']) AND $_POST['jumlahsoalpilgan']<$pilganda){
+        // print_r($_POST['jumlahsoalpilgan'].'<br>');
+        // exit($pilganda);
+        mysqli_query($db, "INSERT INTO tb_jawaban_pilgan_temp (id_peserta,id_tq,id_soal)VALUES ('{$id_siswa}','{$id_tq}','".$_POST['id_pilgan']."')") or die ($db->error);  
+        echo '<script>window.location = "http://'.$redirect.'";</script>';
+        exit();
+      }
+      
      $benar = 0;
       $salah = 0;
       //ambil dari tabel temporary

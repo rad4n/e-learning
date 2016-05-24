@@ -189,12 +189,13 @@ if(@$_SESSION['siswa']) { ?>
 		    <div class="col-md-8">
 		    	<form action="inc/proses_soal.php" method="post">
 					<?php
-                    $sql_soal_sudah = mysqli_query($db, "SELECT id_soal FROM tb_jawaban_pilgan_temp WHERE id_peserta = '".$_SESSION['siswa']."' AND id_tq = '{$id_tq}'") or die ($db->error);
+                    $sql_soal_sudah = mysqli_query($db, "SELECT id_soal,jawaban FROM tb_jawaban_pilgan_temp WHERE id_peserta = '".$_SESSION['siswa']."' AND id_tq = '{$id_tq}'") or die ($db->error);
                     $no_sudah="";
                     $n=1;
                     while($soal_sudah = mysqli_fetch_assoc($sql_soal_sudah)) {
                         if($n>1)$no_sudah .= ",";        
                         $no_sudah .= $soal_sudah["id_soal"];
+                        $jawaban = $soal_sudah["jawaban"];
                         $n++;
                     }
                     //print_r($no_sudah); exit();

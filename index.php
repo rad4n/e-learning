@@ -14,7 +14,7 @@ if(!@$_SESSION['siswa']) {
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>E-Learning SMK Indonesia</title>
+    <title>E-Learning SMAN 114 Jakarta</title>
     <link href="style/assets/css/bootstrap.css" rel="stylesheet" />
     <link href="style/assets/css/font-awesome.css" rel="stylesheet" />
     <link href="style/assets/css/style.css" rel="stylesheet" />
@@ -88,7 +88,7 @@ $data_terlogin = mysqli_fetch_array($sql_terlogin);
                     <div class="navbar-collapse collapse ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
                             <li><a <?php if(@$_GET['page'] == '') { echo 'class="menu-top-active"'; } ?> href="./">Beranda</a></li>
-                            <li><a <?php if(@$_GET['page'] == 'quiz') { echo 'class="menu-top-active"'; } ?> href="?page=quiz">Tugas / Quiz</a></li>
+                            <li><a <?php if(@$_GET['page'] == 'quiz') { echo 'class="menu-top-active"'; } ?> href="?page=quiz">Ulangan</a></li>
                             <li><a <?php if(@$_GET['page'] == 'nilai') { echo 'class="menu-top-active"'; } ?> href="?page=nilai">Nilai</a></li>
                             <li><a <?php if(@$_GET['page'] == 'materi') { echo 'class="menu-top-active"'; } ?> href="?page=materi">Materi</a></li>
                             <li><a <?php if(@$_GET['page'] == 'berita') { echo 'class="menu-top-active"'; } ?> href="?page=berita">Berita</a></li>
@@ -120,7 +120,7 @@ $data_terlogin = mysqli_fetch_array($sql_terlogin);
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    &copy; 2015 E-Learing SMK Indonesia
+                    &copy; 2015 E-Learing SMAN 114 Jakarta
                 </div>
 
             </div>
