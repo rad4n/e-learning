@@ -326,7 +326,7 @@ if(@$_SESSION['siswa']) { ?>
                     } ?>
                     
                     <input type="hidden" name="id_tq" value="<?php echo $id_tq; ?>" />
-
+                    <?php if(mysqli_num_rows($sql_soal_pilgan) == 0) {?>
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div>
@@ -343,6 +343,7 @@ if(@$_SESSION['siswa']) { ?>
                             </script>
                         </div>
                     </div>
+                    <?php }?>
 		        </form>
 		    </div>
 		</div>
