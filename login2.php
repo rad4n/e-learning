@@ -79,7 +79,7 @@
 
 .loginmodal-container a {
   text-decoration: none;
-  color: #666;
+  color: black;
   font-weight: 400;
   text-align: center;
   display: inline-block;
@@ -94,14 +94,31 @@
 <div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   	<div class="modal-dialog">
 		<div class="loginmodal-container">
-		  <form>
-			<input type="text" name="user" placeholder="Username">
-			<input type="password" name="pass" placeholder="Password">
+       <?php
+                        if(@$_POST['login']) {
+                            $user = @mysqli_real_escape_string($db, $_POST['user']);
+                            $pass = @mysqli_real_escape_string($db, $_POST['pass']);
+                            $sql = mysqli_query($db, "SELECT * FROM tb_siswa WHERE username = '$user' AND password = md5('$pass')") or die ($db->error);
+                            $data = mysqli_fetch_array($sql);
+                            if(mysqli_num_rows($sql) > 0) {
+                                if($data['status'] == 'aktif') {
+                                    @$_SESSION['siswa'] = $data['id_siswa'];
+                                    echo "<script>window.location='./';</script>";
+                                } else {
+                                    echo '<div class="alert alert-warning">Login gagal, akun Anda sedang tidak aktif</div>';
+                                }
+                            } else {
+                                echo '<div class="alert alert-danger">Login gagal, username / password salah, coba lagi!</div>';
+                            }
+                        } ?>
+		  <form method="post">
+			<input type="text" name="user" placeholder="Username" class="form-control" required>
+			<input type="password" name="pass" placeholder="Password" class="form-control" required>
 			<input type="submit" name="login" class="login loginmodal-submit" value="Login">
 		  </form>
 			
 		  <div class="login-help">
-			<a href="#">Register</a> - <a href="#">Forgot Password</a>
+			<a href="./?hal=daftar">Register</a> - <a href="#">Forgot Password</a>
 		  </div>
 		</div>
 	</div>
