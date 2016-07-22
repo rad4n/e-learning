@@ -7,7 +7,7 @@ include "+koneksi.php";
 <head>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Login E-Learning SMK Indonesia</title>
+    <title>CBT | Genius Ploes</title>
 	<link href="style/assets/css/bootstrap.css" rel="stylesheet" />
     <link href="style/assets/css/font-awesome.css" rel="stylesheet" />
     <style type="text/css">
