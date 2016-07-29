@@ -88,7 +88,7 @@ include "+koneksi.php";
 				<img id="logo-kiri" src="img/a.png" width="150" height="150">
 			</div>
 			<div class="col-md-8">
-				<h1 class="title-header">TRY OUT UJIAN ONLINE</h1>
+				<h1 class="title-header">LEGENDRE TECHNOLOGY</h1>
 				<h2 class="title-header">Computer Based Test (CBT)</h2>
 			</div>
 			<div class="col-md-2">

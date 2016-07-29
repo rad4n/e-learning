@@ -8,7 +8,7 @@ $soal = mysqli_query($db, "SELECT * FROM tb_soal_pilgan where id_tq = '$id_tq'")
 $pilganda = mysqli_num_rows($soal);
 $id_siswa = $_SESSION['siswa'];
 $uri = explode("/",$_SERVER['REQUEST_URI']);
- $redirect = $_SERVER['HTTP_HOST']."/".$uri[1]."/index.php?page=soal&id_tq=".$id_tq;
+ $redirect = $_SERVER['HTTP_HOST']."/".$uri[1]."/soal_lpia.php?id_tq=".$id_tq;
 
   if(!empty($_POST['soal_pilgan'])){ 
       

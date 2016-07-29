@@ -72,24 +72,60 @@ include "+koneksi.php";
 		  background: linear-gradient(to right, #579830, #0F4C2D); /* Standard syntax */
 		  border: none;
 		}
-		#divwaktu{
-			background: #7B2F24;
-		}
-		h3,h4{
+		h3,h4,h5,h6{
 			color: white;
 		}
+
 		h3{
 			font-size: 18px;
 		}
-		#divwaktu{
+		.divwaktu{
+			background: #7B2F24;
 			font-size: 20;
 			padding: 5px 10px;
-			top: 55px;
-			position: absolute;
+			top: 30px;
+			position: relative;
+		}
+		#sisa-waktu{
+			background: #B0A334;
+			font-size: 20;
+			padding: 5px 10px;
+			top: 30px;
+			position: relative;
+		}
+		.kunci {
+		    background:  #0944bc none repeat scroll 0 0;
+		    margin: 1px;
+		    width: 19%;
+		    padding-right: 0px;
+		    color: black;
+		}
+		.kunci-jwb {
+			color: black;
+		    background:  white none repeat scroll 0 0;
+		    float: right;
+		    text-align: center;
+		    width: 60%;
+		}
+		.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+		    border-top: 0px;
+		    line-height: 1.42857;
+		    padding: 0px;
+		    vertical-align: top;
+		}
+		.footer{
+			position: relative;
+			bottom: -170px;
+			background: #1E1D2A;
+			color: white;
+			text-align: center;
+			font-size: 18px;
 		}
     </style>
 </head>
 <body onload="init(),noBack();" onpageshow="if (event.persisted) noBack();" onunload="keluar()" class="row">
+	<script src="style/assets/js/jquery-1.11.1.js"></script>
+<script src="style/assets/js/bootstrap.js"></script>
 	<?php
 		$id_tq = @$_GET['id_tq'];
 		$no = 1;
@@ -138,7 +174,10 @@ include "+koneksi.php";
 		        jamx = jam;
 		    }
 		    //document.getElementById("divwaktu").innerHTML = jamx+" Jam : "+menitx+" Menit : "+detikx +" Detik";
-		    document.getElementById("divwaktu").innerHTML = menitx+" : "+detikx;
+		    var divs =  document.getElementsByClassName("divwaktu");
+		    for (var i = 0; i < divs.length; i++) {
+			    divs[i].innerHTML = menitx+" : "+detikx;
+			}
 		    waktu --;
 		    if(waktu>0){
 		        t = setTimeout("mulai()",1000);
@@ -202,7 +241,7 @@ include "+koneksi.php";
 							<h4>CBT Application</h4>
 						</div>
 						<div class="col-md-2">
-							<span id="divwaktu"></span>
+							<h3><span class="divwaktu label label-warning"></span></h3>
 						</div>
 					</div>
 					<div class="row">
@@ -231,53 +270,36 @@ include "+koneksi.php";
 				                    else{
 				                        $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' ORDER BY rand() limit 1 ") or die ($db->error);
 				                    }
-									if(mysqli_num_rows($sql_soal_pilgan) > 0) { ?>
-										<div class="panel panel-default">
-				                            <div class="panel-heading"><b>Soal Pilihan Ganda</b></div>
-				                            <div class="panel-body">
-				                                <div class="table-responsive">
-				                                    <?php
-				                                    while($data_soal_pilgan = mysqli_fetch_array($sql_soal_pilgan)) { ?>
-				                                    <input type="hidden" name="id_pilgan" value="<?php echo $data_soal_pilgan['id_pilgan']; ?>">
-				        								<table class="table">
-				        							    	<tr>
-				        							    		<td width="10%">( <?php echo (isset($_GET['no_revisi'])?$_GET['no_revisi']:$n); ?> )</td>
-				        							            <td><b><?php echo $data_soal_pilgan['pertanyaan']; ?></b></td>
-				        							        </tr>
-				                                            <?php if($data_soal_pilgan['gambar'] != '') { ?>
-				                                                <tr>
-				                                                    <td></td>
-				                                                    <td>
-				                                                        <img width="220px" src="admin/img/gambar_soal_pilgan/<?php echo $data_soal_pilgan['gambar']; ?>" />
-				                                                    </td>
-				                                                </tr>
-				                                            <?php } ?>
-				                                            <?php if($data_soal_pilgan['video'] != '') { ?>
-				                                                <tr>
-				                                                    <td></td>
-				                                                    <td>
-				                                                        <video width="220px" controls>
+									if(mysqli_num_rows($sql_soal_pilgan) > 0) { 
+									while($data_soal_pilgan = mysqli_fetch_array($sql_soal_pilgan)) { ?>
+										<div class="panel panel-defaut">
+											<div class="panel-body" style="max-height: 500px;overflow-y: scroll;">
+												 <?php echo (isset($_GET['no_revisi'])?$_GET['no_revisi']:$n); ?> )<b><?php echo $data_soal_pilgan['pertanyaan']; ?></b>
+												 <?php if($data_soal_pilgan['gambar'] != '') { ?><br>
+												 <img width="220px" src="admin/img/gambar_soal_pilgan/<?php echo $data_soal_pilgan['gambar']; ?>" />
+												 <?php } ?>
+												 <?php if($data_soal_pilgan['video'] != '') { ?><br>
+												 <video width="220px" controls>
 				                                                            <source src="admin/video/<?php echo $data_soal_pilgan['video']; ?>" type="video/mp4">
 				                                                            <source src="admin/video/<?php echo $data_soal_pilgan['video']; ?>" type="video/ogg">
 				                                                            Your browser does not support the video tag.
-				                                                        </video>
-				                                                    </td>
-				                                                </tr>
-				                                            <?php } ?>
-				                                            <?php if($data_soal_pilgan['audio'] != '') { ?>
-				                                                <tr>
-				                                                    <td></td>
-				                                                    <td>
-				                                                        <audio controls>
+				                                 </video>
+				                                 <?php } ?>
+				                                 <?php if($data_soal_pilgan['audio'] != '') { ?><br>
+				                                 <audio controls>
 				                                                            <source src="admin/audio/<?php echo $data_soal_pilgan['audio']; ?>" type="audio/mpeg">
 				                                                            <source src="admin/audio/<?php echo $data_soal_pilgan['audio']; ?>" type="audio/ogg">
 				                                                            Your browser does not support the audio tag.
-				                                                        </audio>
-				                                                    </td>
-				                                                </tr>
-				                                            <?php } ?>
+				                                 </audio>
+				                                 <?php } ?>
+											</div>
+										</div>
+										<div class="panel panel-default">
+				                            <div class="panel-body">
+				                                <div class="table-responsive">
+				                                    <input type="hidden" name="id_pilgan" value="<?php echo $data_soal_pilgan['id_pilgan']; ?>">
+				        								<table class="table">
 				        							        <tr>
-				        							        	<td></td>
 				        							            <td>
 				                                                    <div class="radio mrg-del">
 				                                                        <label>
@@ -287,7 +309,6 @@ include "+koneksi.php";
 				                                                </td>
 				        							        </tr>
 				        							        <tr>
-				        							        	<td></td>
 				        							            <td>
 				                                                    <div class="radio mrg-del">
 				                                                        <label>
@@ -297,7 +318,6 @@ include "+koneksi.php";
 				                                                </td>
 				        							        </tr>
 				        							        <tr>
-				        							        	<td></td>
 				        							            <td>
 				                                                    <div class="radio mrg-del">
 				                                                        <label>
@@ -307,7 +327,6 @@ include "+koneksi.php";
 				                                                </td>
 				        							        </tr>
 				        							        <tr>
-				        							        	<td></td>
 				        							            <td>
 				                                                    <div class="radio mrg-del">
 				                                                        <label>
@@ -317,7 +336,6 @@ include "+koneksi.php";
 				                                                </td>
 				        							        </tr>
 				        							        <tr>
-				        							        	<td></td>
 				        							            <td>
 				                                                    <div class="radio mrg-del">
 				                                                        <label>
@@ -334,18 +352,96 @@ include "+koneksi.php";
 				    							</div>
 				    			            </div>
 				    			        </div>
+				    			        
 				                    <?php }?>
+				                    <?php if(mysqli_num_rows($sql_soal_pilgan) == 0) {?>
+				                    <div class="panel panel-default">
+				                        <div class="panel-heading">
+				                            <div>
+				                                <a id="selesai" class="btn btn-info">Selesai</a>
+				                                <!-- <input type="reset" value="Reset Jawaban" class="btn btn-danger" /> -->
+				                            </div>
+				                            <div id="konfirm" style="display:none; margin-top:15px;">
+				                                Apakah Anda yakin sudah selesai mengerjakan soal dan akan mengirim jawaban? &nbsp; <input onclick="selesai();" type="submit" id="kirim" value="Ya" class="btn btn-info btn-sm" />
+				                            </div>
+				                            <script type="text/javascript">
+				                            $("#selesai").click(function() {
+				                                $("#konfirm").fadeIn(1000);
+				                            });
+				                            </script>
+				                        </div>
+				                    </div>
+				                    <?php }?>
+				                    <input type="hidden" name="id_tq" value="<?php echo $id_tq; ?>" />
 							</form>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3">
+					<div class="row">
+						<div class="col-md-12">
+							<h3><span id="sisa-waktu" class="label label-warning">Sisa Waktu</span>
+							<span class="divwaktu label label-warning"></span></h3>
+						</div>
+					</div>
+					<div class="row" style="margin-top:40px;">
+						<div class="panel panel-default col-md-12" style="background:black;">
+						  <div class="panel-body">
+						    <h3 style="text-align:center">TRY OUT PREDIKSI UJIAN NASIONAL 2017</h3>
+						  </div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="panel panel-default col-md-12" style="background:black;">
+						  <div class="panel-body">
+						  	<?php $sql = mysqli_query($db,"SELECT tb_siswa.*,tb_kelas.nama_kelas from tb_siswa
+						  	LEFT JOIN tb_kelas ON tb_siswa.id_kelas  = tb_kelas.id_kelas WHERE id_siswa = '".$_SESSION['siswa']."'");
+						  		$d= mysqli_fetch_assoc($sql);
+						  	?>
+						  	<div class="pull-left">
+						  		<img src="img/foto_siswa/<?=$d['foto'];?>" width="100" height="100" class="img-thumbnail">
+						    </div>
+						    <h3 style="text-align:center"><?=$d['nama_lengkap'];?></h3>
+						    <h4 style="text-align:center">kelas : <?=$d['nama_kelas'];?></h4>
+						    <h5 style="text-align:center"><?=$d['sekolah'];?></h5>
+						  </div>
+						</div>
+					</div>
+
+					<div class="row">
+						<?php $sql_soal_sudah_jawab = mysqli_query($db, "SELECT 
+		                    tb_jawaban_pilgan_temp.id_soal,
+		                    tb_jawaban_pilgan_temp.jawaban
+		                    FROM tb_jawaban_pilgan_temp 
+		                    #LEFT JOIN tb_soal_pilgan ON tb_soal_pilgan.id_pilgan = tb_jawaban_pilgan_temp.id_soal
+		                    WHERE id_peserta = '".$_SESSION['siswa']."' AND id_tq = '{$id_tq}'") or die ($db->error);
+		                    $soal_sudah_jawab = mysqli_num_rows($sql_soal_sudah_jawab);
+		                    if($soal_sudah_jawab>0) { 
+		                ?>
+		                            <?php $no=1; foreach($sql_soal_sudah_jawab as $soal){?>
+		                               <!--  <a href="soal.php?id_tq=<?php echo $id_tq;?>&revisi_soal=<?php echo $soal['id_soal'];?>&no_revisi=<?php echo $no;?>" class="list-group-item"><?php echo $no.")".$soal['jawaban'];?></a> -->
+		                               <a href="soal_lpia.php?id_tq=<?php echo $id_tq;?>&revisi_soal=<?php echo $soal['id_soal'];?>&no_revisi=<?php echo $no;?>" class="kunci col-md-3">
+										  <?php echo $no;?> <div class="kunci-jwb"><?php echo $soal['jawaban'];?></div>
+									    </a>
+		                            <?php $no++;}?>
+		                <?php }?>
+					</div>
 
 				</div>
+				<h6 class="text-justify">Tolong di cek dengan seksama dan teliti jawaban yang telah di pilih sebelum menutup program ini</h6>
 			</div>
 		</div>
 	<?php }else{
 		echo "<script>window.location='./';</script>";
 	}?>
+<div class="container-fluid ">
+	<div class="row footer">
+		<div class="col-lg-12">
+			<div class="col-md-12">
+				<p>aplikasi ini dirancang dan dikembangkan oleh lembaga pendidikan genius ploes group</p>    
+			</div>
+	</div>
+</div>
 </body>
 </html>

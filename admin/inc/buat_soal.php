@@ -152,7 +152,7 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
                     move_uploaded_file($sumber2, $target2.$nama_video);
                     move_uploaded_file($sumber3, $target3.$nama_audio);
 
-                    mysqli_query($db, "INSERT INTO tb_soal_pilgan VALUES('', '$id', '$pertanyaan', '$nama_gambar','$nama_video','$nama_audio', '$pilA', '$pilB', '$pilC', '$pilD', '$pilE', '$kunci', now())") or die ($db->error);          
+                    mysqli_query($db, "INSERT INTO tb_soal_pilgan (id_tq,pertanyaan,gambar,video,audio,pil_a,pil_b,pil_c,pil_d,pil_e,kunci,tgl_buat) VALUES('$id', '$pertanyaan', '$nama_gambar','$nama_video','$nama_audio', '$pilA', '$pilB', '$pilC', '$pilD', '$pilE', '$kunci', now())") or die ($db->error);          
                     echo '<script>window.location="?page=quiz&action=daftarsoal&hal=pilgan&id='.$id.'"</script>';
 	            }?>
 		    </div>
