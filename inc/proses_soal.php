@@ -51,13 +51,13 @@ $uri = explode("/",$_SERVER['REQUEST_URI']);
               $salah++;
           }
       }
-      $jumlah1 = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq'") or die ($db->error);
-      $jumlah = mysqli_num_rows($jumlah1);
-      $persen = $benar / $jumlah;
+      $jumlah1 = mysqli_query($db, "SELECT MAX(level_group) as total FROM tb_soal_pilgan WHERE id_tq = '$id_tq'") or die ($db->error);
+      $jumlah = mysqli_fetch_array($jumlah1);
+      $persen = $benar / $jumlah['total'];//print_r("test :".$persen);exit;
       $hasil = $persen * 100;
       $masuk_tbl_nilai = mysqli_query($db, "INSERT INTO tb_nilai_pilgan VALUES('', '$id_tq', '$_SESSION[siswa]', '$benar', '$salah', '$tidakjawab', '$hasil')") or die ($db->error);
       if($masuk_tbl_nilai){
-        mysqli_query($db, "DELETE FROM tb_jawaban_pilgan_temp WHERE id_peserta='$_SESSION[siswa]'") or die ($db->error);
+        //mysqli_query($db, "DELETE FROM tb_jawaban_pilgan_temp WHERE id_peserta='$_SESSION[siswa]'") or die ($db->error);
         echo "<script>window.location='./../?page=quiz&action=infokerjakan&id_tq=".$id_tq."';</script>";
       }
 

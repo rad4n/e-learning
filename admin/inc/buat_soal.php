@@ -23,6 +23,14 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 		    <div class="panel-body">
 		    	<?php $sql_jumlah_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id'") or die ($db->error); ?>
 			    <form method="post" enctype="multipart/form-data">
+			    	<div class="col-md-2">
+						<label>Group Soal</label>
+					</div>
+					<div class="col-md-10">
+						<div class="form-group">
+							<textarea name="level_group" class="form-control" rows="1" required></textarea>
+						</div>
+					</div>
 					<div class="col-md-2">
 						<label>Pertanyaan No. [ <?php echo mysqli_num_rows($sql_jumlah_pilgan) + 1; ?> ]</label>
 					</div>
@@ -128,6 +136,7 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 	            </form>
 	            <?php
 	            if(@$_POST['simpan']) {
+	            	$level_group = @mysqli_real_escape_string($db, $_POST['level_group']);
 	            	$pertanyaan = @mysqli_real_escape_string($db, $_POST['pertanyaan']);
 	            	$pilA = @mysqli_real_escape_string($db, $_POST['pilA']);
 	            	$pilB = @mysqli_real_escape_string($db, $_POST['pilB']);
@@ -152,7 +161,7 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
                     move_uploaded_file($sumber2, $target2.$nama_video);
                     move_uploaded_file($sumber3, $target3.$nama_audio);
 
-                    mysqli_query($db, "INSERT INTO tb_soal_pilgan (id_tq,pertanyaan,gambar,video,audio,pil_a,pil_b,pil_c,pil_d,pil_e,kunci,tgl_buat) VALUES('$id', '$pertanyaan', '$nama_gambar','$nama_video','$nama_audio', '$pilA', '$pilB', '$pilC', '$pilD', '$pilE', '$kunci', now())") or die ($db->error);          
+                    mysqli_query($db, "INSERT INTO tb_soal_pilgan (id_tq,pertanyaan,gambar,video,audio,pil_a,pil_b,pil_c,pil_d,pil_e,kunci,tgl_buat,level_group) VALUES('$id', '$pertanyaan', '$nama_gambar','$nama_video','$nama_audio', '$pilA', '$pilB', '$pilC', '$pilD', '$pilE', '$kunci', now(),$level_group)") or die ($db->error);          
                     echo '<script>window.location="?page=quiz&action=daftarsoal&hal=pilgan&id='.$id.'"</script>';
 	            }?>
 		    </div>

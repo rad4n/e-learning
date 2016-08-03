@@ -252,6 +252,7 @@ if(@$_GET['action'] == '') { ?>
     mysqli_query($db, "DELETE FROM tb_soal_essay WHERE id_tq = '$_GET[id_tq]'") or die ($db->error);
     mysqli_query($db, "DELETE FROM tb_jawaban WHERE id_tq = '$_GET[id_tq]'") or die ($db->error);
     mysqli_query($db, "DELETE FROM tb_nilai_pilgan WHERE id_tq = '$_GET[id_tq]'") or die ($db->error);
+    mysqli_query($db, "DELETE FROM tb_jawaban_pilgan_temp WHERE id_peserta='$_GET[id_siswa]'") or die ($db->error);
     mysqli_query($db, "DELETE FROM tb_nilai_essay WHERE id_tq = '$_GET[id_tq]'") or die ($db->error);
     echo "<script>window.location='?page=quiz';</script>";
 } else if(@$_GET['action'] == 'buatsoal') {

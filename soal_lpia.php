@@ -262,13 +262,16 @@ include "+koneksi.php";
 				                        if(isset($_GET['revisi_soal'])){
 				                        $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' AND id_pilgan='".$_GET['revisi_soal']."' limit 1 ") or die ($db->error);
 				                        }else{
-				                            $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' AND id_pilgan NOT IN ({$no_sudah}) ORDER BY rand() limit 1 ") or die ($db->error);
+				                            $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' 
+				                            	AND id_pilgan NOT IN ({$no_sudah}) 
+				                            	AND level_group = '$n'
+				                            	ORDER BY rand() limit 1 ") or die ($db->error);
 				                        }
 				                    }elseif(isset($_GET['revisi_soal'])){
 				                        $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' AND id_pilgan='".$_GET['revisi_soal']."' limit 1 ") or die ($db->error);
 				                    }
 				                    else{
-				                        $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' ORDER BY rand() limit 1 ") or die ($db->error);
+				                        $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' AND level_group = '$n' ORDER BY rand() limit 1 ") or die ($db->error);
 				                    }
 									if(mysqli_num_rows($sql_soal_pilgan) > 0) { 
 									while($data_soal_pilgan = mysqli_fetch_array($sql_soal_pilgan)) { ?>

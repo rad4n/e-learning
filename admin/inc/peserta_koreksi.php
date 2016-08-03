@@ -58,6 +58,7 @@
                                         }
                                     } ?>
                                     <a onclick="return confirm('Yakin akan menghapus siswa ini dari daftar peserta ujian?');" href="?page=quiz&action=hapuspeserta&id_tq=<?php echo $id_tq; ?>&id_siswa=<?php echo $data_siswa_mengikuti_tes['id_siswa']; ?>" class="badge" style="background-color:#f00;">Hapus Siswa dari Peserta Ujian</a>
+                                    <a href="?page=quiz&action=export_excel&id_tq=<?php echo $id_tq; ?>&id_siswa=<?php echo $data_siswa_mengikuti_tes['id_siswa']; ?>" class="badge" style="background-color:green;">Export Jawaban Excel</a>
                                 </td>
                             </tr>
     					<?php
