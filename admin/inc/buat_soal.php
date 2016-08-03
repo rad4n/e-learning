@@ -191,7 +191,7 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 					//print_r($allDataInSheet);exit;
 					//$arrayCount
 					$arrayCount = count($allDataInSheet);
-					$sql ="INSERT INTO tb_soal_pilgan (id_tq,pertanyaan,gambar,video,audio,pil_a,pil_b,pil_c,pil_d,pil_e,kunci,tgl_buat) VALUES";
+					$sql ="INSERT INTO tb_soal_pilgan (id_tq,pertanyaan,gambar,video,audio,pil_a,pil_b,pil_c,pil_d,pil_e,kunci,tgl_buat,level_group) VALUES";
 					for($i=2;$i<=$arrayCount;$i++){
 							$pertanyaan  	= trim($allDataInSheet[$i]["B"]);
 							$pilA 			= trim($allDataInSheet[$i]["C"]);
@@ -203,9 +203,10 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 							$nama_gambar 	= trim($allDataInSheet[$i]["I"]);
 							$nama_video 	= trim($allDataInSheet[$i]["J"]);
 							$nama_audio 	= trim($allDataInSheet[$i]["K"]);
+							$level_group 	= trim($allDataInSheet[$i]["L"]);
 
 
-					$sql .= " ('$id', '$pertanyaan', '$nama_gambar','$nama_video','$nama_audio', '$pilA', '$pilB', '$pilC', '$pilD', '$pilE', '$kunci', now()),";
+					$sql .= " ('$id', '$pertanyaan', '$nama_gambar','$nama_video','$nama_audio', '$pilA', '$pilB', '$pilC', '$pilD', '$pilE', '$kunci', now(),'$level_group'),";
 					}
 					$sql = substr($sql,0,-1);
 					mysqli_query($db,$sql)or die ($db->error); 
