@@ -1,8 +1,8 @@
-<div class="row">
+<!-- <div class="row">
     <div class="col-md-12">
         <h1 class="page-header">Manajemen Tugas / Quiz</h1>
     </div>
-</div>
+</div> -->
 
 <?php
 $id = @$_GET['id'];
@@ -268,4 +268,43 @@ if(@$_GET['action'] == '') { ?>
     mysqli_query($db, "DELETE FROM tb_nilai_pilgan WHERE id_tq = '$_GET[id_tq]' AND id_siswa = '$_GET[id_siswa]'") or die ($db->error);
     mysqli_query($db, "DELETE FROM tb_nilai_essay WHERE id_tq = '$_GET[id_tq]' AND id_siswa = '$_GET[id_siswa]'") or die ($db->error);
     echo "<script>window.location='?page=quiz&action=pesertakoreksi&id_tq=".@$_GET['id_tq']."';</script>";
-} ?>
+} 
+  else if(@$_GET['action'] == 'export_excel'){
+    $db = mysqli_connect("localhost", "root", "", "db_elearning");
+    include "PHPExcel.php";
+    include "PHPExcel/Cell.php";
+    include "PHPExcel/Calculation.php";
+    //include "PHPExcel/Writer/Excel2007/Worksheet.php";
+
+    $excelku = new PHPExcel();
+    
+
+    $jawab = mysqli_query($db,"SELECT jawaban FROM tb_jawaban_pilgan_temp 
+                                WHERE id_peserta='$_GET[id_siswa]'
+                                AND  id_tq = '$_GET[id_tq]'");
+    $r = mysqli_fetch_assoc($jawab);
+    $n='A';
+    $no=1;
+    $excelku->createSheet();
+    $excelku->getActiveSheet()->setTitle('Data Hasil jawaban');
+    $excelku->getSheetByName('Data Hasil jawaban');
+    // while($r = mysqli_fetch_assoc($jawab)){
+        
+    //    $excelku->setActiveSheetIndex(0)->setCellValue($n."1",$no);
+    //    $excelku->setActiveSheetIndex(0)->setCellValue($n."2",$r['jawaban']);
+    //    ++$n;
+    //    $no++;
+    // }
+    
+    //Memberi nama sheet
+   // $excelku->setActiveSheetIndex(0); 
+
+    
+    $objWriter = PHPExcel_IOFactory::createWriter($excelku, 'Excel5');
+    header('Content-Type: application/vnd.ms-excel');
+    header('Content-Disposition: attachment;filename="Tes.xlsx"');
+    header('Cache-Control: max-age=0');
+    $objWriter->save('php://output');
+    exit;
+  }
+?>
