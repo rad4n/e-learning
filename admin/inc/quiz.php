@@ -20,15 +20,15 @@ if(@$_GET['action'] == '') { ?>
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Daftar Topik Quiz / Tugas &nbsp; <a href="?page=quiz&action=tambah" class="btn btn-primary btn-sm">Tambah Topik</a> &nbsp; <a href="./laporan/cetak.php?data=topikquiz" target="_blank" class="btn btn-default btn-sm">Cetak</a></div>
+                <div class="panel-heading">Daftar Jenis Ujian &nbsp; <a href="?page=quiz&action=tambah" class="btn btn-primary btn-sm">Tambah Jenis Ujian</a> &nbsp; <a href="./laporan/cetak.php?data=topikquiz" target="_blank" class="btn btn-default btn-sm">Cetak</a></div>
                 <div class="panel-body">
                     <div class="table-responsive">                        
                         <table class="table table-striped table-bordered table-hover" id="dataquiz">
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Judul</th>
-                                    <th>Kelas</th>
+                                    <th>Jenis Ujian</th>
+                                    <th>Tingkat Kelas</th>
                                     <th>Mapel</th>
                                     <th>Tanggal Pembuatan</th>
                                     <?php
@@ -267,6 +267,7 @@ if(@$_GET['action'] == '') { ?>
     mysqli_query($db, "DELETE FROM tb_jawaban WHERE id_tq = '$_GET[id_tq]' AND id_siswa = '$_GET[id_siswa]'") or die ($db->error);
     mysqli_query($db, "DELETE FROM tb_nilai_pilgan WHERE id_tq = '$_GET[id_tq]' AND id_siswa = '$_GET[id_siswa]'") or die ($db->error);
     mysqli_query($db, "DELETE FROM tb_nilai_essay WHERE id_tq = '$_GET[id_tq]' AND id_siswa = '$_GET[id_siswa]'") or die ($db->error);
+    mysqli_query($db, "DELETE FROM tb_jawaban_pilgan_temp WHERE id_tq = '$_GET[id_tq]' AND id_peserta = '$_GET[id_siswa]'") or die ($db->error);
     echo "<script>window.location='?page=quiz&action=pesertakoreksi&id_tq=".@$_GET['id_tq']."';</script>";
 } 
   else if(@$_GET['action'] == 'export_excel'){

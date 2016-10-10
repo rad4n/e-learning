@@ -6,36 +6,45 @@ if(@$_GET['action'] != 'kerjakansoal') { ?>
 <div class="row">
 <?php
 }
-
-if(@$_GET['action'] == '') { ?>
-
-	<div class="row">
-	    <div class="col-md-9 col-md-push-2">
-	                       
-            <?php
-            $sql_mapel = mysqli_query($db, "SELECT * FROM tb_mapel") or die ($db->error);
-            while($data_mapel = mysqli_fetch_array($sql_mapel)) { ?>
-                   <!--  <td></td>
-                    <td width="200px" align="center">
-                    	<a href="?page=quiz&action=daftartopik&id_mapel=<?php echo $data_mapel['id']; ?>" class="btn btn-primary btn-xs">Lihat Quiz</a>
-                    </td> -->
-                    <a href="?page=quiz&action=daftartopik&id_mapel=<?php echo $data_mapel['id']; ?>" type="button" class="btn btn-primary btn-lg btn-block"><?php echo $data_mapel['mapel']; ?></a>
-            	<?php
-            } ?>
-	                      
+if(@$_GET['action'] == ''){?>
+	 <div class="col-md-9 col-md-push-2">
+        <?php
+        $sql_mapel = mysqli_query($db, "SELECT * FROM tb_kelas") or die ($db->error);
+        while($data_mapel = mysqli_fetch_array($sql_mapel)) { ?>
+                <a href="?page=quiz&action=daftarjenisujian&id_kelas=<?php echo $data_mapel['id_kelas']; ?>" type="button" class="btn btn-primary btn-lg btn-block"><?php echo $data_mapel['nama_kelas']; ?></a>
+        	<?php
+        } ?>
 	</div>
-
+<?php }
+else if(@$_GET['action'] == 'daftarjenisujian') {
+	$_SESSION['id_kelas'] = $_GET['id_kelas'];
+ ?>
+    <div class="col-md-9 col-md-push-2">
+        <?php
+        $sql_mapel = mysqli_query($db, "SELECT  DISTINCT tb_topik_quiz.judul,tb_topik_quiz.id_tq FROM tb_topik_quiz 
+#LEFT JOIN tb_mapel ON tb_mapel.id = tb_topik_quiz.id_mapel
+#LEFT JOIN tb_kelas ON tb_kelas.id_kelas = tb_topik_quiz.id_kelas
+WHERE tb_topik_quiz.id_kelas = {$_GET['id_kelas']}") or die ($db->error);
+        while($data_mapel = mysqli_fetch_array($sql_mapel)) { ?>
+                <a href="?page=quiz&action=daftartopik&id_tq=<?php echo $data_mapel['judul']; ?>" type="button" class="btn btn-primary btn-lg btn-block"><?php echo $data_mapel['judul']; ?></a>
+        	<?php
+        } ?>
+	</div>
 <?php
 } else if(@$_GET['action'] == 'daftartopik') { ?>
 	<div class="row">
 	    <div class="col-md-12">
 	        <div class="panel panel-default">
-	            <div class="panel-heading">Data Tugas / Quiz Setiap Mata Pelajaran</div>
+	            <div class="panel-heading">Mata Pelajaran</div>
 	            <div class="panel-body">
 					<div class="table-responsive">
 					<?php
 					$id_mapel = @$_GET['id_mapel'];
-					$sql_tq = mysqli_query($db, "SELECT * FROM tb_topik_quiz WHERE id_mapel = '$id_mapel' AND id_kelas = '$data_terlogin[id_kelas]' AND status = 'aktif'") or die ($db->error);
+					//$judul_mapel = str_replace(""," ",$_GET['id_tq']);
+					$sql_tq = mysqli_query($db, "SELECT tb_topik_quiz.*, tb_mapel.mapel FROM tb_topik_quiz 
+						LEFT JOIN tb_mapel ON tb_mapel.id = tb_topik_quiz.id_mapel
+						WHERE tb_topik_quiz.judul like '%{$_GET['id_tq']}%' AND id_kelas = '{$_SESSION['id_kelas']}' AND status = 'aktif'") or die ($db->error);
+					
 					if(mysqli_num_rows($sql_tq) > 0) {
 						while($data_tq = mysqli_fetch_array($sql_tq)) { ?>
 						<table width="100%">
@@ -47,7 +56,7 @@ if(@$_GET['action'] == '') { ?>
 									        <tr>
 									            <td width="20%"><b>Judul</b></td>
 									            <td>:</td>
-									            <td width="65%"><?php echo $data_tq['judul']; ?></td>
+									            <td width="65%"><?php echo $data_tq['mapel']; ?></td>
 									        </tr>
 									    </thead>
 									    <tbody>
