@@ -72,12 +72,19 @@ include "+koneksi.php";
 		  background: linear-gradient(to right, #579830, #0F4C2D); /* Standard syntax */
 		  border: none;
 		}
+		.btn-danger{
+			margin-right: 5px;
+		}
     </style>
 </head>
 <body <?php if(@$_GET['page'] == 'soal') {?>onload="init(),noBack();" onpageshow="if (event.persisted) noBack();" onunload="keluar()" class="row" <?php }?>>
 	<?php if(@$_SESSION['siswa']) {?>
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
+	  		<a href="?page=quiz" class="btn btn-danger btn navbar-left navbar-btn">Home</a>
+			<a href="?page=nilai" class="btn btn-danger btn navbar-left navbar-btn">Hasil Ujian</a>
+			<a href="?page=materi" class="btn btn-danger btn navbar-left navbar-btn">Materi Ujian</a>
+			<a href="?page=berita" class="btn btn-danger btn navbar-left navbar-btn">Pengumuman</a>
 			<a href="inc/logout.php?sesi=siswa" class="btn btn-default navbar-btn navbar-right">Log Out</a>
 	  </div>
 	</nav>
