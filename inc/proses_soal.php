@@ -8,7 +8,7 @@ $soal = mysqli_query($db, "SELECT * FROM tb_soal_pilgan where id_tq = '$id_tq'")
 $pilganda = mysqli_num_rows($soal);
 $id_siswa = $_SESSION['siswa'];
 $uri = explode("/",$_SERVER['REQUEST_URI']);
- $redirect = $_SERVER['HTTP_HOST']."/".$uri[1]."/soal.php?id_tq=".$id_tq;
+ $redirect = $_SERVER['HTTP_HOST']."/".$uri[1]."/soal_lpia.php?id_tq=".$id_tq;
 
   if(!empty($_POST['soal_pilgan'])){ 
       
@@ -37,7 +37,7 @@ $uri = explode("/",$_SERVER['REQUEST_URI']);
      $salah = 0;
      $tidakjawab = 0;
       //ambil dari tabel temporary
-      $result = mysqli_query($db, "SELECT jawaban,id_soal FROM tb_jawaban_pilgan_temp WHERE id_peserta = {$id_siswa} AND id_tq = {$id_tq}") or die ($db->error);
+      $result = mysqli_query($db, "SELECT jawaban,id_soal FROM tb_jawaban_pilgan_temp WHERE id_peserta = {$id_siswa} AND id_tq = {$id_tq} ") or die ($db->error);
       foreach($result as $key) {
           $cek = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_pilgan = '".$key['id_soal']."'") or die ($db->error);
           while($c = mysqli_fetch_array($cek)) {
@@ -51,13 +51,13 @@ $uri = explode("/",$_SERVER['REQUEST_URI']);
               $salah++;
           }
       }
-      $jumlah1 = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq'") or die ($db->error);
-      $jumlah = mysqli_num_rows($jumlah1);
-      $persen = $benar / $jumlah;
+      $jumlah1 = mysqli_query($db, "SELECT MAX(level_group) as total FROM tb_soal_pilgan WHERE id_tq = '$id_tq'") or die ($db->error);
+      $jumlah = mysqli_fetch_array($jumlah1);
+      $persen = $benar / $jumlah['total'];//print_r("test :".$persen);exit;
       $hasil = $persen * 100;
       $masuk_tbl_nilai = mysqli_query($db, "INSERT INTO tb_nilai_pilgan VALUES('', '$id_tq', '$_SESSION[siswa]', '$benar', '$salah', '$tidakjawab', '$hasil')") or die ($db->error);
       if($masuk_tbl_nilai){
-        mysqli_query($db, "DELETE FROM tb_jawaban_pilgan_temp WHERE id_peserta='$_SESSION[siswa]'") or die ($db->error);
+        //mysqli_query($db, "DELETE FROM tb_jawaban_pilgan_temp WHERE id_peserta='$_SESSION[siswa]'") or die ($db->error);
         echo "<script>window.location='./../?page=quiz&action=infokerjakan&id_tq=".$id_tq."';</script>";
       }
 

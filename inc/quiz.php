@@ -4,111 +4,66 @@ $no = 1;
 
 if(@$_GET['action'] != 'kerjakansoal') { ?>
 <div class="row">
-    <div class="col-md-12">
-        <h4 class="page-head-line">Tugas / Quiz</h4>
-    </div>
-</div>
 <?php
 }
-
-if(@$_GET['action'] == '') { ?>
-
-	<div class="row">
-	    <div class="col-md-12">
-	        <div class="panel panel-default">
-	            <div class="panel-heading">Data Tugas / Quiz Setiap Mata Pelajaran</div>
-	            <div class="panel-body">
-	                <div class="table-responsive">
-	                    <table class="table table-striped table-bordered table-hover">
-	                        <thead>
-	                            <tr>
-	                                <th>#</th>
-	                                <th>Mata Pelajaran</th>
-	                                <th>Aksi</th>
-	                            </tr>
-	                        </thead>
-	                        <tbody>
-	                        <?php
-	                        $sql_mapel = mysqli_query($db, "SELECT * FROM tb_mapel") or die ($db->error);
-	                        while($data_mapel = mysqli_fetch_array($sql_mapel)) { ?>
-	                            <tr>
-	                                <td width="40px" align="center"><?php echo $no++; ?></td>
-	                                <td><?php echo $data_mapel['mapel']; ?></td>
-	                                <td width="200px" align="center">
-	                                	<a href="?page=quiz&action=daftartopik&id_mapel=<?php echo $data_mapel['id']; ?>" class="btn btn-primary btn-xs">Lihat Quiz</a>
-	                                </td>
-	                            </tr>
-	                        	<?php
-	                        } ?>
-	                        </tbody>
-	                    </table>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
+if(@$_GET['action'] == ''){?>
+	 <div class="col-md-9 col-md-push-2">
+        <?php
+        $sql_mapel = mysqli_query($db, "SELECT * FROM tb_kelas") or die ($db->error);
+        while($data_mapel = mysqli_fetch_array($sql_mapel)) { ?>
+                <a href="?page=quiz&action=daftarjenisujian&id_kelas=<?php echo $data_mapel['id_kelas']; ?>" type="button" class="btn btn-primary btn-lg btn-block"><?php echo $data_mapel['nama_kelas']; ?></a>
+        	<?php
+        } ?>
 	</div>
-
+<?php }
+else if(@$_GET['action'] == 'daftarjenisujian') {
+	$_SESSION['id_kelas'] = $_GET['id_kelas'];
+ ?>
+    <div class="col-md-9 col-md-push-2">
+        <?php
+        $sql_mapel = mysqli_query($db, "SELECT  DISTINCT tb_topik_quiz.judul,tb_topik_quiz.id_tq FROM tb_topik_quiz 
+#LEFT JOIN tb_mapel ON tb_mapel.id = tb_topik_quiz.id_mapel
+#LEFT JOIN tb_kelas ON tb_kelas.id_kelas = tb_topik_quiz.id_kelas
+WHERE tb_topik_quiz.id_kelas = {$_GET['id_kelas']}") or die ($db->error);
+        while($data_mapel = mysqli_fetch_array($sql_mapel)) { ?>
+                <a href="?page=quiz&action=daftartopik&id_tq=<?php echo $data_mapel['judul']; ?>" type="button" class="btn btn-primary btn-block"><?php echo $data_mapel['judul']; ?></a>
+        	<?php
+        } ?>
+	</div>
 <?php
 } else if(@$_GET['action'] == 'daftartopik') { ?>
 	<div class="row">
 	    <div class="col-md-12">
 	        <div class="panel panel-default">
-	            <div class="panel-heading">Data Tugas / Quiz Setiap Mata Pelajaran</div>
+	            <div class="panel-heading">Mata Pelajaran</div>
 	            <div class="panel-body">
 					<div class="table-responsive">
 					<?php
 					$id_mapel = @$_GET['id_mapel'];
-					$sql_tq = mysqli_query($db, "SELECT * FROM tb_topik_quiz WHERE id_mapel = '$id_mapel' AND id_kelas = '$data_terlogin[id_kelas]' AND status = 'aktif'") or die ($db->error);
+					//$judul_mapel = str_replace(""," ",$_GET['id_tq']);
+					$sql_tq = mysqli_query($db, "SELECT tb_topik_quiz.*, tb_mapel.mapel FROM tb_topik_quiz 
+						LEFT JOIN tb_mapel ON tb_mapel.id = tb_topik_quiz.id_mapel
+						WHERE tb_topik_quiz.judul like '%{$_GET['id_tq']}%' AND id_kelas = '{$_SESSION['id_kelas']}' AND status = 'aktif'") or die ($db->error);
+					
 					if(mysqli_num_rows($sql_tq) > 0) {
 						while($data_tq = mysqli_fetch_array($sql_tq)) { ?>
-						<table width="100%">
+						<table class="table-responsive" width="100%">
 							<tr>
 								<td valign="top">No. ( <?php echo $no++; ?> )</td>
 								<td>
 									<table class="table">
 									    <thead>
 									        <tr>
-									            <td width="20%"><b>Judul</b></td>
-									            <td>:</td>
-									            <td width="65%"><?php echo $data_tq['judul']; ?></td>
+									            <td><b>Judul</b> <?php echo $data_tq['mapel']; ?></td>
 									        </tr>
 									    </thead>
 									    <tbody>
 									        <tr>
-									            <td>Tanggal Pembuatan</td>
-									            <td>:</td>
-									            <td><?php echo tgl_indo($data_tq['tgl_buat']); ?></td>
+									            <td>Waktu Pengerjaan <?php echo $data_tq['waktu_soal'] / 60 ." menit"; ?></td>
 									        </tr>
 									        <tr>
-									            <td>Pembuat</td>
-									            <td>:</td>
-									            <td>
-									            	<?php
-									            	if($data_tq['pembuat'] != 'admin') {
-									            		$sql_peng = mysqli_query($db, "SELECT * FROM tb_pengajar WHERE id_pengajar = '$data_tq[pembuat]'") or die ($db->error);
-									            		$data_peng = mysqli_fetch_array($sql_peng);
-									            		echo $data_peng['nama_lengkap'];
-									            	} else {
-									            		echo $data_tq['pembuat'];
-									            	} ?>
-									            </td>
-									        </tr>
-									        <tr>
-									            <td>Waktu Pengerjaan</td>
-									            <td>:</td>
-									            <td><?php echo $data_tq['waktu_soal'] / 60 ." menit"; ?></td>
-									        </tr>
-									        <tr>
-									            <td>Info</td>
-									            <td>:</td>
-									            <td><?php echo $data_tq['info']; ?></td>
-									        </tr>
-									        <tr>
-									        	<td></td>
-									        	<td></td>
+									        	<td><a href="?page=quiz&action=infokerjakan&id_tq=<?php echo $data_tq['id_tq']; ?>" class="btn btn-primary btn-xs">Kerjakan Soal</a></td>
 									        	<td>
-									        		<a href="?page=quiz&action=infokerjakan&id_tq=<?php echo $data_tq['id_tq']; ?>" class="btn btn-primary btn-xs">Kerjakan Soal</a>
-									        	</td>
 									        </tr>
 									    </tbody>
 									</table>
@@ -155,7 +110,8 @@ if(@$_GET['action'] == '') { ?>
 						$sql_cek_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$_GET[id_tq]'") or die ($db->error);
 						$sql_cek_soal_essay = mysqli_query($db, "SELECT * FROM tb_soal_essay WHERE id_tq = '$_GET[id_tq]'") or die ($db->error);
 						if(mysqli_num_rows($sql_cek_soal_pilgan) > 0 || mysqli_num_rows($sql_cek_soal_essay) > 0) { ?>
-							<a href="soal.php?id_tq=<?php echo @$_GET['id_tq']; ?>" class="btn btn-primary">Mulai Mengerjakan</a>
+							<a href="soal_lpia.php?id_tq=<?php echo @$_GET['id_tq']; ?>" class="btn btn-primary">Mulai Mengerjakan</a>
+							<!-- <a href="?page=soal&id_tq=<?php echo @$_GET['id_tq']; ?>" class="btn btn-primary">Mulai Mengerjakan</a> -->
 						<?php
 						} else { ?>
 							<a onclick="alert('Data soal tidak ditemukan, mungkin karena belum dibuat. Silahkan hubungi guru yang bersangkutan');" class="btn btn-primary">Mulai Mengerjakan</a>

@@ -1,133 +1,144 @@
 <?php
 @session_start();
 include "+koneksi.php";
-
-if(!@$_SESSION['siswa']) {
-    if(@$_GET['hal'] == 'daftar') {
-        include "register.php";
-    } else {
-        include "login.php";
-    }
-} else { ?>
+?>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>E-Learning SMAN 114 Jakarta</title>
-    <link href="style/assets/css/bootstrap.css" rel="stylesheet" />
+    <title>CBT | Genius Ploes</title>
+	<link href="style/assets/css/bootstrap.css" rel="stylesheet" />
     <link href="style/assets/css/font-awesome.css" rel="stylesheet" />
-    <link href="style/assets/css/style.css" rel="stylesheet" />
+    <style type="text/css">
+    	html {
+    		background: -webkit-linear-gradient(#019A3D, #4EA800) no-repeat; /* For Safari 5.1 to 6.0 */
+		    background: -o-linear-gradient(#019A3D, #4EA800) no-repeat; /* For Opera 11.1 to 12.0 */
+		    background: -moz-linear-gradient(#019A3D, #4EA800) no-repeat; /* For Firefox 3.6 to 15 */
+		    background: linear-gradient(#019A3D, #4EA800) no-repeat; /* Standard syntax */
+		    height: 100%;
+
+		}
+		body{
+			background: -webkit-linear-gradient(#019A3D, #4EA800) no-repeat; /* For Safari 5.1 to 6.0 */
+		    background: -o-linear-gradient(#019A3D, #4EA800) no-repeat; /* For Opera 11.1 to 12.0 */
+		    background: -moz-linear-gradient(#019A3D, #4EA800) no-repeat; /* For Firefox 3.6 to 15 */
+		    background: linear-gradient(#019A3D, #4EA800) no-repeat; /* Standard syntax */
+		}
+		#main-container{
+			border: 22px white solid;
+			box-shadow: 0px 0px 10px 10px black;
+		}
+    	#main-container{
+    		width: 90%;
+    		margin-top: 30px;
+    	}
+    	#main-container{
+    		background: white;
+    	}
+		#logo-kanan {
+		    float: right;
+		    position: absolute;
+		    right: -83px;
+		    top: -30px;
+		}
+		#logo-kiri {
+		    float: left;
+		    position: absolute;
+		    left: -83px;
+		    top: -25px;
+		}
+    	#main-content{
+    		background: #009A3D;
+    		min-height: 354px;
+    		box-shadow: 0px 0px 10px 5px black inset;
+    		padding: 30px;
+    	}
+    	.title-header{
+    		color: #FFFF00;
+    		text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+    		font-weight: bold;
+    		text-align: center;
+		}
+    	.title-footer{
+    		/*color: white;*/
+    		text-align: center;
+    	}
+    	.btn {
+		  background: red; /* For browsers that do not support gradients */
+		  background: -webkit-linear-gradient(right, #579830, #0F4C2D); /* For Safari 5.1 to 6.0 */
+		  background: -o-linear-gradient(right, #579830, #0F4C2D); /* For Opera 11.1 to 12.0 */
+		  background: -moz-linear-gradient(right, #579830, #0F4C2D); /* For Firefox 3.6 to 15 */
+		  background: linear-gradient(to right, #579830, #0F4C2D); /* Standard syntax */
+		  border: none;
+		}
+		.btn-danger{
+			margin-right: 5px;
+		}
+    </style>
 </head>
-<body>
+<body <?php if(@$_GET['page'] == 'soal') {?>onload="init(),noBack();" onpageshow="if (event.persisted) noBack();" onunload="keluar()" class="row" <?php }?>>
+	<?php if(@$_SESSION['siswa']) {?>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	  		<a href="?page=quiz" class="btn btn-danger btn navbar-left navbar-btn">Home</a>
+			<a href="?page=nilai" class="btn btn-danger btn navbar-left navbar-btn">Hasil Ujian</a>
+			<a href="?page=materi" class="btn btn-danger btn navbar-left navbar-btn">Materi Ujian</a>
+			<a href="?page=berita" class="btn btn-danger btn navbar-left navbar-btn">Pengumuman</a>
+			<a href="inc/logout.php?sesi=siswa" class="btn btn-default navbar-btn navbar-right">Log Out</a>
+	  </div>
+	</nav>
+	<?php }?>
+	<div class="container" id="main-container">
+		<div class="row" id="header-container">
+			<div class="col-md-2">
+				<img id="logo-kiri" class="hidden-xs img-responsive" src="img/a.png" width="150" height="150">
+			</div>
+			<div class="col-md-8">
+				<h1 class="title-header">LEGENDRE TECHNOLOGY</h1>
+				<h2 class="title-header">Computer Based Test (CBT)</h2>
+			</div>
+			<div class="col-md-2">
+				<img id="logo-kanan" class="hidden-xs img-responsive" src="img/SKE.png" width="160" height="160">
+			</div>
+		</div>
+		<div class="row" id="main-content">
+			<div class="col-md-12">
+				<?php
+				if(empty($_SESSION['siswa'])) {
+					if(@$_GET['hal'] == 'daftar') {
+			        	include "register.php";
+			    	}
+					else include "login2.php";
+				}
+				
+				else{
 
-<script src="style/assets/js/jquery-1.11.1.js"></script>
-<script src="style/assets/js/bootstrap.js"></script>
-<?php
-$sql_terlogin = mysqli_query($db, "SELECT * FROM tb_siswa JOIN tb_kelas ON tb_siswa.id_siswa = '$_SESSION[siswa]' AND tb_kelas.id_kelas = tb_siswa.id_kelas") or die ($db->error);
-$data_terlogin = mysqli_fetch_array($sql_terlogin);
-?>
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    Selamat datang, <u><?php echo ucfirst($data_terlogin['username']); ?></u>. Jangan lupa <a href="inc/logout.php?sesi=siswa" class="btn btn-xs btn-danger">Logout</a>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- HEADER END-->
-    <div class="navbar navbar-inverse set-radius-zero">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="./">
-                    <img src="style/assets/img/logo.png" />
-                </a>
+					$sql_terlogin = mysqli_query($db, "SELECT * FROM tb_siswa JOIN tb_kelas ON tb_siswa.id_siswa = '$_SESSION[siswa]' AND tb_kelas.id_kelas = tb_siswa.id_kelas") or die ($db->error);
+					$data_terlogin = mysqli_fetch_array($sql_terlogin);
 
-            </div>
-
-            <div class="left-div">
-                <div class="user-settings-wrapper">
-                    <ul class="nav">
-
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                                <span class="glyphicon glyphicon-user" style="font-size: 25px;"></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-settings">
-                                <div class="media">
-                                    <a class="media-left" href="#">
-                                        <img src="img/foto_siswa/<?php echo $data_terlogin['foto']; ?>" class="img-rounded" />
-                                    </a>
-                                    <div class="media-body">
-                                        <h4 class="media-heading"><?php echo $data_terlogin['nama_lengkap']; ?></h4>
-                                        <h5>Kelas : <?php echo $data_terlogin['nama_kelas']; ?></h5>
-                                    </div>
-                                </div>
-                                <hr />
-                                <center><a href="?hal=detailprofil" class="btn btn-info btn-sm">Detail Profile</a> <a href="?hal=editprofil" class="btn btn-primary btn-sm">Edit Profile</a></center>
-
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section class="menu-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="navbar-collapse collapse ">
-                        <ul id="menu-top" class="nav navbar-nav navbar-right">
-                            <li><a <?php if(@$_GET['page'] == '') { echo 'class="menu-top-active"'; } ?> href="./">Beranda</a></li>
-                            <li><a <?php if(@$_GET['page'] == 'quiz') { echo 'class="menu-top-active"'; } ?> href="?page=quiz">Ulangan</a></li>
-                            <li><a <?php if(@$_GET['page'] == 'nilai') { echo 'class="menu-top-active"'; } ?> href="?page=nilai">Nilai</a></li>
-                            <li><a <?php if(@$_GET['page'] == 'materi') { echo 'class="menu-top-active"'; } ?> href="?page=materi">Materi</a></li>
-                            <li><a <?php if(@$_GET['page'] == 'berita') { echo 'class="menu-top-active"'; } ?> href="?page=berita">Berita</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="content-wrapper">
-        <div class="container" id="wadah">
-        <?php
-        if(@$_GET['page'] == '') {
-            include "inc/beranda.php";
-        } else if(@$_GET['page'] == 'quiz') {
-            include "inc/quiz.php";
-        } else if(@$_GET['page'] == 'nilai') {
-            include "inc/nilai.php";
-        } else if(@$_GET['page'] == 'materi') {
-            include "inc/materi.php";
-        } else if(@$_GET['page'] == 'berita') {
-            include "inc/berita.php";
-        } ?>
-        </div>
-    </div>
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    &copy; 2015 E-Learing SMAN 114 Jakarta
-                </div>
-
-            </div>
-        </div>
-    </footer>
+			        if(@$_GET['page'] == '') {
+			            include "inc/quiz.php";
+			        } else if(@$_GET['page'] == 'quiz') {
+			            include "inc/quiz.php";
+			        } else if(@$_GET['page'] == 'nilai') {
+			            include "inc/nilai.php";
+			        } else if(@$_GET['page'] == 'materi') {
+			            include "inc/materi.php";
+			        } else if(@$_GET['page'] == 'berita') {
+			            include "inc/berita.php";
+			        } 
+			        else if(@$_GET['page'] == 'soal') {
+			            include "soal.php";
+			        } 
+			    }
+				?>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<h5 class="title-footer">Lembaga pendidikan Genious Ploes Group</h5>
+		<h2 class="title-footer hidden-xs">Bimbingan Belajar-Kursus Matematika</h2>
+	</div>
 </body>
 </html>
-<?php
-}
-?>

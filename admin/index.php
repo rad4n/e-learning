@@ -177,7 +177,7 @@ if(@$_SESSION['admin'] || @$_SESSION['pengajar']) {
                     echo "<div class='col-xs-12'><div class='alert alert-danger'>[404] Halaman tidak ditemukan! Silahkan pilih menu yang ada!</div></div>";
                 } ?>
                 
-				<footer><p> &copy; 2015 e-Learning SMK Indonesia | By : yukcoding.blogspot.com</p></footer>
+				<footer><p> &copy; 2015 e-Learning | By : Legendre Technology</p></footer>
             </div>
         </div>
     </div>

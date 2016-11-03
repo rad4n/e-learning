@@ -1,13 +1,15 @@
 <?php
-//include "+koneksi.php";
+@session_start();
+include "+koneksi.php";
 
 $id_tq = @$_GET['id_tq'];
 $no = 1;
 $no2 = 1;
 $sql_tq = mysqli_query($db, "SELECT * FROM tb_topik_quiz JOIN tb_mapel ON tb_topik_quiz.id_mapel = tb_mapel.id WHERE id_tq = '$id_tq'") or die ($db->error);
-$data_tq = mysqli_fetch_array($sql_tq); 
+$data_tq = mysqli_fetch_array($sql_tq);
 ?>
-
+<script src="style/assets/js/jquery-1.11.1.js"></script>
+<script src="style/assets/js/bootstrap.js"></script>
 <script>
 var waktunya;
 waktunya = <?php echo $data_tq['waktu_soal']; ?>;
@@ -99,13 +101,62 @@ function checkCookie(){
 </script>
 
 <?php
-if(@$_SESSION['siswa']){ ?>
-	<div class="row">
+if(@$_SESSION['siswa']) { ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Ujian Online E-Learning SMK Indonesia</title>
+    <link href="style/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="style/assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="style/assets/css/style.css" rel="stylesheet" />
+    <style type="text/css">
+    .mrg-del {
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+</head>
+<body onload="init(),noBack();" onpageshow="if (event.persisted) noBack();" onunload="keluar()">
+
+<div class="navbar navbar-inverse set-radius-zero">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="./">
+                <img src="style/assets/img/logo.png" />
+            </a>
+        </div>
+
+        <div class="left-div">
+            <div class="user-settings-wrapper">
+                <ul class="nav">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                            <span class="glyphicon glyphicon-user" style="font-size: 25px;"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-wrapper">
+    <div class="container">
+		<div class="row">
 		    <div class="col-md-12">
 		        <h4 class="page-head-line">Test : <u><?php echo $data_tq['judul']; ?></u><br />Mapel : <u><?php echo $data_tq['mapel']; ?></u></h4>
 		    </div>
-	</div>
-	<div >
+		</div>
+
+		<div class="row">
 			<div class="col-md-4">
 		        <div class="panel panel-default">
 		            <div class="panel-heading"><b>Info <small>(Sisa waktu Anda)</small></b></div>
@@ -296,6 +347,25 @@ if(@$_SESSION['siswa']){ ?>
 		        </form>
 		    </div>
 		</div>
-<?php } else {
+
+	</div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                &copy; 2015 E-Learing SMA Negeri 114 Jakarta | By : Kerendi Developers
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
+
+<?php
+} else {
 	echo "<script>window.location='./';</script>";
-}?>
+} ?>
