@@ -13,7 +13,10 @@
                     <div class="col-md-6">
                         <h4><i>Masukkan data Anda dengan benar !</i></h4>
                         <form method="post" enctype="multipart/form-data">
+<<<<<<< HEAD
                          Cabang* :<input type="text" name="nis" class="form-control" required />
+=======
+>>>>>>> 7741143d769dde2c08503735d12a4b0c68e8ba62
                             NIS* :<input type="text" name="nis" class="form-control" required />
                             Nama Lengkap* : <input type="text" name="nama_lengkap" class="form-control" required />
                             Tempat Lahir* : <input type="text" name="tempat_lahir" class="form-control" required />

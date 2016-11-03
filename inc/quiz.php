@@ -26,7 +26,11 @@ else if(@$_GET['action'] == 'daftarjenisujian') {
 #LEFT JOIN tb_kelas ON tb_kelas.id_kelas = tb_topik_quiz.id_kelas
 WHERE tb_topik_quiz.id_kelas = {$_GET['id_kelas']}") or die ($db->error);
         while($data_mapel = mysqli_fetch_array($sql_mapel)) { ?>
+<<<<<<< HEAD
                 <a href="?page=quiz&action=daftartopik&id_tq=<?php echo $data_mapel['judul']; ?>" type="button" class="btn btn-primary btn-block"><?php echo $data_mapel['judul']; ?></a>
+=======
+                <a href="?page=quiz&action=daftartopik&id_tq=<?php echo $data_mapel['judul']; ?>" type="button" class="btn btn-primary btn-lg btn-block"><?php echo $data_mapel['judul']; ?></a>
+>>>>>>> 7741143d769dde2c08503735d12a4b0c68e8ba62
         	<?php
         } ?>
 	</div>
@@ -54,7 +58,13 @@ WHERE tb_topik_quiz.id_kelas = {$_GET['id_kelas']}") or die ($db->error);
 									<table class="table">
 									    <thead>
 									        <tr>
+<<<<<<< HEAD
 									            <td><b>Judul</b> <?php echo $data_tq['mapel']; ?></td>
+=======
+									            <td width="20%"><b>Judul</b></td>
+									            <td>:</td>
+									            <td width="65%"><?php echo $data_tq['mapel']; ?></td>
+>>>>>>> 7741143d769dde2c08503735d12a4b0c68e8ba62
 									        </tr>
 									    </thead>
 									    <tbody>

@@ -92,14 +92,22 @@ include "+koneksi.php";
 	<div class="container" id="main-container">
 		<div class="row" id="header-container">
 			<div class="col-md-2">
+<<<<<<< HEAD
 				<img id="logo-kiri" class="hidden-xs img-responsive" src="img/a.png" width="150" height="150">
+=======
+				<img id="logo-kiri" src="img/a.png" width="150" height="150">
+>>>>>>> 7741143d769dde2c08503735d12a4b0c68e8ba62
 			</div>
 			<div class="col-md-8">
 				<h1 class="title-header">LEGENDRE TECHNOLOGY</h1>
 				<h2 class="title-header">Computer Based Test (CBT)</h2>
 			</div>
 			<div class="col-md-2">
+<<<<<<< HEAD
 				<img id="logo-kanan" class="hidden-xs img-responsive" src="img/SKE.png" width="160" height="160">
+=======
+				<img id="logo-kanan" src="img/SKE.png" width="160" height="160">
+>>>>>>> 7741143d769dde2c08503735d12a4b0c68e8ba62
 			</div>
 		</div>
 		<div class="row" id="main-content">
@@ -137,8 +145,13 @@ include "+koneksi.php";
 		</div>
 	</div>
 	<div class="container">
+<<<<<<< HEAD
 		<h5 class="title-footer">Lembaga pendidikan Genious Ploes Group</h5>
 		<h2 class="title-footer hidden-xs">Bimbingan Belajar-Kursus Matematika</h2>
+=======
+		<h1 class="title-footer">Lembaga pendidikan Genious Ploes Group</h1>
+		<h2 class="title-footer">Bimbingan Belajar-Kursus Matematika</h2>
+>>>>>>> 7741143d769dde2c08503735d12a4b0c68e8ba62
 	</div>
 </body>
 </html>
