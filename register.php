@@ -6,17 +6,14 @@
             if(@$_GET['page'] == '') { ?>
                 <div class="row">
                     <div class="col-md-12">
-                        <h4 class="page-head-line">Halaman pendaftaran akun e-learning</h4>
+                        <h5 class="page-head-line">Halaman pendaftaran akun e-learning</h5>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <h4><i>Masukkan data Anda dengan benar !</i></h4>
+                        <h5><i>Masukkan data Anda dengan benar !</i></h5>
                         <form method="post" enctype="multipart/form-data">
-<<<<<<< HEAD
-                         Cabang* :<input type="text" name="nis" class="form-control" required />
-=======
->>>>>>> 7741143d769dde2c08503735d12a4b0c68e8ba62
+                         Cabang* :<input type="text" name="cabang" class="form-control" required />
                             NIS* :<input type="text" name="nis" class="form-control" required />
                             Nama Lengkap* : <input type="text" name="nama_lengkap" class="form-control" required />
                             Tempat Lahir* : <input type="text" name="tempat_lahir" class="form-control" required />
@@ -66,11 +63,12 @@
                             <i><b>Catatan</b> : Tanda * wajib disi</i>
                             <hr />
                             <input type="submit" name="daftar" value="Daftar" class="btn btn-info" />
-                            <input type="reset" class="btn btn-danger" />
+                            <input type="reset" class="btn btn-danger hidden-xs" />
                         </form>
                         <?php
                         if(@$_POST['daftar']) {
                             $nis = @mysqli_real_escape_string($db, $_POST['nis']);
+                            $cabang = @mysqli_real_escape_string($db, $_POST['cabang']);
                             $nama_lengkap = @mysqli_real_escape_string($db, $_POST['nama_lengkap']);
                             $tempat_lahir = @mysqli_real_escape_string($db, $_POST['tempat_lahir']);
                             $tgl_lahir = @mysqli_real_escape_string($db, $_POST['tgl_lahir']);
@@ -96,7 +94,7 @@
                             } else {
                                 if($nama_gambar != '') {
                                     if(move_uploaded_file($sumber, $target.$nama_gambar)) {
-                                        mysqli_query($db, "INSERT INTO tb_siswa VALUES('', '$nis', '$nama_lengkap', '$tempat_lahir', '$tgl_lahir', '$jenis_kelamin', '$agama', '$nama_ayah', '$nama_ibu', '$no_telp', '$email', '$alamat', '$kelas', '$thn_masuk', '$nama_gambar', '$user', md5('$pass'), '$pass', 'tidak aktif')") or die ($db->error);          
+                                        mysqli_query($db, "INSERT INTO tb_siswa VALUES('', '$cabang', '$nis', '$nama_lengkap', '$tempat_lahir', '$tgl_lahir', '$jenis_kelamin', '$agama', '$nama_ayah', '$nama_ibu', '$no_telp', '$email', '$alamat', '$kelas', '$thn_masuk', '$nama_gambar', '$user', md5('$pass'), '$pass', 'tidak aktif')") or die ($db->error);          
                                         echo '<script>alert("Pendaftaran berhasil, silahkan login"); window.location="./"</script>';
                                     } else {
                                         echo '<script>alert("Gagal mendaftar, foto gagal diupload, coba lagi!");</script>';

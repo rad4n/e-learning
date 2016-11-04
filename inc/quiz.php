@@ -9,7 +9,20 @@ if(@$_GET['action'] != 'kerjakansoal') { ?>
 if(@$_GET['action'] == ''){?>
 	 <div class="col-md-9 col-md-push-2">
         <?php
-        $sql_mapel = mysqli_query($db, "SELECT * FROM tb_kelas") or die ($db->error);
+        $sql_mapel = mysqli_query($db, "SELECT * FROM jenis_ujian") or die ($db->error);
+        while($data_mapel = mysqli_fetch_array($sql_mapel)) { ?>
+                <a style="font-size: 12px;" 
+                	<?php if($data_mapel['nama_jenis_ujian']=="SBMPTN"){?>href="?page=quiz&action=daftarjenisujian&id_kelas=5"<?php }
+                	else{?> href="?page=quiz&action=daftarjenjang" <?php }?> 
+                type="button" class="btn btn-primary btn-lg btn-block"><?php echo $data_mapel['nama_jenis_ujian']; ?></a>
+        	<?php
+        } ?>
+	</div>
+<?php }
+if(@$_GET['action'] == 'daftarjenjang'){?>
+	 <div class="col-md-9 col-md-push-2">
+        <?php
+        $sql_mapel = mysqli_query($db, "SELECT * FROM tb_kelas WHERE id_kelas!=5") or die ($db->error);
         while($data_mapel = mysqli_fetch_array($sql_mapel)) { ?>
                 <a href="?page=quiz&action=daftarjenisujian&id_kelas=<?php echo $data_mapel['id_kelas']; ?>" type="button" class="btn btn-primary btn-lg btn-block"><?php echo $data_mapel['nama_kelas']; ?></a>
         	<?php
@@ -26,11 +39,7 @@ else if(@$_GET['action'] == 'daftarjenisujian') {
 #LEFT JOIN tb_kelas ON tb_kelas.id_kelas = tb_topik_quiz.id_kelas
 WHERE tb_topik_quiz.id_kelas = {$_GET['id_kelas']}") or die ($db->error);
         while($data_mapel = mysqli_fetch_array($sql_mapel)) { ?>
-<<<<<<< HEAD
                 <a href="?page=quiz&action=daftartopik&id_tq=<?php echo $data_mapel['judul']; ?>" type="button" class="btn btn-primary btn-block"><?php echo $data_mapel['judul']; ?></a>
-=======
-                <a href="?page=quiz&action=daftartopik&id_tq=<?php echo $data_mapel['judul']; ?>" type="button" class="btn btn-primary btn-lg btn-block"><?php echo $data_mapel['judul']; ?></a>
->>>>>>> 7741143d769dde2c08503735d12a4b0c68e8ba62
         	<?php
         } ?>
 	</div>
@@ -58,13 +67,7 @@ WHERE tb_topik_quiz.id_kelas = {$_GET['id_kelas']}") or die ($db->error);
 									<table class="table">
 									    <thead>
 									        <tr>
-<<<<<<< HEAD
 									            <td><b>Judul</b> <?php echo $data_tq['mapel']; ?></td>
-=======
-									            <td width="20%"><b>Judul</b></td>
-									            <td>:</td>
-									            <td width="65%"><?php echo $data_tq['mapel']; ?></td>
->>>>>>> 7741143d769dde2c08503735d12a4b0c68e8ba62
 									        </tr>
 									    </thead>
 									    <tbody>
@@ -114,7 +117,7 @@ WHERE tb_topik_quiz.id_kelas = {$_GET['id_kelas']}") or die ($db->error);
 	            <div class="panel-footer">
 					<?php
 					if(mysqli_num_rows($sql_nilai) > 0 || mysqli_num_rows($sql_jwb) > 0) { ?>
-						<a href="?page=quiz" class="btn btn-primary">Kembali</a>
+						<a href="?page=nilai" class="btn btn-primary">Kembali</a>
 						<?php
 					} else {
 						$sql_cek_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$_GET[id_tq]'") or die ($db->error);
@@ -127,7 +130,7 @@ WHERE tb_topik_quiz.id_kelas = {$_GET['id_kelas']}") or die ($db->error);
 							<a onclick="alert('Data soal tidak ditemukan, mungkin karena belum dibuat. Silahkan hubungi guru yang bersangkutan');" class="btn btn-primary">Mulai Mengerjakan</a>
 						<?php
 						} ?>
-						<a href="?page=quiz" class="btn btn-primary">Kembali</a>
+						<a href="?page=nilai" class="btn btn-primary">Kembali</a>
 					<?php
 					} ?>
 				</div>

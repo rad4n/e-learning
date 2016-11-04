@@ -15,11 +15,9 @@
   font-family: roboto;
 }
 
-<<<<<<< HEAD
+
 .loginmodal-submit{
-=======
-.loginmodal-container input[type=submit] {
->>>>>>> 7741143d769dde2c08503735d12a4b0c68e8ba62
+
   width: 100%;
   display: block;
   margin-bottom: 10px;
@@ -96,11 +94,7 @@
 }
 </style>
 <div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<<<<<<< HEAD
-=======
-  	<div class="modal-dialog">
-		<div class="loginmodal-container">
->>>>>>> 7741143d769dde2c08503735d12a4b0c68e8ba62
+
        <?php
                         if(@$_POST['login']) {
                             $user = @mysqli_real_escape_string($db, $_POST['user']);
@@ -118,7 +112,7 @@
                                 echo '<div class="alert alert-danger">Login gagal, username / password salah, coba lagi!</div>';
                             }
                         } ?>
-<<<<<<< HEAD
+
 		  <form method="post" class="form-horizontal">
       <div class="form-group col-xs-12 col-md-12">
 			   <input type="text" name="user" placeholder="Username" class="form-control" required>
@@ -127,20 +121,11 @@
 			   <input type="password" name="pass" placeholder="Password" class="form-control" required>
         <input type="submit" name="login" class="login loginmodal-submit" value="Login">
 			</div>
-=======
-		  <form method="post">
-			<input type="text" name="user" placeholder="Username" class="form-control" required>
-			<input type="password" name="pass" placeholder="Password" class="form-control" required>
-			<input type="submit" name="login" class="login loginmodal-submit" value="Login">
->>>>>>> 7741143d769dde2c08503735d12a4b0c68e8ba62
+
 		  </form>
 			
 		  <div class="login-help">
-			<a href="./?hal=daftar">Register</a> - <a href="#">Forgot Password</a>
+			<a style="color: yellow" href="./?hal=daftar">Register</a> - <a style="color: yellow" href="#">Forgot Password</a>
 		  </div>
-<<<<<<< HEAD
-=======
-		</div>
-	</div>
->>>>>>> 7741143d769dde2c08503735d12a4b0c68e8ba62
+
 </div>

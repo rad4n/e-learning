@@ -96,11 +96,7 @@ include "+koneksi.php";
 		.kunci {
 		    background:  #0944bc none repeat scroll 0 0;
 		    margin: 1px;
-<<<<<<< HEAD
 		    width: 10%;
-=======
-		    width: 19%;
->>>>>>> 7741143d769dde2c08503735d12a4b0c68e8ba62
 		    padding-right: 0px;
 		    color: black;
 		}
@@ -237,7 +233,6 @@ include "+koneksi.php";
 				<div class="col-md-9">
 					<div class="row">
 						<div class="col-md-3">
-							<img src="img/SKE.png" class="img-responsive pull-left" alt="Responsive image" width="60" height="60">
 							<img src="img/a.png" class="img-responsive pull-left" alt="Responsive image" width="60" height="60">
 						</div>
 						<div class="col-md-7">
@@ -438,11 +433,7 @@ include "+koneksi.php";
 		                ?>
 		                            <?php $no=1; foreach($sql_soal_sudah_jawab as $soal){?>
 		                               <!--  <a href="soal.php?id_tq=<?php echo $id_tq;?>&revisi_soal=<?php echo $soal['id_soal'];?>&no_revisi=<?php echo $no;?>" class="list-group-item"><?php echo $no.")".$soal['jawaban'];?></a> -->
-<<<<<<< HEAD
 		                               <a href="soal_lpia.php?id_tq=<?php echo $id_tq;?>&revisi_soal=<?php echo $soal['id_soal'];?>&no_revisi=<?php echo $no;?>" class="kunci col-xs-1">
-=======
-		                               <a href="soal_lpia.php?id_tq=<?php echo $id_tq;?>&revisi_soal=<?php echo $soal['id_soal'];?>&no_revisi=<?php echo $no;?>" class="kunci col-md-3">
->>>>>>> 7741143d769dde2c08503735d12a4b0c68e8ba62
 										  <?php echo $no;?> <div class="kunci-jwb"><?php echo $soal['jawaban'];?></div>
 									    </a>
 		                            <?php $no++;}?>
@@ -450,13 +441,9 @@ include "+koneksi.php";
 					</div>
 
 				</div>
-<<<<<<< HEAD
 			</div>
 			<div class="row">
 				<h6 class="col md-12 text-justify">Tolong di cek dengan seksama dan teliti jawaban yang telah di pilih sebelum menutup program ini</h6>
-=======
-				<h6 class="text-justify">Tolong di cek dengan seksama dan teliti jawaban yang telah di pilih sebelum menutup program ini</h6>
->>>>>>> 7741143d769dde2c08503735d12a4b0c68e8ba62
 			</div>
 		</div>
 	<?php }else{
