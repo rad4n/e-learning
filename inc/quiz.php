@@ -34,7 +34,7 @@ else if(@$_GET['action'] == 'daftarjenisujian') {
  ?>
     <div class="col-md-9 col-md-push-2">
         <?php
-        $sql_mapel = mysqli_query($db, "SELECT  DISTINCT tb_topik_quiz.judul,tb_topik_quiz.id_tq FROM tb_topik_quiz 
+        $sql_mapel = mysqli_query($db, "SELECT  DISTINCT tb_topik_quiz.judul,tb_topik_quiz.id_tq,tb_mapel_mapel FROM tb_mapel tb_topik_quiz 
 #LEFT JOIN tb_mapel ON tb_mapel.id = tb_topik_quiz.id_mapel
 #LEFT JOIN tb_kelas ON tb_kelas.id_kelas = tb_topik_quiz.id_kelas
 WHERE tb_topik_quiz.id_kelas = {$_GET['id_kelas']}") or die ($db->error);
