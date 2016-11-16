@@ -34,7 +34,7 @@ else if(@$_GET['action'] == 'daftarjenisujian') {
  ?>
     <div class="col-md-9 col-md-push-2">
         <?php
-        $sql_mapel = mysqli_query($db, "SELECT  DISTINCT tb_topik_quiz.judul,tb_topik_quiz.id_tq,tb_mapel_mapel FROM tb_mapel tb_topik_quiz 
+        $sql_mapel = mysqli_query($db, "SELECT  DISTINCT tb_topik_quiz.judul,tb_topik_quiz.id_tq FROM tb_topik_quiz 
 #LEFT JOIN tb_mapel ON tb_mapel.id = tb_topik_quiz.id_mapel
 #LEFT JOIN tb_kelas ON tb_kelas.id_kelas = tb_topik_quiz.id_kelas
 WHERE tb_topik_quiz.id_kelas = {$_GET['id_kelas']}") or die ($db->error);
@@ -106,7 +106,8 @@ WHERE tb_topik_quiz.id_kelas = {$_GET['id_kelas']}") or die ($db->error);
 	            $sql_jwb = mysqli_query($db, "SELECT * FROM tb_jawaban WHERE id_tq = '$_GET[id_tq]' AND id_siswa = '$_SESSION[siswa]'") or die ($db->error);
 	            if(mysqli_num_rows($sql_nilai) > 0 || mysqli_num_rows($sql_jwb) > 0) {
 	            	echo "Anda sudah mengerjakan ujian / test ini, silahkan lihat nilai Anda di halaman nilai.";
-	            } else { ?>
+	            } else { 
+	            	header("Location:soal_lpia.php?id_tq=".@$_GET['id_tq']);?>
 					1. Baca dengan seksama dan teliti sebelum mengerjakan Tugas / Quiz.<br />
 					2. Pastikan koneksi anda terjamin dan bagus.<br />
 					3. Pilih browser yang versi terbaru.<br />
@@ -130,7 +131,7 @@ WHERE tb_topik_quiz.id_kelas = {$_GET['id_kelas']}") or die ($db->error);
 							<a onclick="alert('Data soal tidak ditemukan, mungkin karena belum dibuat. Silahkan hubungi guru yang bersangkutan');" class="btn btn-primary">Mulai Mengerjakan</a>
 						<?php
 						} ?>
-						<a href="?page=nilai" class="btn btn-primary">Kembali</a>
+						<a onclick="goBack()" href="#" class="btn btn-primary">Kembali</a>
 					<?php
 					} ?>
 				</div>

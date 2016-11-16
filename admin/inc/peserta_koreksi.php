@@ -33,7 +33,13 @@
                             	$data_essay = mysqli_fetch_array($sql_essay);
                             	?>
                             	<td>
-                            		Nilai soal pilihan ganda : <?php echo $data_pilgan['presentase']; ?><br />
+                            		Nilai soal pilihan ganda : <?php 
+                                    $jumlah1 = mysqli_query($db, "SELECT MAX(level_group) as total FROM tb_soal_pilgan WHERE id_tq = '$id_tq'") or die ($db->error);
+                                  $jumlah = mysqli_fetch_array($jumlah1);
+                                  $persen = $data_pilgan['benar'] / $jumlah['total'];//print_r("SELECT MAX(level_group) as total FROM tb_soal_pilgan WHERE id_tq = '$id_tq'");exit;
+                                  $hasil = $persen * 100;
+                                    echo $hasil;
+                                     ?><br />
                             		Nilai soal essay : 
                             		<?php
                                     if(mysqli_num_rows($sql_jwb) > 0) {

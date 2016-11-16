@@ -74,6 +74,9 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 						<div class="form-group">
 							<textarea name="pilA" class="form-control" rows="1" required></textarea>
 						</div>
+						<div class="form-group">
+							<input type="file" name="gambar_a" class="form-control" />
+						</div>
 					</div>
 					<div class="col-md-2">
 						<label>Pilihan B</label>
@@ -81,6 +84,9 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 					<div class="col-md-10">
 						<div class="form-group">
 							<textarea name="pilB" class="form-control" rows="1" required></textarea>
+						</div>
+						<div class="form-group">
+							<input type="file" name="gambar_b" class="form-control" />
 						</div>
 					</div>
 					<div class="col-md-2">
@@ -90,6 +96,9 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 						<div class="form-group">
 							<textarea name="pilC" class="form-control" rows="1" required></textarea>
 						</div>
+						<div class="form-group">
+							<input type="file" name="gambar_c" class="form-control" />
+						</div>
 					</div>
 					<div class="col-md-2">
 						<label>Pilihan D</label>
@@ -98,6 +107,9 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 						<div class="form-group">
 							<textarea name="pilD" class="form-control" rows="1" required></textarea>
 						</div>
+						<div class="form-group">
+							<input type="file" name="gambar_d" class="form-control" />
+						</div>
 					</div>
 					<div class="col-md-2">
 						<label>Pilihan E</label>
@@ -105,6 +117,9 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 					<div class="col-md-10">
 						<div class="form-group">
 							<textarea name="pilE" class="form-control" rows="1" required></textarea>
+						</div>
+						<div class="form-group">
+							<input type="file" name="gambar_e" class="form-control" />
 						</div>
 	                </div>
 	                <div class="col-md-2">
@@ -157,11 +172,76 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
                     $target3 = 'img/audio_soal_pilgan/';
                     $nama_audio = @$_FILES['audio']['name'];
 
+                    #####gambar pilihan soal
+
+                    $sumber4 = @$_FILES['gambar_a']['tmp_name'];
+                    $target4 = 'img/gambar_soal_pilgan/';
+                    $nama_gambar_a = @$_FILES['gambar_a']['name'];
+
+                    $sumber5 = @$_FILES['gambar_b']['tmp_name'];
+                    $target5 = 'img/gambar_soal_pilgan/';
+                    $nama_gambar_b = @$_FILES['gambar_b']['name'];
+
+                    $sumber6 = @$_FILES['gambar_c']['tmp_name'];
+                    $target6 = 'img/gambar_soal_pilgan/';
+                    $nama_gambar_c = @$_FILES['gambar_c']['name'];
+
+                    $sumber7 = @$_FILES['gambar_d']['tmp_name'];
+                    $target7 = 'img/gambar_soal_pilgan/';
+                    $nama_gambar_d = @$_FILES['gambar_d']['name'];
+
+                    $sumber8 = @$_FILES['gambar_e']['tmp_name'];
+                    $target8 = 'img/gambar_soal_pilgan/';
+                    $nama_gambar_e = @$_FILES['gambar_e']['name'];
+
                     move_uploaded_file($sumber, $target.$nama_gambar);
                     move_uploaded_file($sumber2, $target2.$nama_video);
                     move_uploaded_file($sumber3, $target3.$nama_audio);
+                    move_uploaded_file($sumber4, $target4.$nama_gambar_a);
+                    move_uploaded_file($sumber5, $target5.$nama_gambar_b);
+                    move_uploaded_file($sumber6, $target6.$nama_gambar_c);
+                    move_uploaded_file($sumber7, $target7.$nama_gambar_d);
+                    move_uploaded_file($sumber8, $target8.$nama_gambar_e);
 
-                    mysqli_query($db, "INSERT INTO tb_soal_pilgan (id_tq,pertanyaan,gambar,video,audio,pil_a,pil_b,pil_c,pil_d,pil_e,kunci,tgl_buat,level_group) VALUES('$id', '$pertanyaan', '$nama_gambar','$nama_video','$nama_audio', '$pilA', '$pilB', '$pilC', '$pilD', '$pilE', '$kunci', now(),$level_group)") or die ($db->error);          
+                    mysqli_query($db, "INSERT INTO tb_soal_pilgan (
+		                    	id_tq,
+		                    	pertanyaan,
+		                    	gambar,
+		                    	video,
+		                    	audio,
+		                    	pil_a,
+		                    	gbr_a,
+		                    	pil_b,
+		                    	gbr_b,
+		                    	pil_c,
+		                    	gbr_c,
+		                    	pil_d,
+		                    	gbr_d,
+		                    	pil_e,
+		                    	gbr_e,
+		                    	kunci,
+		                    	tgl_buat,
+		                    	level_group
+                    	) VALUES(
+		                    	'$id', 
+		                    	'$pertanyaan', 
+		                    	'$nama_gambar',
+		                    	'$nama_video',
+		                    	'$nama_audio', 
+		                    	'$pilA',
+		                    	'$nama_gambar_a', 
+		                    	'$pilB',
+		                    	'$nama_gambar_b', 
+		                    	'$pilC',
+		                    	'$nama_gambar_c', 
+		                    	'$pilD',
+		                    	'$nama_gambar_d', 
+		                    	'$pilE',
+		                    	'$nama_gambar_e', 
+		                    	'$kunci', 
+		                    	 now(),
+		                    	 $level_group
+                    	)") or die ($db->error);          
                     echo '<script>window.location="?page=quiz&action=daftarsoal&hal=pilgan&id='.$id.'"</script>';
 	            }?>
 		    </div>

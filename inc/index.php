@@ -63,7 +63,6 @@ include "+koneksi.php";
     	.title-footer{
     		/*color: white;*/
     		text-align: center;
-    		margin-top: 25px;
     	}
     	.btn {
 		  background: red; /* For browsers that do not support gradients */
@@ -83,7 +82,9 @@ include "+koneksi.php";
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
 	  		<a href="?page=quiz" class="btn btn-danger btn navbar-left navbar-btn">Home</a>
-			<a onclick="history.go(-1);" href="#" class="btn btn-danger btn navbar-left navbar-btn">Kembali</a>
+			<a href="?page=nilai" class="btn btn-danger btn navbar-left navbar-btn">Hasil Ujian</a>
+			<a href="?page=materi" class="btn btn-danger btn navbar-left navbar-btn">Materi Ujian</a>
+			<a href="?page=berita" class="btn btn-danger btn navbar-left navbar-btn">Pengumuman</a>
 			<a href="inc/logout.php?sesi=siswa" class="btn btn-default navbar-btn navbar-right">Log Out</a>
 	  </div>
 	</nav>
@@ -92,23 +93,10 @@ include "+koneksi.php";
 		<div class="row" id="header-container">
 			<div class="col-md-2">
 				<img id="logo-kiri" class="hidden-xs img-responsive" src="img/a.png" width="150" height="150">
-
 			</div>
 			<div class="col-md-8">
-				<h3 class="title-header" style="margin-top: -10px;">
-					
-					<?php 
-						if(empty($_SESSION['siswa']) AND @$_GET['page'] == '') {
-			            echo  "Computer Based Test (CBT)";
-			        }else if(!empty($_SESSION['siswa']) AND @$_GET['action'] == 'daftarjenjang') {
-			            echo  "JENJANG PENDIDIKAN";
-			        } else if(@$_GET['page'] == 'quiz' AND (@$_GET['action']=='daftarjenisujian' OR @$_GET['action']=='')) {
-			            echo "JENIS UJIAN";
-			        }else if(!empty($_SESSION['siswa']) AND @$_GET['page'] == 'nilai'){
-			            echo "NILAI";
-			        }
-					?>
-				</h3>
+				<h1 class="title-header">LEGENDRE TECHNOLOGY</h1>
+				<h2 class="title-header">Computer Based Test (CBT)</h2>
 			</div>
 			<div class="col-md-2">
 				<img id="logo-kanan" class="hidden-xs img-responsive" src="img/SKE.png" width="160" height="160">

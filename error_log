@@ -1,0 +1,41 @@
+[17-Oct-2016 01:17:07 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/u2447560/public_html/dadanh.com/lab/e-learning/inc/materi.php on line 8
+[17-Oct-2016 01:17:07 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u2447560/public_html/dadanh.com/lab/e-learning/inc/materi.php on line 27
+[17-Oct-2016 01:17:07 UTC] PHP Notice:  Trying to get property of non-object in /home/u2447560/public_html/dadanh.com/lab/e-learning/inc/materi.php on line 27
+[17-Oct-2016 01:28:05 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/u2447560/public_html/dadanh.com/lab/e-learning/inc/materi.php on line 8
+[17-Oct-2016 01:28:05 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u2447560/public_html/dadanh.com/lab/e-learning/inc/materi.php on line 27
+[17-Oct-2016 01:28:05 UTC] PHP Notice:  Trying to get property of non-object in /home/u2447560/public_html/dadanh.com/lab/e-learning/inc/materi.php on line 27
+[24-Oct-2016 09:37:14 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/u2447560/public_html/dadanh.com/lab/e-learning/inc/materi.php on line 8
+[24-Oct-2016 09:37:14 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u2447560/public_html/dadanh.com/lab/e-learning/inc/materi.php on line 27
+[24-Oct-2016 09:37:14 UTC] PHP Notice:  Trying to get property of non-object in /home/u2447560/public_html/dadanh.com/lab/e-learning/inc/materi.php on line 27
+[24-Oct-2016 09:45:03 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/u2447560/public_html/dadanh.com/lab/e-learning/inc/materi.php on line 8
+[24-Oct-2016 09:45:03 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u2447560/public_html/dadanh.com/lab/e-learning/inc/materi.php on line 27
+[24-Oct-2016 09:45:03 UTC] PHP Notice:  Trying to get property of non-object in /home/u2447560/public_html/dadanh.com/lab/e-learning/inc/materi.php on line 27
+[29-Oct-2016 05:43:19 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/u2447560/public_html/dadanh.com/lab/e-learning/inc/materi.php on line 8
+[29-Oct-2016 05:43:19 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u2447560/public_html/dadanh.com/lab/e-learning/inc/materi.php on line 27
+[29-Oct-2016 05:43:19 UTC] PHP Notice:  Trying to get property of non-object in /home/u2447560/public_html/dadanh.com/lab/e-learning/inc/materi.php on line 27
+[29-Oct-2016 05:44:47 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/u2447560/public_html/dadanh.com/lab/e-learning/inc/materi.php on line 8
+[29-Oct-2016 05:44:47 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/u2447560/public_html/dadanh.com/lab/e-learning/inc/materi.php on line 27
+[29-Oct-2016 05:44:47 UTC] PHP Notice:  Trying to get property of non-object in /home/u2447560/public_html/dadanh.com/lab/e-learning/inc/materi.php on line 27
+[16-Nov-2016 03:28:35 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/u2447560/public_html/dadanh.com/lab/e-learning/inc/quiz.php on line 110
+[16-Nov-2016 03:31:20 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 109
+[16-Nov-2016 03:31:27 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 109
+[16-Nov-2016 03:31:28 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 109
+[16-Nov-2016 03:31:32 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 109
+[16-Nov-2016 03:31:32 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 109
+[16-Nov-2016 03:31:34 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 109
+[16-Nov-2016 03:31:34 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 109
+[16-Nov-2016 03:31:34 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 109
+[16-Nov-2016 03:31:37 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 109
+[16-Nov-2016 03:31:39 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 109
+[16-Nov-2016 03:31:42 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 109
+[16-Nov-2016 03:31:42 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 109
+[16-Nov-2016 03:31:44 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 109
+[16-Nov-2016 03:31:46 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 109
+[16-Nov-2016 03:31:46 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 109
+[16-Nov-2016 03:31:48 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 109
+[16-Nov-2016 03:31:53 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 109
+[16-Nov-2016 03:31:53 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 109
+[16-Nov-2016 03:31:58 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 109
+[16-Nov-2016 03:32:03 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 109
+[16-Nov-2016 03:36:21 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 105
+[16-Nov-2016 03:36:21 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/u2447560/public_html/dadanh.com/lab/e-learning/index.php on line 105

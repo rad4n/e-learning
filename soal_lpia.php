@@ -319,6 +319,9 @@ include "+koneksi.php";
 				                                                        <label>
 				                                                            <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="A" /><?php echo $data_soal_pilgan['pil_a']; ?>
 				                                                        </label>
+				                                                        <?php if($data_soal_pilgan['gbr_a'] != '') { ?><br>
+																		 	<img width="220px" src="admin/img/gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_a']; ?>" />
+																		<?php } ?>
 				                                                    </div>
 				                                                </td>
 				        							        </tr>
@@ -328,6 +331,9 @@ include "+koneksi.php";
 				                                                        <label>
 				                                                            <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="B" /><?php echo $data_soal_pilgan['pil_b']; ?>
 				                                                        </label>
+				                                                        <?php if($data_soal_pilgan['gbr_b'] != '') { ?><br>
+																		 	<img width="220px" src="admin/img/gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_b']; ?>" />
+																		<?php } ?>
 				                                                    </div>
 				                                                </td>
 				        							        </tr>
@@ -337,6 +343,9 @@ include "+koneksi.php";
 				                                                        <label>
 				                                                            <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="C" /><?php echo $data_soal_pilgan['pil_c']; ?>
 				                                                        </label>
+				                                                        <?php if($data_soal_pilgan['gbr_c'] != '') { ?><br>
+																		 	<img width="220px" src="admin/img/gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_c']; ?>" />
+																		<?php } ?>
 				                                                    </div>
 				                                                </td>
 				        							        </tr>
@@ -346,6 +355,9 @@ include "+koneksi.php";
 				                                                        <label>
 				                                                            <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="D" /><?php echo $data_soal_pilgan['pil_d']; ?>
 				                                                        </label>
+				                                                        <?php if($data_soal_pilgan['gbr_d'] != '') { ?><br>
+																		 	<img width="220px" src="admin/img/gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_d']; ?>" />
+																		<?php } ?>
 				                                                    </div>
 				                                                </td>
 				        							        </tr>
@@ -355,6 +367,9 @@ include "+koneksi.php";
 				                                                        <label>
 				                                                            <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="E" /><?php echo $data_soal_pilgan['pil_e']; ?>
 				                                                        </label>
+				                                                        <?php if($data_soal_pilgan['gbr_e'] != '') { ?><br>
+																		 	<img width="220px" src="admin/img/gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_e']; ?>" />
+																		<?php } ?>
 				                                                    </div>
 				                                                </td>
 				        							        </tr>

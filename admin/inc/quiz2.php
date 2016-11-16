@@ -1,4 +1,4 @@
-<?php $db = mysqli_connect("localhost", "root", "", "db_elearning");
+<?php $db = mysqli_connect("localhost", "u2447560_dadan", "bangginggongle80ws12", "u2447560_e-learning");
     include "PHPExcel.php";
     include "PHPExcel/Cell.php";
     include "PHPExcel/Calculation.php";
@@ -63,7 +63,7 @@
     
     $objWriter = PHPExcel_IOFactory::createWriter($excelku, 'Excel5');
     header('Content-Type: application/vnd.ms-excel');
-    header('Content-Disposition: attachment;filename="Tes.xlsx"');
+    header('Content-Disposition: attachment;filename="Tes.xls"');
     header('Cache-Control: max-age=0');
     $objWriter->save('php://output');
     exit;
