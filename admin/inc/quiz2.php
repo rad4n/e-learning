@@ -1,4 +1,6 @@
-<?php $db = mysqli_connect("localhost", "u2447560_dadan", "bangginggongle80ws12", "u2447560_e-learning");
+<?php include "../../+koneksi.php";
+
+// $db = mysqli_connect("localhost", "root", "", "db_elearning");
     include "PHPExcel.php";
     include "PHPExcel/Cell.php";
     include "PHPExcel/Calculation.php";
@@ -7,6 +9,7 @@
     
 
     $jawab = mysqli_query($db,"SELECT tb_jawaban_pilgan_temp.jawaban,
+                                      tb_jawaban_pilgan_temp.id_soal,
                                       tb_siswa.nama_lengkap,
                                       tb_siswa.nis,
                                       tb_kelas.nama_kelas
@@ -37,9 +40,16 @@
     $excelku->setActiveSheetIndex(0)->setCellValue("D3","No");
     $excelku->setActiveSheetIndex(0)->setCellValue("D4","Skor");
     while($r = mysqli_fetch_assoc($jawab)){
+      $cek = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_pilgan = '".$r['id_soal']."'") or die ($db->error);
+      while($c = mysqli_fetch_array($cek)) {
+              $jawaban = $c['kunci'];
+          }
+      if($r['jawaban']==$jawaban) $h = 1;
+      else $h=0;
        
        $excelku->setActiveSheetIndex(0)->setCellValue($n."3",$no);
-       $excelku->setActiveSheetIndex(0)->setCellValue($n."4",$r['jawaban']);
+      // $excelku->setActiveSheetIndex(0)->setCellValue($n."4",$r['jawaban']);
+       $excelku->setActiveSheetIndex(0)->setCellValue($n."4",$h);
        $excelku->getActiveSheet()->getColumnDimension($n)->setWidth(5);
 
 
