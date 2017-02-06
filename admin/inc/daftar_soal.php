@@ -334,6 +334,9 @@ if(@$_GET['hal'] == "pilgan") { ?>
 	</div>
 	<?php
 } else if(@$_GET['hal'] == "hapussoalpilgan") {
+	$r = mysqli_query($db, "SELECT gambar FROM tb_soal_pilgan WHERE id_pilgan = '$idsoal'") or die ($db->error);
+	$d = mysqli_fetch_array($r,MYSQLI_ASSOC);
+	if (file_exists("img/gambar_soal_pilgan/".$d['gambar'])) unlink("img/gambar_soal_pilgan/".$d['gambar']);
 	mysqli_query($db, "DELETE FROM tb_soal_pilgan WHERE id_pilgan = '$idsoal'") or die ($db->error);
 	echo "<script>window.location='?page=quiz&action=daftarsoal&hal=pilgan&id=".$id."';</script>";
 } else if(@$_GET['hal'] == "editsoalessay") { ?>

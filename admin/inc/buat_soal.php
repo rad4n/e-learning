@@ -178,29 +178,53 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 					require 'inc/PHPExcel.php';
 					require_once 'inc/PHPExcel/IOFactory.php';
 					$objPHPExcel = PHPExcel_IOFactory::load($target_file);
+					
+
+					//GET IMAGE FROM EXCEL
+					foreach ($objPHPExcel->getActiveSheet()->getDrawingCollection() as $drawing) {
+						$string = $drawing->getCoordinates();
+							$coordinate = PHPExcel_Cell::coordinateFromString($string); 
+							if ($drawing instanceof PHPExcel_Worksheet_MemoryDrawing) {
+								$image = $drawing->getImageResource();
+								$renderingFunction = $drawing->getRenderingFunction();
+								switch ($renderingFunction) {
+									case PHPExcel_Worksheet_MemoryDrawing::RENDERING_JPEG:
+										imagejpeg($image, 'img/gambar_soal_pilgan/' . $drawing->getIndexedFilename());
+									break;
+									case PHPExcel_Worksheet_MemoryDrawing::RENDERING_GIF:
+										imagegif($image, 'img/gambar_soal_pilgan/' . $drawing->getIndexedFilename());
+									break;
+									case PHPExcel_Worksheet_MemoryDrawing::RENDERING_PNG:
+										imagepng($image, 'img/gambar_soal_pilgan/' . $drawing->getIndexedFilename());
+									case PHPExcel_Worksheet_MemoryDrawing::RENDERING_DEFAULT:
+										imagepng($image, 'img/gambar_soal_pilgan/' . $drawing->getIndexedFilename());
+									break;
+								}
+								$nama_gambar[$coordinate[1]] =  $drawing->getIndexedFilename();
+							}
+					}
+
 					$allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null,true,true,true);
-					//print_r($allDataInSheet);exit;
-					//$arrayCount
 					$arrayCount = count($allDataInSheet);
 					$sql ="INSERT INTO tb_soal_pilgan (id_tq,pertanyaan,gambar,video,audio,pil_a,pil_b,pil_c,pil_d,pil_e,kunci,tgl_buat) VALUES";
+
+					//get value every row and create sql
+					//echo "<pre>";print_r($allDataInSheet); exit;
 					for($i=2;$i<=$arrayCount;$i++){
-							$pertanyaan  	= trim($allDataInSheet[$i]["B"]);
-							$pilA 			= trim($allDataInSheet[$i]["C"]);
-							$pilB 			= trim($allDataInSheet[$i]["D"]);
-							$pilC 			= trim($allDataInSheet[$i]["E"]);
-							$pilD 			= trim($allDataInSheet[$i]["F"]);
-							$pilE 			= trim($allDataInSheet[$i]["G"]);
-							$kunci 			= trim($allDataInSheet[$i]["H"]);
-							$nama_gambar 	= trim($allDataInSheet[$i]["I"]);
-							$nama_video 	= trim($allDataInSheet[$i]["J"]);
-							$nama_audio 	= trim($allDataInSheet[$i]["K"]);
+						$pertanyaan  	= trim($allDataInSheet[$i]["B"]);
+						$pilA 			= trim($allDataInSheet[$i]["C"]);
+						$pilB 			= trim($allDataInSheet[$i]["D"]);
+						$pilC 			= trim($allDataInSheet[$i]["E"]);
+						$pilD 			= trim($allDataInSheet[$i]["F"]);
+						$pilE 			= trim($allDataInSheet[$i]["G"]);
+						$kunci 			= trim($allDataInSheet[$i]["H"]);
+						$nama_video 	= trim($allDataInSheet[$i]["J"]);
+						$nama_audio 	= trim($allDataInSheet[$i]["K"]);
 
-
-					$sql .= " ('$id', '$pertanyaan', '$nama_gambar','$nama_video','$nama_audio', '$pilA', '$pilB', '$pilC', '$pilD', '$pilE', '$kunci', now()),";
+						$sql .= " ('$id', '$pertanyaan', '".$nama_gambar[$i]."','$nama_video','$nama_audio', '$pilA', '$pilB', '$pilC', '$pilD', '$pilE', '$kunci', now()),";
 					}
 					$sql = substr($sql,0,-1);
 					mysqli_query($db,$sql)or die ($db->error); 
-
 	            	echo '<script>window.location="?page=quiz&action=daftarsoal&hal=pilgan&id='.$id.'"</script>';
 	        	} 
 	        ?>
