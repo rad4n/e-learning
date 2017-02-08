@@ -1,6 +1,13 @@
 <?php
 $db = mysqli_connect("localhost", "root", "", "db_elearning");
 
+define("NAMA_SEKOLAH", "SMA NEGERI 114 JAKARTA");
+define("ALAMAT_SEKOLAH", "Jln. Pedongkelan No. 24, Cilincing, Jakarta");
+define("LOGO_SEKOLAH", "../../style/assets/img/logo2.png");
+define("TELP_SEKOLAH", "(xxx) xxxxxx");
+define("EMAIL_SEKOLAH", "admin@sman114.sch.id");
+define("KOTA_SEKOLAH", "Jakarta");
+
 //---fungsi2---//
 function cek_session($isi_admin, $isi_pengajar) {
     if(@$_SESSION['admin']) {

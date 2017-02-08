@@ -1,4 +1,5 @@
 <?php
+ob_start();
 @session_start();
 include "../../+koneksi.php";
 include "fpdf.php";
@@ -7,13 +8,13 @@ $pdf = new FPDF('L','mm','A4');
 $pdf->SetMargins(15,20,15);
 $pdf->AddPage();
 
-$pdf->Image('../../style/assets/img/logo2.png',15,18,16);
+$pdf->Image(LOGO_SEKOLAH,15,18,16);
 
 $pdf->SetFont('Arial','B',18);
-$pdf->Cell(0,5,'SMK INDONESIA','0','1','C',false);
+$pdf->Cell(0,5,NAMA_SEKOLAH,'0','1','C',false);
 $pdf->SetFont('Arial','i',8);
-$pdf->Cell(0,5,'Alamat : Jln. Merdeka No. 1, Banjarmasin, Indonesia','0','1','C',false);
-$pdf->Cell(0,2,'Telp : (xxx) xxxxxx - Email : admin@smkindonesia.com','0','1','C',false);
+$pdf->Cell(0,5,'Alamat : '.ALAMAT_SEKOLAH,'0','1','C',false);
+$pdf->Cell(0,2,'Telp : '.TELP_SEKOLAH.' - Email : '.EMAIL_SEKOLAH,'0','1','C',false);
 $pdf->Ln(3);
 $pdf->Cell(265,0.6,'','0','1','C',true);
 $pdf->Ln(5);
@@ -145,7 +146,7 @@ if(@$_GET['data'] == "pengajar") {
 	}
 } else if(@$_GET['data'] == "kelas") {
 	$pdf->SetFont('Arial','B',11);
-	$pdf->Cell(50,5,'Laporan Daftar Kelas, Letak Ruang, Wali dan Ketua Masing-masing Kelas di SMK Indonesia','0','1','L',false);
+	$pdf->Cell(50,5,'Laporan Daftar Kelas, Letak Ruang, Wali dan Ketua Masing-masing Kelas di '.NAMA_SEKOLAH,'0','1','L',false);
 	$pdf->Ln(3);
 
 	$pdf->SetFont('Arial','B',8);
@@ -351,7 +352,7 @@ if(@$_GET['data'] == "pengajar") {
 $pdf->Ln(50);
 $pdf->SetLeftMargin(230);
 $pdf->SetFont('Arial','',10);
-$pdf->Cell(0,0,"Banjarmasin, ".tgl_indo(date('Y-m-d')),0,0,'L');
-
+$pdf->Cell(0,0,KOTA_SEKOLAH.", ".tgl_indo(date('Y-m-d')),0,0,'L');
+ob_end_clean();
 $pdf->Output();
 ?>
