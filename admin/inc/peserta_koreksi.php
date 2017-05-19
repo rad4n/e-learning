@@ -33,7 +33,13 @@
                             	$data_essay = mysqli_fetch_array($sql_essay);
                             	?>
                             	<td>
-                            		Nilai soal pilihan ganda : <?php echo $data_pilgan['presentase']; ?><br />
+                            		Nilai soal pilihan ganda : <?php 
+                                    $jumlah1 = mysqli_query($db, "SELECT MAX(level_group) as total FROM tb_soal_pilgan WHERE id_tq = '$id_tq'") or die ($db->error);
+                                  $jumlah = mysqli_fetch_array($jumlah1);
+                                  $persen = $data_pilgan['benar'] / $jumlah['total'];//print_r("SELECT MAX(level_group) as total FROM tb_soal_pilgan WHERE id_tq = '$id_tq'");exit;
+                                  $hasil = $persen * 100;
+                                    echo $hasil;
+                                     ?><br />
                             		Nilai soal essay : 
                             		<?php
                                     if(mysqli_num_rows($sql_jwb) > 0) {
@@ -58,6 +64,7 @@
                                         }
                                     } ?>
                                     <a onclick="return confirm('Yakin akan menghapus siswa ini dari daftar peserta ujian?');" href="?page=quiz&action=hapuspeserta&id_tq=<?php echo $id_tq; ?>&id_siswa=<?php echo $data_siswa_mengikuti_tes['id_siswa']; ?>" class="badge" style="background-color:#f00;">Hapus Siswa dari Peserta Ujian</a>
+                                    <a href="inc/quiz2.php?id_tq=<?php echo $id_tq; ?>&id_siswa=<?php echo $data_siswa_mengikuti_tes['id_siswa']; ?>" class="badge" style="background-color:green;">Export Jawaban Excel</a>
                                 </td>
                             </tr>
     					<?php
@@ -68,7 +75,7 @@
                     </tbody>
                 </table>
                 <?php if(mysqli_num_rows($sql_siswa_mengikuti_tes) > 0) { ?>
-                    <a href="./laporan/cetak.php?data=quiz&id_tq=<?php echo $id_tq; ?>" target="_blank" class="btn btn-default btn-sm">Cetak</a>
+                    <a href="inc/quiz2.php?id_tq=<?php echo $id_tq; ?>&id_siswa=all" target="_blank" class="btn btn-default btn-sm">Cetak</a>
                 <?php } ?>
             </div>
         </div>

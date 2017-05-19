@@ -1,0 +1,543 @@
+[24-Oct-2016 09:42:15 UTC] PHP Notice:  Undefined index: id_siswa in /home/u2447560/public_html/dadanh.com/lab/e-learning/admin/inc/quiz.php on line 255
+[24-Oct-2016 09:42:19 UTC] PHP Notice:  Undefined index: id_siswa in /home/u2447560/public_html/dadanh.com/lab/e-learning/admin/inc/quiz.php on line 255
+[24-Oct-2016 09:42:21 UTC] PHP Notice:  Undefined index: id_siswa in /home/u2447560/public_html/dadanh.com/lab/e-learning/admin/inc/quiz.php on line 255
+[24-Oct-2016 09:42:24 UTC] PHP Notice:  Undefined index: id_siswa in /home/u2447560/public_html/dadanh.com/lab/e-learning/admin/inc/quiz.php on line 255
+[24-Oct-2016 09:42:26 UTC] PHP Notice:  Undefined index: id_siswa in /home/u2447560/public_html/dadanh.com/lab/e-learning/admin/inc/quiz.php on line 255
+[09-Nov-2016 22:28:49 UTC] PHP Notice:  Undefined index: id_siswa in /home/u2447560/public_html/dadanh.com/lab/e-learning/admin/inc/quiz.php on line 255
+[09-Nov-2016 22:37:13 UTC] PHP Notice:  Undefined index: id_siswa in /home/u2447560/public_html/dadanh.com/lab/e-learning/admin/inc/quiz.php on line 255
+[17-Feb-2017 14:23:23 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'genius'@'localhost' (using password: YES) in /home/genius/public_html/evaluasi/+koneksi.php on line 2
+[17-Feb-2017 14:28:54 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'genius'@'localhost' (using password: YES) in /home/genius/public_html/evaluasi/+koneksi.php on line 2
+[17-Feb-2017 14:31:55 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'genius'@'localhost' (using password: YES) in /home/genius/public_html/evaluasi/+koneksi.php on line 2
+[27-Feb-2017 00:51:30 UTC] PHP Notice:  Undefined index: hal in /home/genius/public_html/evaluasi/admin/inc/buat_soal.php on line 13
+[25-Mar-2017 00:40:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 12
+[25-Mar-2017 00:40:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 12
+[25-Mar-2017 00:40:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 12
+[25-Mar-2017 00:40:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 12
+[25-Mar-2017 00:41:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 12
+[25-Mar-2017 00:41:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 12
+[25-Mar-2017 00:42:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 12
+[25-Mar-2017 00:45:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 12
+[25-Mar-2017 00:45:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 12
+[25-Mar-2017 00:47:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 12
+[25-Mar-2017 00:47:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 12
+[25-Mar-2017 01:28:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 12
+[25-Mar-2017 01:31:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 12
+[25-Mar-2017 01:32:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 12
+[25-Mar-2017 01:32:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 12
+[25-Mar-2017 01:33:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 12
+[25-Mar-2017 01:34:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 12
+[25-Mar-2017 01:34:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 12
+[25-Mar-2017 01:34:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 11
+[25-Mar-2017 01:35:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 11
+[25-Mar-2017 01:36:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 11
+[25-Mar-2017 01:36:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 11
+[25-Mar-2017 01:37:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 11
+[25-Mar-2017 01:37:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 11
+[25-Mar-2017 01:49:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cek_session() in /home/genius/public_html/evaluasi/admin/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/index.php on line 11
+[25-Mar-2017 01:56:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/inc/quiz.php:53
+Stack trace:
+#0 /home/genius/public_html/evaluasi/admin/index.php(178): include()
+#1 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/inc/quiz.php on line 53
+[25-Mar-2017 01:57:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tampil_per_id() in /home/genius/public_html/evaluasi/admin/inc/kelas.php:43
+Stack trace:
+#0 /home/genius/public_html/evaluasi/admin/index.php(174): include()
+#1 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/inc/kelas.php on line 43
+[25-Mar-2017 01:57:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/inc/quiz.php:53
+Stack trace:
+#0 /home/genius/public_html/evaluasi/admin/index.php(178): include()
+#1 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/inc/quiz.php on line 53
+[25-Mar-2017 01:57:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/inc/quiz.php:53
+Stack trace:
+#0 /home/genius/public_html/evaluasi/admin/index.php(178): include()
+#1 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/inc/quiz.php on line 53
+[25-Mar-2017 02:24:05 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[25-Mar-2017 02:24:19 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[25-Mar-2017 04:53:37 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[25-Mar-2017 04:53:42 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[25-Mar-2017 06:36:49 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[25-Mar-2017 06:36:51 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[25-Mar-2017 08:23:36 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[25-Mar-2017 08:23:36 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[25-Mar-2017 09:12:16 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:25:16 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:25:31 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:25:35 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:25:48 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:26:01 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:26:06 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:26:10 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:26:15 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:26:20 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:26:23 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:26:27 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:26:31 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:26:34 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:26:37 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:26:40 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:26:44 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:26:49 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:26:53 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:26:57 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:27:02 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:27:08 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:27:23 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:27:37 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:27:46 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:27:52 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:28:01 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:28:07 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:28:15 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:28:26 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:28:29 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:28:32 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:28:36 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:28:41 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:28:44 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:28:47 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:28:51 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:28:54 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:28:57 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:29:00 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:29:03 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:29:06 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:29:09 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:29:12 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:29:20 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:29:24 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:29:30 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:29:33 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:29:36 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:29:39 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:29:42 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:29:45 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:29:48 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:29:51 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:29:55 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:29:59 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:30:02 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:30:05 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:30:08 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:30:10 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:30:14 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:30:17 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:30:20 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:30:23 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:30:31 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:30:36 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:30:39 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:30:45 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:30:58 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:31:02 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:31:05 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:31:09 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:31:12 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:31:15 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:31:20 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:31:24 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:31:28 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:31:31 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:31:50 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:31:59 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:32:03 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:32:06 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:32:09 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:32:12 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:32:16 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:32:19 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:32:21 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:32:24 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:32:27 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:32:34 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:32:38 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:32:42 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:32:45 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:32:48 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:32:51 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:32:55 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:32:59 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:33:02 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:33:06 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:33:10 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:33:13 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:33:16 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:33:19 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:33:23 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:33:26 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:33:30 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:33:32 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:33:36 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:33:40 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:33:48 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:33:55 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:34:01 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:34:04 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:34:07 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:34:10 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:34:12 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:34:19 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 01:34:22 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 02:23:59 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 02:24:09 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 02:31:10 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 04:56:20 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 04:56:30 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 06:39:55 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:45:33 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:50:16 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:50:20 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:50:26 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:50:31 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:50:34 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:50:37 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:50:40 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:50:42 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:50:46 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:50:49 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:50:52 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:51:14 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:51:17 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:51:21 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:51:25 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:51:28 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:51:31 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:51:34 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:51:37 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:51:38 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:51:41 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:51:44 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:51:48 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:51:51 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:51:54 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:51:57 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:52:00 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:52:06 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:52:09 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:53:15 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:59:07 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:59:12 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 08:59:16 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:33:44 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:33:53 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:34:08 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:34:18 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:34:26 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:34:32 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:34:40 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:34:47 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:34:57 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:35:05 UTC] PHP Notice:  Undefined variable: db in /home/genius/public_html/evaluasi/admin/index.php on line 67
+[27-Mar-2017 09:35:05 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/genius/public_html/evaluasi/admin/index.php on line 67
+[27-Mar-2017 09:35:05 UTC] PHP Notice:  Undefined variable: db in /home/genius/public_html/evaluasi/admin/index.php on line 67
+[27-Mar-2017 09:35:05 UTC] PHP Notice:  Trying to get property of non-object in /home/genius/public_html/evaluasi/admin/index.php on line 67
+[27-Mar-2017 09:35:14 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:35:24 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:35:30 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:35:38 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:42:09 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:42:13 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:42:16 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:43:40 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:43:48 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:43:51 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:49:58 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:50:03 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:50:06 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:57:12 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:57:16 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:57:19 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:57:22 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:57:25 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:57:28 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 09:57:31 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 10:05:10 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 10:05:32 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 10:05:38 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 10:05:52 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 10:05:58 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 10:06:10 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 10:06:19 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 10:21:36 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 10:21:41 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 10:21:45 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 10:21:49 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 10:29:17 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 10:29:24 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 10:34:13 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 10:34:22 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 10:56:11 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 15:11:23 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[27-Mar-2017 15:11:28 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[28-Mar-2017 03:02:08 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[28-Mar-2017 03:02:18 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[28-Mar-2017 08:48:03 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[28-Mar-2017 11:53:52 UTC] PHP Warning:  mysqli_connect(): (HY000/1040): Too many connections in /home/genius/public_html/evaluasi/+koneksi.php on line 2
+[28-Mar-2017 11:53:52 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/genius/public_html/evaluasi/admin/index.php on line 152
+[28-Mar-2017 11:53:52 UTC] PHP Notice:  Trying to get property of non-object in /home/genius/public_html/evaluasi/admin/index.php on line 152
+[28-Mar-2017 11:54:22 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswa.php on line 137
+[28-Mar-2017 11:54:25 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswa.php on line 137
+[28-Mar-2017 11:54:45 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswa.php on line 137
+[29-Mar-2017 08:17:55 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:18:15 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:18:51 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:19:44 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:20:17 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:20:27 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:20:48 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:21:19 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:22:31 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:22:46 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:23:03 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:23:15 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:23:20 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:23:42 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:23:48 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:23:55 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:24:03 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:24:10 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:24:15 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:24:20 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:24:25 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:24:30 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:24:35 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:24:40 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:24:46 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:46:43 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:46:58 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:47:03 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:47:09 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:47:14 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:47:18 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:47:22 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:47:28 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:55:13 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:56:27 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:58:24 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 08:58:35 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 09:00:12 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 09:02:02 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 09:06:45 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 09:32:41 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 09:48:44 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 09:48:50 UTC] PHP Warning:  mysqli_connect(): (08004/1040): Too many connections in /home/genius/public_html/evaluasi/+koneksi.php on line 2
+[29-Mar-2017 09:48:50 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/genius/public_html/evaluasi/admin/index.php on line 152
+[29-Mar-2017 09:48:50 UTC] PHP Notice:  Trying to get property of non-object in /home/genius/public_html/evaluasi/admin/index.php on line 152
+[29-Mar-2017 09:49:04 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 10:29:10 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 10:29:40 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 10:30:09 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 10:30:45 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 10:30:53 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 10:31:09 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 12:10:16 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 12:10:29 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 12:10:40 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[29-Mar-2017 12:10:49 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 03:28:55 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 03:29:08 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 03:29:17 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 03:29:18 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 08:22:12 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 08:22:19 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 08:22:27 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 08:22:37 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 08:38:52 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 08:49:52 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 08:56:06 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 09:02:32 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 09:32:28 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswa.php on line 137
+[30-Mar-2017 09:33:24 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswa.php on line 137
+[30-Mar-2017 09:37:14 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 09:37:17 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 09:37:24 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 09:51:57 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 09:51:58 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 09:52:24 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 09:52:32 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 09:52:40 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 09:52:49 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 09:59:44 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 09:59:46 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 10:00:05 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 10:00:18 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 10:13:51 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 10:13:51 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 10:13:59 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 10:14:08 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 12:14:39 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 12:14:40 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 12:44:51 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[30-Mar-2017 12:44:52 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 00:22:34 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 00:23:08 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 08:22:53 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 08:23:06 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 08:23:56 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 08:24:37 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 08:24:48 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 08:25:01 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 08:25:11 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 08:42:47 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 08:42:59 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 08:43:33 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 08:43:38 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 08:43:43 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 08:43:49 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 08:43:55 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 08:44:00 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 08:52:48 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 08:52:51 UTC] PHP Warning:  mysqli_connect(): (HY000/1040): Too many connections in /home/genius/public_html/evaluasi/+koneksi.php on line 2
+[31-Mar-2017 08:52:51 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/genius/public_html/evaluasi/admin/index.php on line 152
+[31-Mar-2017 08:52:51 UTC] PHP Notice:  Trying to get property of non-object in /home/genius/public_html/evaluasi/admin/index.php on line 152
+[31-Mar-2017 08:55:31 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 10:03:59 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 10:04:00 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 10:04:14 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 10:04:22 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 10:04:30 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 10:04:49 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 10:23:25 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 10:23:36 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 10:24:33 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 10:24:59 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 10:25:33 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 10:27:11 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 10:40:41 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswa.php on line 137
+[31-Mar-2017 10:40:42 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswa.php on line 137
+[31-Mar-2017 11:20:30 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 11:20:42 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 12:57:13 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 12:57:27 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 12:57:34 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 12:57:41 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 12:57:48 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[31-Mar-2017 12:57:54 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[05-Apr-2017 01:23:15 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[05-Apr-2017 01:23:26 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[05-Apr-2017 01:23:32 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[05-Apr-2017 01:23:36 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[05-Apr-2017 01:23:44 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:37:06 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:37:19 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:37:25 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:37:31 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:37:36 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:37:41 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:37:46 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:37:51 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:37:56 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:38:09 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:38:14 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:38:19 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:38:24 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:38:31 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:38:35 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:38:40 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:38:44 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:38:49 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:38:53 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:38:57 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:39:02 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:39:07 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:39:11 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:39:15 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:39:23 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:39:23 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:39:29 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:39:32 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:39:37 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:39:44 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:39:49 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:40:39 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:40:44 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:40:48 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:40:52 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:40:56 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:41:00 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:41:04 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:41:10 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:41:18 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:41:23 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:41:32 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:41:41 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:41:45 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:41:48 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44
+[01-May-2017 02:41:52 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/inc/siswaregistrasi.php on line 44

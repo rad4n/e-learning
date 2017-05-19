@@ -1,0 +1,315 @@
+[23-Mar-2017 22:56:02 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[24-Mar-2017 02:18:16 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[27-Mar-2017 02:23:22 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[27-Mar-2017 02:23:22 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[27-Mar-2017 02:23:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:80
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[27-Mar-2017 02:23:25 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[27-Mar-2017 02:23:25 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[27-Mar-2017 02:23:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:80
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[27-Mar-2017 02:23:26 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[27-Mar-2017 02:23:26 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[27-Mar-2017 02:23:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:80
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[27-Mar-2017 02:23:27 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[27-Mar-2017 02:23:27 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[27-Mar-2017 02:23:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:80
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[27-Mar-2017 02:23:40 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[27-Mar-2017 02:23:40 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[27-Mar-2017 02:23:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:80
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[27-Mar-2017 02:23:42 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[27-Mar-2017 02:23:42 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[27-Mar-2017 02:23:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:80
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[27-Mar-2017 02:23:55 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[27-Mar-2017 02:23:55 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[27-Mar-2017 02:23:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:80
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[27-Mar-2017 02:23:56 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[27-Mar-2017 02:23:56 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[27-Mar-2017 02:23:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:80
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[27-Mar-2017 02:25:12 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[27-Mar-2017 02:25:12 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[27-Mar-2017 02:25:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:80
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[27-Mar-2017 02:25:15 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[27-Mar-2017 02:25:15 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[27-Mar-2017 02:25:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:80
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[28-Mar-2017 08:48:28 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 08:48:28 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[28-Mar-2017 08:48:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:354
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 354
+[28-Mar-2017 08:50:04 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 08:50:04 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[28-Mar-2017 08:50:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:80
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[28-Mar-2017 08:50:48 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 08:50:48 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[28-Mar-2017 08:50:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:354
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 354
+[28-Mar-2017 08:59:05 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 08:59:05 UTC] PHP Notice:  Undefined index: tempat_lahir in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[28-Mar-2017 08:59:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:80
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 80
+[28-Mar-2017 11:23:02 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 11:23:02 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[28-Mar-2017 11:23:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:354
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 354
+[28-Mar-2017 11:52:02 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 11:52:03 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[28-Mar-2017 11:52:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:354
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 354
+[28-Mar-2017 11:55:42 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 11:55:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:254
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 254
+[28-Mar-2017 11:56:58 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 11:56:58 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[28-Mar-2017 11:56:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:354
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 354
+[28-Mar-2017 12:01:54 UTC] PHP Parse error:  syntax error, unexpected 'SELECT' (T_STRING), expecting ',' or ')' in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 321
+[28-Mar-2017 12:01:56 UTC] PHP Parse error:  syntax error, unexpected 'SELECT' (T_STRING), expecting ',' or ')' in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 321
+[28-Mar-2017 12:02:05 UTC] PHP Parse error:  syntax error, unexpected 'SELECT' (T_STRING), expecting ',' or ')' in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 321
+[28-Mar-2017 12:02:27 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:07:02 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:10:28 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:10:28 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[28-Mar-2017 12:10:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:354
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 354
+[28-Mar-2017 12:11:24 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:11:24 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[28-Mar-2017 12:11:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:354
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 354
+[28-Mar-2017 12:11:46 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 357
+[28-Mar-2017 12:12:00 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:12:00 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[28-Mar-2017 12:12:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:355
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 355
+[28-Mar-2017 12:12:02 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:12:02 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[28-Mar-2017 12:12:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:355
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 355
+[28-Mar-2017 12:12:03 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:12:03 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[28-Mar-2017 12:12:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:355
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 355
+[28-Mar-2017 12:12:42 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:12:42 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[28-Mar-2017 12:14:41 UTC] PHP Parse error:  syntax error, unexpected '"]"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ')' in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 348
+[28-Mar-2017 12:14:43 UTC] PHP Parse error:  syntax error, unexpected '"]"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ')' in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 348
+[28-Mar-2017 12:14:58 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:14:58 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[28-Mar-2017 12:14:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:355
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 355
+[28-Mar-2017 12:18:20 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:18:20 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[28-Mar-2017 12:18:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:355
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 355
+[28-Mar-2017 12:18:26 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:18:26 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[28-Mar-2017 12:18:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:355
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 355
+[28-Mar-2017 12:18:41 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:18:41 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[28-Mar-2017 12:18:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:355
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 355
+[28-Mar-2017 12:19:56 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:19:56 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[28-Mar-2017 12:19:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:355
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 355
+[28-Mar-2017 12:22:15 UTC] PHP Parse error:  syntax error, unexpected '$pdf' (T_VARIABLE) in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 323
+[28-Mar-2017 12:22:17 UTC] PHP Parse error:  syntax error, unexpected '$pdf' (T_VARIABLE) in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 323
+[28-Mar-2017 12:22:34 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:22:34 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[28-Mar-2017 12:22:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:354
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 354
+[28-Mar-2017 12:24:25 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:24:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:354
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 354
+[28-Mar-2017 12:24:27 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:24:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:354
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 354
+[28-Mar-2017 12:28:07 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:28:09 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:28:25 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:28:25 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[28-Mar-2017 12:29:42 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:29:42 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[28-Mar-2017 12:29:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:354
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 354
+[28-Mar-2017 12:29:44 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:29:44 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[28-Mar-2017 12:29:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:354
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 354
+[28-Mar-2017 12:43:17 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 12:43:17 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[28-Mar-2017 12:43:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:354
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 354
+[28-Mar-2017 22:55:45 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[28-Mar-2017 22:55:45 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[28-Mar-2017 22:55:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:354
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 354
+[29-Mar-2017 02:05:16 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:05:16 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[29-Mar-2017 02:05:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:354
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 354
+[29-Mar-2017 02:07:05 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:07:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 24
+[29-Mar-2017 02:07:07 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:07:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 24
+[29-Mar-2017 02:07:08 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:07:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 24
+[29-Mar-2017 02:07:09 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:07:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 24
+[29-Mar-2017 02:07:09 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:07:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 24
+[29-Mar-2017 02:07:09 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:07:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 24
+[29-Mar-2017 02:07:10 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:07:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 24
+[29-Mar-2017 02:07:30 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:08:03 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:08:03 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[29-Mar-2017 02:09:05 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:09:06 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[29-Mar-2017 02:09:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function tgl_indo() in /home/genius/public_html/evaluasi/admin/laporan/cetak.php:354
+Stack trace:
+#0 {main}
+  thrown in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 354
+[29-Mar-2017 02:09:24 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:09:24 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[29-Mar-2017 02:09:40 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:09:40 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[29-Mar-2017 02:10:52 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:10:52 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[29-Mar-2017 02:10:52 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:10:52 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[29-Mar-2017 02:10:54 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:10:54 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[29-Mar-2017 02:11:56 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:11:56 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 342
+[29-Mar-2017 02:12:14 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:12:14 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[29-Mar-2017 02:12:16 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:12:16 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[29-Mar-2017 02:12:33 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:12:34 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[29-Mar-2017 02:13:07 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:13:07 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[29-Mar-2017 02:13:09 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:13:09 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[29-Mar-2017 02:13:32 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:13:32 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[29-Mar-2017 02:13:34 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:13:34 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[29-Mar-2017 02:13:34 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:13:34 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[29-Mar-2017 02:13:35 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:13:35 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[29-Mar-2017 02:13:35 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:13:35 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[29-Mar-2017 02:14:01 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:14:01 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[29-Mar-2017 02:17:22 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 02:17:24 UTC] PHP Notice:  Undefined variable: nilai_essay in /home/genius/public_html/evaluasi/admin/laporan/cetak.php on line 343
+[29-Mar-2017 02:18:09 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 03:06:31 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 03:15:17 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12
+[29-Mar-2017 03:16:54 UTC] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FPDF has a deprecated constructor in /home/genius/public_html/evaluasi/admin/laporan/fpdf.php on line 12

@@ -1,13 +1,12 @@
 <?php
 @session_start();
-$db = mysqli_connect("localhost", "root", "", "db_elearning");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Login E-Learning SMK Indonesia</title>
+    <title>Login CBT <?=NAMA_SEKOLAH;?></title>
     <link href="style/assets/css/bootstrap.css" rel="stylesheet" />
     <link href="style/assets/css/font-awesome.css" rel="stylesheet" />
     <link href="style/assets/css/style.css" rel="stylesheet" />
@@ -122,7 +121,7 @@ $db = mysqli_connect("localhost", "root", "", "db_elearning");
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    &copy; 2015 E-Learing SMK Indonesia | By : yukcoding.blogspot.com
+                    &copy; <?=date('Y');?> CBT Software | By : <?=COMPANY;?>
                 </div>
 
             </div>

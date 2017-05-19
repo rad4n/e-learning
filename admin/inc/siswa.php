@@ -185,7 +185,7 @@ if(@$_GET['action'] == '') {
                                 <td align="right" valign="top"><b>Foto</b></td>
                                 <td align="center" valign="top">:</td>
                                 <td>
-                                    <div style="padding:10px 0;"><img width="250px" src="../img/foto_siswa/<?php echo $data['foto']; ?>" /></div>
+                                    <div style="padding:10px 0;"><img width="250px" src="<?php echo URL_FOTO_SISWA.$data['foto']; ?>" /></div>
                                 </td>
                             </tr>
                             <?php if(@$_SESSION[admin]) { ?>

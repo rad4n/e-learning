@@ -1,8 +1,73 @@
-<?php
+<?php 
 @session_start();
 include "../+koneksi.php";
+if(@$_SESSION['admin'] || @$_SESSION['pengajar']){
+ //   ---fungsi2---//
+function cek_session($isi_admin, $isi_pengajar) {
+    if(@$_SESSION['admin']) {
+        echo $isi_admin;
+    } else if(@$_SESSION['pengajar']) {
+        echo $isi_pengajar;
+    }
+}
 
-if(@$_SESSION['admin'] || @$_SESSION['pengajar']) {
+function tgl_indo($tgl) {
+ $tanggal = substr($tgl,8,2);
+ $bulan = getBulan(substr($tgl,5,2));
+ $tahun = substr($tgl,0,4);
+ return $tanggal.' '.$bulan.' '.$tahun;       
+}
+function getBulan($bln){
+ switch ($bln){
+     case 1: 
+         return "Januari";
+         break;
+     case 2:
+         return "Februari";
+         break;
+     case 3:
+         return "Maret";
+         break;
+     case 4:
+         return "April";
+         break;
+     case 5:
+         return "Mei";
+         break;
+     case 6:
+         return "Juni";
+         break;
+     case 7:
+         return "Juli";
+         break;
+     case 8:
+         return "Agustus";
+         break;
+     case 9:
+         return "September";
+         break;
+     case 10:
+         return "Oktober";
+         break;
+     case 11:
+         return "November";
+         break;
+     case 12:
+         return "Desember";
+         break;
+ }
+}
+
+function tampil_per_ID($table, $where = null) {
+ //global $db;
+ $command = "SELECT * FROM $table";
+ if($where != null) {
+     $command .= " WHERE $where";
+ }
+ $query = mysqli_query($GLOBALS['db'], $command) or die ($GLOBALS['db']->error);
+ return $query;
+ mysqli_close($db);
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,26 +75,27 @@ if(@$_SESSION['admin'] || @$_SESSION['pengajar']) {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?php cek_session("Halaman Administrator", "Halaman Pengajar"); ?> e-Learning</title>
-    <link href="style/assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="style/assets/css/font-awesome.css" rel="stylesheet" />
-    <link href="style/assets/css/custom-styles.css" rel="stylesheet" />
-    <link href='style/assets/css/font-opensans.css' rel='stylesheet' />
-    <link href="style/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-    <link href="style/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <link href='assets/css/font-opensans.css' rel='stylesheet' />
+    <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
     <style type="text/css">
     .link:hover { cursor:pointer; }
     </style>
 </head>
 
 <body>
-    <script src="style/assets/js/jquery-1.10.2.js"></script>
-    <script src="style/assets/js/bootstrap.min.js"></script>
-    <script src="style/assets/js/jquery.metisMenu.js"></script>
-    <script src="style/assets/js/morris/raphael-2.1.0.min.js"></script>
-    <script src="style/assets/js/morris/morris.js"></script>
-    <script src="style/assets/js/dataTables/jquery.dataTables.js"></script>
-    <script src="style/assets/js/dataTables/dataTables.bootstrap.js"></script>
-    <script src="style/assets/js/custom-scripts.js"></script>    
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="assets/js/morris/morris.js"></script>
+    <script src="assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+    <script src="assets/tinymce/js/tinymce/tinymce.js"></script>    
+    <script src="assets/js/custom-scripts.js"></script>  
 
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
@@ -41,6 +107,37 @@ if(@$_SESSION['admin'] || @$_SESSION['pengajar']) {
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
+                <!-- <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New User
+                                    <span class="pull-right text-muted small">4 min</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 min</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li> -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <?php
@@ -146,7 +243,7 @@ if(@$_SESSION['admin'] || @$_SESSION['pengajar']) {
                     echo "<div class='col-xs-12'><div class='alert alert-danger'>[404] Halaman tidak ditemukan! Silahkan pilih menu yang ada!</div></div>";
                 } ?>
                 
-				<footer><p> &copy; 2015 e-Learning SMK Indonesia | By : yukcoding.blogspot.com</p></footer>
+				<footer><p> &copy; <?=date('Y');?> CBT Software | By : <?=COMPANY;?></p></footer>
             </div>
         </div>
     </div>

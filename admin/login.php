@@ -1,4 +1,4 @@
-<?php
+<?php 
 @session_start();
 if(@$_SESSION['admin'] || @$_SESSION['pengajar']) {
 	echo "<script>window.location='./';</script>";

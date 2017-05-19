@@ -1,13 +1,12 @@
 <?php
 @session_start();
-$db = mysqli_connect("localhost", "root", "", "db_elearning");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Daftar E-Learning SMK Indonesia</title>
+    <title>Daftar CBT <?=NAMA_SEKOLAH;?></title>
     <link href="style/assets/css/bootstrap.css" rel="stylesheet" />
     <link href="style/assets/css/font-awesome.css" rel="stylesheet" />
     <link href="style/assets/css/style.css" rel="stylesheet" />
@@ -147,9 +146,10 @@ $db = mysqli_connect("localhost", "root", "", "db_elearning");
                             $thn_masuk = @mysqli_real_escape_string($db, $_POST['thn_masuk']);
                             $user = @mysqli_real_escape_string($db, $_POST['user']);
                             $pass = @mysqli_real_escape_string($db, $_POST['pass']);
+                            $pass = md5('$pass');
 
                             $sumber = @$_FILES['gambar']['tmp_name'];
-                            $target = 'img/foto_siswa/';
+                            $target = DIR_ASSETS.'img/foto_siswa/';
                             $nama_gambar = @$_FILES['gambar']['name'];
 
                             $sql_cek_user = mysqli_query($db, "SELECT * FROM tb_siswa WHERE username = '$user'") or die ($db->error);
@@ -157,14 +157,91 @@ $db = mysqli_connect("localhost", "root", "", "db_elearning");
                                 echo "<script>alert('Username yang Anda pilih sudah ada, silahkan ganti yang lain');</script>";
                             } else {
                                 if($nama_gambar != '') {
-                                    if(move_uploaded_file($sumber, $target.$nama_gambar)) {
-                                        mysqli_query($db, "INSERT INTO tb_siswa VALUES('', '$nis', '$nama_lengkap', '$tempat_lahir', '$tgl_lahir', '$jenis_kelamin', '$agama', '$nama_ayah', '$nama_ibu', '$no_telp', '$email', '$alamat', '$kelas', '$thn_masuk', '$nama_gambar', '$user', md5('$pass'), '$pass', 'tidak aktif')") or die ($db->error);          
-                                        echo '<script>alert("Pendaftaran berhasil, silahkan login"); window.location="./"</script>';
+                                    if(move_uploaded_file($sumber, $target.md5($nis.$nama_gambar).'.'.pathinfo($nama_gambar, PATHINFO_EXTENSION))) {
+                                        $nama_gambar = md5($nis.$nama_gambar).'.'.pathinfo($nama_gambar, PATHINFO_EXTENSION); 
+                                        $sql = "INSERT INTO tb_siswa(
+                                                                nis,
+                                                                nama_lengkap,
+                                                                tgl_lahir,
+                                                                jenis_kelamin,
+                                                                agama,
+                                                                nama_ayah,
+                                                                nama_ibu,
+                                                                no_telp,
+                                                                email,
+                                                                alamat,
+                                                                id_kelas,
+                                                                thn_masuk,
+                                                                foto,
+                                                                username,
+                                                                password,
+                                                                pass,
+                                                                status,
+                                                                tempat_lahir)
+                                                             VALUES(
+                                                                '$nis', 
+                                                                '$nama_lengkap', 
+                                                                '$tgl_lahir', 
+                                                                '$jenis_kelamin', 
+                                                                '$agama', 
+                                                                '$nama_ayah', 
+                                                                '$nama_ibu', 
+                                                                '$no_telp', 
+                                                                '$email', 
+                                                                '$alamat', 
+                                                                '$kelas', 
+                                                                '$thn_masuk', 
+                                                                '$nama_gambar', 
+                                                                '$user', 
+                                                                '$pass', 
+                                                                '$_POST[pass]', 
+                                                                'tidak aktif',
+                                                                '$tempat_lahir')";
+                                        $r = mysqli_query($db, $sql) or die ($db->error);          
+                                        if($r){echo '<script>alert("Pendaftaran berhasil, silahkan login"); window.location="./"</script>';}
+                                        else echo '<script>alert("terjadi kesalahan");'; 
                                     } else {
                                         echo '<script>alert("Gagal mendaftar, foto gagal diupload, coba lagi!");</script>';
                                     }
                                 } else {
-                                    mysqli_query($db, "INSERT INTO tb_siswa VALUES('', '$nis', '$nama_lengkap', '$tempat_lahir', '$tgl_lahir', '$jenis_kelamin', '$agama', '$nama_ayah', '$nama_ibu', '$no_telp', '$email', '$alamat', '$kelas', '$thn_masuk', 'anonim.png', '$user', md5('$pass'), '$pass', 'tidak aktif')") or die ($db->error);          
+                                    mysqli_query($db, "INSERT INTO tb_siswa(
+                                                                    nis,
+                                                                nama_lengkap,
+                                                                tgl_lahir,
+                                                                jenis_kelamin,
+                                                                agama,
+                                                                nama_ayah,
+                                                                nama_ibu,
+                                                                no_telp,
+                                                                email,
+                                                                alamat,
+                                                                id_kelas,
+                                                                thn_masuk,
+                                                                username,
+                                                                password,
+                                                                pass,
+                                                                status,
+                                                                tempat_lahir) 
+                                                                VALUES(
+                                                                '$nis', 
+                                                                '$nama_lengkap', 
+                                                                '$tgl_lahir', 
+                                                                '$jenis_kelamin', 
+                                                                '$agama', 
+                                                                '$nama_ayah', 
+                                                                '$nama_ibu', 
+                                                                '$no_telp', 
+                                                                '$email', 
+                                                                '$alamat', 
+                                                                '$kelas', 
+                                                                '$thn_masuk', 
+                                                                'anonim.png', 
+                                                                '$user', 
+                                                                '$pass', 
+                                                                '$_POST[pass]', 
+                                                                'tidak aktif',
+                                                                '$tempat_lahir'
+                                                        )") or die ($db->error);          
                                     echo '<script>alert("Pendaftaran berhasil, tunggu akun aktif dan silahkan login"); window.location="./"</script>';
                                 }
                             }
@@ -187,7 +264,7 @@ $db = mysqli_connect("localhost", "root", "", "db_elearning");
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    &copy; 2015 E-Learing SMK Indonesia | By : yukcoding.blogspot.com
+                    &copy; <?=date('Y');?> CBT <?=NAMA_SEKOLAH;?> | By : <?=COMPANY;?>
                 </div>
 
             </div>

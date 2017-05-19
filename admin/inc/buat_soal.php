@@ -1,4 +1,12 @@
-
+<script>tinymce.init({ 
+	selector:'.incTiny',
+	plugins:[
+		"advlist autolink lists link image charmap print preview anchor",
+		"searchreplace visualblocks code fullscreen",
+		"insertdatetime media table contextmenu paste imagetools tiny_mce_wiris"
+	],
+	toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | tiny_mce_wiris_formulaEditor"
+	});</script>
 <div class="row">
 	<div class="panel panel-default">
 	    <div class="panel-heading">
@@ -9,7 +17,15 @@
 	    </div>
 	    <div class="panel-body" style="padding-bottom:0;">
 			<div class="alert alert-warning">
-		        Perhatian, pembuatan soal wajib ada pilihan gandanya, jangan essay saja. Kalo soal pilihan ganda saja tanpa essay atau ada keduanya tidak masalah. 
+			<?php 
+				if(isset($_GET['hal']) AND $_GET['hal']=="soalpilganexcel"){
+			?>
+		        Perhatian, silahkan download contoh file excel berikut<br>
+		        <strong><a href="<?php echo base_url."contoh_soal.xls";?>">Download file excel</a></strong><br>
+		        untuk melihat contoh format yang benar dalam pembuatan soal.
+	       <?php }else{?>
+	       		Perhatian, pembuatan soal wajib ada pilihan gandanya, jangan essay saja. Kalo soal pilihan ganda saja tanpa essay atau ada keduanya tidak masalah.
+	       <?php }?>
 	        </div>
 	    </div>
 	</div>
@@ -23,12 +39,20 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 		    <div class="panel-body">
 		    	<?php $sql_jumlah_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id'") or die ($db->error); ?>
 			    <form method="post" enctype="multipart/form-data">
+			    	<div class="col-md-2">
+						<label>Group Soal</label>
+					</div>
+					<div class="col-md-10">
+						<div class="form-group">
+							<textarea name="level_group" class="form-control" rows="1" required></textarea>
+						</div>
+					</div>
 					<div class="col-md-2">
 						<label>Pertanyaan No. [ <?php echo mysqli_num_rows($sql_jumlah_pilgan) + 1; ?> ]</label>
 					</div>
 					<div class="col-md-10">
 						<div class="form-group">
-							<textarea name="pertanyaan" class="form-control" rows="2" required></textarea>
+							<textarea name="pertanyaan" class="form-control incTiny" rows="2" required></textarea>
 						</div>
 					</div>
 
@@ -64,7 +88,10 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 					</div>
 					<div class="col-md-10">
 						<div class="form-group">
-							<textarea name="pilA" class="form-control" rows="1" required></textarea>
+							<textarea name="pilA" class="form-control incTiny" rows="1" required></textarea>
+						</div>
+						<div class="form-group">
+							<input type="file" name="gambar_a" class="form-control" />
 						</div>
 					</div>
 					<div class="col-md-2">
@@ -72,7 +99,10 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 					</div>
 					<div class="col-md-10">
 						<div class="form-group">
-							<textarea name="pilB" class="form-control" rows="1" required></textarea>
+							<textarea name="pilB" class="form-control incTiny" rows="1" required></textarea>
+						</div>
+						<div class="form-group">
+							<input type="file" name="gambar_b" class="form-control" />
 						</div>
 					</div>
 					<div class="col-md-2">
@@ -80,7 +110,10 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 					</div>
 					<div class="col-md-10">
 						<div class="form-group">
-							<textarea name="pilC" class="form-control" rows="1" required></textarea>
+							<textarea name="pilC" class="form-control incTiny" rows="1" required></textarea>
+						</div>
+						<div class="form-group">
+							<input type="file" name="gambar_c" class="form-control" />
 						</div>
 					</div>
 					<div class="col-md-2">
@@ -88,7 +121,10 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 					</div>
 					<div class="col-md-10">
 						<div class="form-group">
-							<textarea name="pilD" class="form-control" rows="1" required></textarea>
+							<textarea name="pilD" class="form-control incTiny" rows="1" required></textarea>
+						</div>
+						<div class="form-group">
+							<input type="file" name="gambar_d" class="form-control" />
 						</div>
 					</div>
 					<div class="col-md-2">
@@ -96,7 +132,10 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 					</div>
 					<div class="col-md-10">
 						<div class="form-group">
-							<textarea name="pilE" class="form-control" rows="1" required></textarea>
+							<textarea name="pilE" class="form-control incTiny" rows="1" required></textarea>
+						</div>
+						<div class="form-group">
+							<input type="file" name="gambar_e" class="form-control" />
 						</div>
 	                </div>
 	                <div class="col-md-2">
@@ -128,6 +167,7 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 	            </form>
 	            <?php
 	            if(@$_POST['simpan']) {
+	            	$level_group = @mysqli_real_escape_string($db, $_POST['level_group']);
 	            	$pertanyaan = @mysqli_real_escape_string($db, $_POST['pertanyaan']);
 	            	$pilA = @mysqli_real_escape_string($db, $_POST['pilA']);
 	            	$pilB = @mysqli_real_escape_string($db, $_POST['pilB']);
@@ -148,11 +188,76 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
                     $target3 = 'img/audio_soal_pilgan/';
                     $nama_audio = @$_FILES['audio']['name'];
 
+                    #####gambar pilihan soal
+
+                    $sumber4 = @$_FILES['gambar_a']['tmp_name'];
+                    $target4 = 'img/gambar_soal_pilgan/';
+                    $nama_gambar_a = @$_FILES['gambar_a']['name'];
+
+                    $sumber5 = @$_FILES['gambar_b']['tmp_name'];
+                    $target5 = 'img/gambar_soal_pilgan/';
+                    $nama_gambar_b = @$_FILES['gambar_b']['name'];
+
+                    $sumber6 = @$_FILES['gambar_c']['tmp_name'];
+                    $target6 = 'img/gambar_soal_pilgan/';
+                    $nama_gambar_c = @$_FILES['gambar_c']['name'];
+
+                    $sumber7 = @$_FILES['gambar_d']['tmp_name'];
+                    $target7 = 'img/gambar_soal_pilgan/';
+                    $nama_gambar_d = @$_FILES['gambar_d']['name'];
+
+                    $sumber8 = @$_FILES['gambar_e']['tmp_name'];
+                    $target8 = 'img/gambar_soal_pilgan/';
+                    $nama_gambar_e = @$_FILES['gambar_e']['name'];
+
                     move_uploaded_file($sumber, $target.$nama_gambar);
                     move_uploaded_file($sumber2, $target2.$nama_video);
                     move_uploaded_file($sumber3, $target3.$nama_audio);
-
-                    mysqli_query($db, "INSERT INTO tb_soal_pilgan VALUES('', '$id', '$pertanyaan', '$nama_gambar','$nama_video','$nama_audio', '$pilA', '$pilB', '$pilC', '$pilD', '$pilE', '$kunci', now())") or die ($db->error);          
+                    move_uploaded_file($sumber4, $target4.$nama_gambar_a);
+                    move_uploaded_file($sumber5, $target5.$nama_gambar_b);
+                    move_uploaded_file($sumber6, $target6.$nama_gambar_c);
+                    move_uploaded_file($sumber7, $target7.$nama_gambar_d);
+                    move_uploaded_file($sumber8, $target8.$nama_gambar_e);
+                   // print_r($r); exit;
+                    mysqli_query($db, "INSERT INTO tb_soal_pilgan (
+		                    	id_tq,
+		                    	pertanyaan,
+		                    	gambar,
+		                    	video,
+		                    	audio,
+		                    	pil_a,
+		                    	gbr_a,
+		                    	pil_b,
+		                    	gbr_b,
+		                    	pil_c,
+		                    	gbr_c,
+		                    	pil_d,
+		                    	gbr_d,
+		                    	pil_e,
+		                    	gbr_e,
+		                    	kunci,
+		                    	tgl_buat,
+		                    	level_group
+                    	) VALUES(
+		                    	'$id', 
+		                    	'$pertanyaan', 
+		                    	'$nama_gambar',
+		                    	'$nama_video',
+		                    	'$nama_audio', 
+		                    	'$pilA',
+		                    	'$nama_gambar_a', 
+		                    	'$pilB',
+		                    	'$nama_gambar_b', 
+		                    	'$pilC',
+		                    	'$nama_gambar_c', 
+		                    	'$pilD',
+		                    	'$nama_gambar_d', 
+		                    	'$pilE',
+		                    	'$nama_gambar_e', 
+		                    	'$kunci', 
+		                    	 now(),
+		                    	 $level_group
+                    	)") or die ($db->error);          
                     echo '<script>window.location="?page=quiz&action=daftarsoal&hal=pilgan&id='.$id.'"</script>';
 	            }?>
 		    </div>
@@ -171,7 +276,7 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 			</div>
 			<?php
 	            if(@$_POST['upload']){
-	            	$target_dir = "../img/";
+	            	$target_dir = DIR_ASSETS."img/";
 					$target_file = $target_dir . basename($_FILES["soal"]["name"]);
 					move_uploaded_file($_FILES['soal']['tmp_name'],$target_file); 
 
@@ -189,43 +294,82 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 								$renderingFunction = $drawing->getRenderingFunction();
 								switch ($renderingFunction) {
 									case PHPExcel_Worksheet_MemoryDrawing::RENDERING_JPEG:
-										imagejpeg($image, 'img/gambar_soal_pilgan/' . $drawing->getIndexedFilename());
+										imagejpeg($image, DIR_ASSETS.'gambar_soal_pilgan/' . $drawing->getIndexedFilename());
 									break;
 									case PHPExcel_Worksheet_MemoryDrawing::RENDERING_GIF:
-										imagegif($image, 'img/gambar_soal_pilgan/' . $drawing->getIndexedFilename());
+										imagegif($image, DIR_ASSETS.'gambar_soal_pilgan/' . $drawing->getIndexedFilename());
 									break;
 									case PHPExcel_Worksheet_MemoryDrawing::RENDERING_PNG:
-										imagepng($image, 'img/gambar_soal_pilgan/' . $drawing->getIndexedFilename());
+										imagepng($image, DIR_ASSETS.'gambar_soal_pilgan/' . $drawing->getIndexedFilename());
+									break;
 									case PHPExcel_Worksheet_MemoryDrawing::RENDERING_DEFAULT:
-										imagepng($image, 'img/gambar_soal_pilgan/' . $drawing->getIndexedFilename());
+										imagepng($image, DIR_ASSETS.'gambar_soal_pilgan/' . $drawing->getIndexedFilename());
 									break;
 								}
-								$nama_gambar[$coordinate[1]] =  $drawing->getIndexedFilename();
+								if($coordinate[0]=="C")$nama_gambar[$coordinate[1]] =  $drawing->getIndexedFilename();
+								if($coordinate[0]=="I")$gambar_a[$coordinate[1]] 	=  $drawing->getIndexedFilename();
+								if($coordinate[0]=="J")$gambar_b[$coordinate[1]] 	=  $drawing->getIndexedFilename();
+								if($coordinate[0]=="K")$gambar_c[$coordinate[1]] 	=  $drawing->getIndexedFilename();
+								if($coordinate[0]=="L")$gambar_d[$coordinate[1]] 	=  $drawing->getIndexedFilename();
+								if($coordinate[0]=="M")$gambar_e[$coordinate[1]] 	=  $drawing->getIndexedFilename();
+
 							}
 					}
-
 					$allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null,true,true,true);
+					//print_r($allDataInSheet);exit;
+					//$arrayCount
 					$arrayCount = count($allDataInSheet);
-					$sql ="INSERT INTO tb_soal_pilgan (id_tq,pertanyaan,gambar,video,audio,pil_a,pil_b,pil_c,pil_d,pil_e,kunci,tgl_buat) VALUES";
+					$sql ="INSERT INTO tb_soal_pilgan (
+												id_tq,
+												pertanyaan,
+												gambar,
+												pil_a,
+												pil_b,
+												pil_c,
+												pil_d,
+												pil_e,
+												gbr_a,
+												gbr_b,
+												gbr_c,
+												gbr_d,
+												gbr_e,
+												kunci,
+												tgl_buat,
+												level_group) VALUES";
+					for($i=4;$i<=$arrayCount;$i++){
+							$pertanyaan  	= trim($allDataInSheet[$i]["B"]);
+							$pilA 			= trim($allDataInSheet[$i]["D"]);
+							$pilB 			= trim($allDataInSheet[$i]["E"]);
+							$pilC 			= trim($allDataInSheet[$i]["F"]);
+							$pilD 			= trim($allDataInSheet[$i]["G"]);
+							$pilE 			= trim($allDataInSheet[$i]["H"]);
+							$kunci 			= trim($allDataInSheet[$i]["N"]);
+							$level_group 	= trim($allDataInSheet[$i]["O"]);
 
-					//get value every row and create sql
-					//echo "<pre>";print_r($allDataInSheet); exit;
-					for($i=2;$i<=$arrayCount;$i++){
-						$pertanyaan  	= trim($allDataInSheet[$i]["B"]);
-						$pilA 			= trim($allDataInSheet[$i]["C"]);
-						$pilB 			= trim($allDataInSheet[$i]["D"]);
-						$pilC 			= trim($allDataInSheet[$i]["E"]);
-						$pilD 			= trim($allDataInSheet[$i]["F"]);
-						$pilE 			= trim($allDataInSheet[$i]["G"]);
-						$kunci 			= trim($allDataInSheet[$i]["H"]);
-						$nama_video 	= trim($allDataInSheet[$i]["J"]);
-						$nama_audio 	= trim($allDataInSheet[$i]["K"]);
 
-						$sql .= " ('$id', '$pertanyaan', '".$nama_gambar[$i]."','$nama_video','$nama_audio', '$pilA', '$pilB', '$pilC', '$pilD', '$pilE', '$kunci', now()),";
+					$sql .= " (
+								'$id', 
+								'$pertanyaan', 
+								'".$nama_gambar[$i]."',
+								'$pilA', 
+								'$pilB', 
+								'$pilC', 
+								'$pilD', 
+								'$pilE', 
+								'".$gambar_a[$i]."',
+								'".$gambar_b[$i]."',
+								'".$gambar_c[$i]."',
+								'".$gambar_d[$i]."',
+								'".$gambar_e[$i]."',
+								'$kunci', 
+								 now(),
+								'$level_group'
+							   ),";
 					}
 					$sql = substr($sql,0,-1);
 					mysqli_query($db,$sql)or die ($db->error); 
-	            	echo '<script>window.location="?page=quiz&action=daftarsoal&hal=pilgan&id='.$id.'"</script>';
+
+	            	if(!$db->error)echo '<script>window.location="?page=quiz&action=daftarsoal&hal=pilgan&id='.$id.'"</script>';
 	        	} 
 	        ?>
 		</div>			            

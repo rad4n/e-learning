@@ -1,20 +1,20 @@
 <?php
-ob_start();
-@session_start();
+//@session_start();
 include "../../+koneksi.php";
+ob_start();
 include "fpdf.php";
 
 $pdf = new FPDF('L','mm','A4');
 $pdf->SetMargins(15,20,15);
 $pdf->AddPage();
 
-$pdf->Image(LOGO_SEKOLAH,15,18,16);
+$pdf->Image('../../../img/a.png',15,18,16);
 
 $pdf->SetFont('Arial','B',18);
-$pdf->Cell(0,5,NAMA_SEKOLAH,'0','1','C',false);
+$pdf->Cell(0,5,'Genius PLoes','0','1','C',false);
 $pdf->SetFont('Arial','i',8);
-$pdf->Cell(0,5,'Alamat : '.ALAMAT_SEKOLAH,'0','1','C',false);
-$pdf->Cell(0,2,'Telp : '.TELP_SEKOLAH.' - Email : '.EMAIL_SEKOLAH,'0','1','C',false);
+$pdf->Cell(0,5,'Alamat : Jln. Sumur Batu Raya, Jakarta, Indonesia','0','1','C',false);
+$pdf->Cell(0,2,'Telp : (021) 424 6832 - Email : admin@geniusploes.com','0','1','C',false);
 $pdf->Ln(3);
 $pdf->Cell(265,0.6,'','0','1','C',true);
 $pdf->Ln(5);
@@ -146,7 +146,7 @@ if(@$_GET['data'] == "pengajar") {
 	}
 } else if(@$_GET['data'] == "kelas") {
 	$pdf->SetFont('Arial','B',11);
-	$pdf->Cell(50,5,'Laporan Daftar Kelas, Letak Ruang, Wali dan Ketua Masing-masing Kelas di '.NAMA_SEKOLAH,'0','1','L',false);
+	$pdf->Cell(50,5,'Laporan Daftar Kelas, Letak Ruang, Wali dan Ketua Masing-masing Kelas di Genius PLoes Indonesia','0','1','L',false);
 	$pdf->Ln(3);
 
 	$pdf->SetFont('Arial','B',8);
@@ -338,7 +338,7 @@ if(@$_GET['data'] == "pengajar") {
         			$nilai_essay = "belum dikoreksi";
         		}
             } else {
-                echo "Ujian ini tidak ada soal essay";
+                $nilai_essay = "Ujian ini tidak ada soal essay";
             }
             if(is_numeric($nilai_essay)) {
             	$total = ". Nilai total : [".($data_pilgan['presentase'] + $data_essay['nilai']) / 2 ."]";
@@ -352,7 +352,8 @@ if(@$_GET['data'] == "pengajar") {
 $pdf->Ln(50);
 $pdf->SetLeftMargin(230);
 $pdf->SetFont('Arial','',10);
-$pdf->Cell(0,0,KOTA_SEKOLAH.", ".tgl_indo(date('Y-m-d')),0,0,'L');
+//$pdf->Cell(0,0,"Banjarmasin, ".tgl_indo(date('Y-m-d')),0,0,'L');
 ob_end_clean();
 $pdf->Output();
+ob_end_flush(); 
 ?>

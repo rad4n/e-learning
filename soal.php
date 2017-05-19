@@ -198,7 +198,6 @@ if(@$_SESSION['siswa']) { ?>
                         $jawaban = $soal_sudah["jawaban"];
                         $n++;
                     }
-                    //print_r($no_sudah); exit();
                     if(!empty($no_sudah)){
                         if(isset($_GET['revisi_soal'])){
                         $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' AND id_pilgan='".$_GET['revisi_soal']."' limit 1 ") or die ($db->error);
@@ -229,7 +228,7 @@ if(@$_SESSION['siswa']) { ?>
                                                 <tr>
                                                     <td></td>
                                                     <td>
-                                                        <img width="220px" src="admin/img/gambar_soal_pilgan/<?php echo $data_soal_pilgan['gambar']; ?>" />
+                                                        <img width="220px" src="<?=DIR_ASSETS?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gambar']; ?>" />
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -355,7 +354,7 @@ if(@$_SESSION['siswa']) { ?>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                &copy; 2015 E-Learing SMA Negeri 114 Jakarta | By : Kerendi Developers
+                &copy; <?=date('Y');?> CBT Software | By : <?=COMPANY;?>
             </div>
 
         </div>

@@ -69,9 +69,26 @@ if(@$_SESSION['admin']) {
     <?php
     } else if(@$_GET['action'] == 'aktifkan') {
         mysqli_query($db, "UPDATE tb_siswa SET status = 'aktif' WHERE id_siswa = '$id'") or die ($db->error);
-        echo "<script>window.location='?page=siswaregistrasi';</script>";
+        $r = mysqli_query($db,"SELECT * from tb_siswa WHERE id_siswa = '$id'");
+        $d = mysqli_fetch_array($r,MYSQLI_ASSOC);
+        
+        //kirim email
+        $to = $d['email'];
+        $subject = "Akun Genius Ploes Anda sudah Aktif";
+        $message = "Akun Genius Ploes Anda sudah Aktif, silahkan login dengan user dan password yang telah didaftarkan sebelumnya<br>";
+        $headers = "From: admin@geniusploes.com" . "\r\n";
+        $headers .= "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+        $mail = mail($to,$subject,$message,$headers);
+        if($mail) echo "<script>window.location='?page=siswaregistrasi';</script>";
     } else if(@$_GET['action'] == 'hapus') {
-        mysqli_query($db, "DELETE FROM tb_siswa WHERE id_siswa = '$id'") or die ($db->error);
+        $data = mysqli_query($db, "SELECT * FROM tb_siswa WHERE id_siswa = '$id'") or die ($db->error);
+        $d = mysqli_fetch_array($data,MYSQLI_ASSOC);
+        $r = mysqli_query($db, "DELETE FROM tb_siswa WHERE id_siswa = '$id'") or die ($db->error);
+        if($r AND !empty($d['foto'])){
+            unlink(DIR_FOTO_SISWA.$d['foto']);
+        }
         echo "<script>window.location='?page=siswaregistrasi';</script>";
     }
 
