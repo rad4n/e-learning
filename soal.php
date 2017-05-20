@@ -130,7 +130,8 @@ if(@$_SESSION['siswa']) { ?>
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="./">
-                <img src="style/assets/img/logo.png" />
+                <h4 style="color: white;"><?=NAMA_SEKOLAH;?></h4>
+                    <h5 style="color: white;"><?=ALAMAT_SEKOLAH;?></h5>
             </a>
         </div>
 

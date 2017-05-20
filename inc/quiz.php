@@ -35,7 +35,7 @@ if(@$_GET['action'] == '') { ?>
 	                                <td width="40px" align="center"><?php echo $no++; ?></td>
 	                                <td><?php echo $data_mapel['mapel']; ?></td>
 	                                <td width="200px" align="center">
-	                                	<a href="?page=quiz&action=daftartopik&id_mapel=<?php echo $data_mapel['id']; ?>" class="btn btn-primary btn-xs">Lihat Quiz</a>
+	                                	<a href="?page=quiz&action=daftartopik&id_mapel=<?php echo $data_mapel['id']; ?>" class="btn btn-primary btn-xs">Lihat Soal</a>
 	                                </td>
 	                            </tr>
 	                        	<?php

@@ -31,7 +31,8 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="./">
-                    <img src="<?=LOGO_SEKOLAH;?>" style="width: 100px"/>
+                   <h4 style="color: white;"><?=NAMA_SEKOLAH;?></h4>
+                    <h5 style="color: white;"><?=ALAMAT_SEKOLAH;?></h5>
                 </a>
 
             </div>

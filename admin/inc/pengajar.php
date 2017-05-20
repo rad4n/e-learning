@@ -223,7 +223,7 @@ if(@$_SESSION['admin']) { ?>
                         </div>
                         <div class="form-group">
                             <label>Website</label>
-                            <input type="url" name="web" class="form-control" placeholder="Ex. http://yukcoding.blogspot.com" />
+                            <input type="url" name="web" class="form-control" />
                         </div>
                         <div class="form-group">
                             <label>Username *</label>
@@ -266,8 +266,8 @@ if(@$_SESSION['admin']) { ?>
 		$status = @mysqli_real_escape_string($db, $_POST['status']);
 
 		$sumber = @$_FILES['gambar']['tmp_name'];
-		$target = 'img/foto_pengajar/';
-		$nama_gambar = @$_FILES['gambar']['name'];
+		$target = DIR_ASSETS.'img/foto_pengajar/';
+		$nama_gambar = md5($_POST['username'].@$_FILES['gambar']['name']).'.'.pathinfo($_FILES['gambar']['name'], PATHINFO_EXTENSION);
 
 		if($nama_gambar != '') {
 			if(move_uploaded_file($sumber, $target.$nama_gambar)) {

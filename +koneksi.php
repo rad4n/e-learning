@@ -2,12 +2,12 @@
 $GLOBALS['db']= mysqli_connect("localhost", "root", "", "elearning");
 $db = mysqli_connect("localhost", "root", "", "elearning");
 
-if($_SERVER['SERVER_NAME']!="localhost")define('base_url',"https://".$_SERVER['HTTP_HOST']);
+if($_SERVER['SERVER_NAME']!="localhost")define('base_url',"https://".$_SERVER['HTTP_HOST'].'/');
 else define('base_url',"http://".$_SERVER['HTTP_HOST']."/e-learning/");
 
 
 define("NAMA_SEKOLAH", "SMA NEGERI 41 JAKARTA");
-define("ALAMAT_SEKOLAH", "Jln. RE Artadinata Jakarta");
+define("ALAMAT_SEKOLAH", "Jln. Laks R.E Artadinata Jakarta");
 define("TELP_SEKOLAH", "(xxx) xxxxxx");
 define("EMAIL_SEKOLAH", "admin@sman114.sch.id");
 define("KOTA_SEKOLAH", "Jakarta");
@@ -16,8 +16,8 @@ define('DIR_ASSETS', $_SERVER["DOCUMENT_ROOT"].'/e-learning/assets/');
 define('DIR_FOTO_SISWA',DIR_ASSETS.'img/foto_siswa/');
 define('URL_FOTO_SISWA',base_url.'assets/img/foto_siswa/');
 define('URL_ASSETS',base_url.'assets/');
-define("LOGO_SEKOLAH", URL_ASSETS."img/logo.jpg");
-
+#define("LOGO_SEKOLAH", URL_ASSETS."img/logo.jpg");
+define("LOGO_SEKOLAH", "SMA NEGERI 41");
 
 // //---fungsi2---//
 // function cek_session($isi_admin, $isi_pengajar) {

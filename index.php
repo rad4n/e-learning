@@ -46,7 +46,8 @@ $data_terlogin = mysqli_fetch_array($sql_terlogin);
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="./">
-                     <img src="<?=LOGO_SEKOLAH;?>" style="width: 100px"/>
+                     <h4 style="color: white;"><?=NAMA_SEKOLAH;?></h4>
+                    <h5 style="color: white;"><?=ALAMAT_SEKOLAH;?></h5>
                 </a>
 
             </div>
@@ -91,7 +92,7 @@ $data_terlogin = mysqli_fetch_array($sql_terlogin);
                             <li><a <?php if(@$_GET['page'] == 'quiz') { echo 'class="menu-top-active"'; } ?> href="?page=quiz">Ulangan</a></li>
                            <!--  <li><a <?php if(@$_GET['page'] == 'nilai') { echo 'class="menu-top-active"'; } ?> href="?page=nilai">Nilai</a></li> -->
                             <li><a <?php if(@$_GET['page'] == 'materi') { echo 'class="menu-top-active"'; } ?> href="?page=materi">Materi</a></li>
-                            <li><a <?php if(@$_GET['page'] == 'berita') { echo 'class="menu-top-active"'; } ?> href="?page=berita">Berita</a></li>
+                            <li><a <?php if(@$_GET['page'] == 'berita') { echo 'class="menu-top-active"'; } ?> href="?page=berita">Jadwal CBT</a></li>
                         </ul>
                     </div>
                 </div>

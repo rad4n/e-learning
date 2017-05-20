@@ -160,7 +160,7 @@ function tampil_per_ID($table, $where = null) {
                         <a class="<?php if(@$_GET['page'] == 'mapel') { echo 'active-menu'; } ?>" href="?page=mapel"><i class="fa fa-fw fa-file"></i> Mata Pelajaran</a>
                     </li>
                     <li>
-                        <a class="<?php if(@$_GET['page'] == 'quiz') { echo 'active-menu'; } ?>" href="?page=quiz"><i class="fa fa-bar-chart-o"></i> Manajemen Tugas / Quiz</a>
+                        <a class="<?php if(@$_GET['page'] == 'quiz') { echo 'active-menu'; } ?>" href="?page=quiz"><i class="fa fa-bar-chart-o"></i> Manajemen Soal</a>
                     </li>
                     <li>
                         <a class="<?php if(@$_GET['page'] == 'materi') { echo 'active-menu'; } ?>" href="?page=materi"><i class="fa fa-qrcode"></i> Materi</a>
