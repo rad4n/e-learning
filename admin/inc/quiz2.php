@@ -1,6 +1,4 @@
 <?php include "../../+koneksi.php";
-
-// $db = mysqli_connect("localhost", "root", "", "db_elearning");
     include "PHPExcel.php";
     include "PHPExcel/Cell.php";
     include "PHPExcel/Calculation.php";
@@ -100,15 +98,14 @@
       }
     }
     else{
-      $jawab = mysqli_query($db,"SELECT tb_jawaban_pilgan_temp.jawaban,
-                                      tb_jawaban_pilgan_temp.id_soal,
+      $jawab = mysqli_query($db,"SELECT tb_nilai_pilgan.uraian,
                                       tb_siswa.nama_lengkap,
                                       tb_siswa.nis,
                                       tb_kelas.nama_kelas
-                               FROM tb_jawaban_pilgan_temp 
-                               LEFT JOIN tb_siswa ON tb_siswa.id_siswa = tb_jawaban_pilgan_temp.id_peserta
+                               FROM tb_nilai_pilgan 
+                               LEFT JOIN tb_siswa ON tb_siswa.id_siswa = tb_nilai_pilgan.id_siswa
                                LEFT JOIN tb_kelas ON tb_kelas.id_kelas = tb_siswa.id_kelas
-                               WHERE tb_jawaban_pilgan_temp.id_peserta='$_GET[id_siswa]'
+                               WHERE tb_nilai_pilgan.id_siswa='$_GET[id_siswa]'
                                AND  id_tq = '$_GET[id_tq]'");
 
             $r = mysqli_fetch_assoc($jawab);
@@ -124,29 +121,43 @@
 
           $excelku->setActiveSheetIndex(0)->setCellValue("D4","Skor");
           
-          $jawab = mysqli_query($db,"SELECT tb_jawaban_pilgan_temp.jawaban,
-                                            tb_jawaban_pilgan_temp.id_soal,
+          $jawab = mysqli_query($db,"SELECT tb_nilai_pilgan.uraian,
                                             tb_siswa.nama_lengkap,
                                             tb_siswa.nis,
                                             tb_kelas.nama_kelas
-                                     FROM tb_jawaban_pilgan_temp 
-                                     LEFT JOIN tb_siswa ON tb_siswa.id_siswa = tb_jawaban_pilgan_temp.id_peserta
+                                     FROM tb_nilai_pilgan 
+                                     LEFT JOIN tb_siswa ON tb_siswa.id_siswa = tb_nilai_pilgan.id_siswa
                                      LEFT JOIN tb_kelas ON tb_kelas.id_kelas = tb_siswa.id_kelas
-                                     WHERE tb_jawaban_pilgan_temp.id_peserta='$_GET[id_siswa]'
+                                     WHERE tb_nilai_pilgan.id_siswa='$_GET[id_siswa]'
                                      AND  id_tq = '$_GET[id_tq]'");
-          while($r = mysqli_fetch_assoc($jawab)){
-            $cek = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_pilgan = '".$r['id_soal']."'") or die ($db->error);
+
+           $rr=mysqli_fetch_array($jawab,MYSQLI_ASSOC);
+           $rr1 = json_decode($rr['uraian']);
+            $rr2 = json_decode($rr['uraian'], true);
+
+          foreach ($rr2 as $key => $r) {
+            //print_r($r); exit;
+            $cek = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_pilgan = '".$r['id']."'") or die ($db->error);
             while($c = mysqli_fetch_array($cek)) {
                     $jawaban = $c['kunci'];
                 }
-            if($r['jawaban']==$jawaban) $h = 1;
-            else $h=0;
+
              
              $excelku->setActiveSheetIndex(0)->setCellValue($n."3",$no);
             // $excelku->setActiveSheetIndex(0)->setCellValue($n."4",$r['jawaban']);
-             $excelku->setActiveSheetIndex(0)->setCellValue($n."4",$h);
+             $excelku->setActiveSheetIndex(0)->setCellValue($n."4",$r['j']);
              $excelku->getActiveSheet()->getColumnDimension($n)->setWidth(5);
+             if($r['j']!=$jawaban){ $h = "B";// print_r('expressio'); exit;
+           
 
+             $excelku->getActiveSheet()
+                    ->getStyle($n."4")
+                    ->getFill()
+                    ->setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+                    ->getStartColor()
+                    ->setARGB('#FF0000');
+
+            }
 
              ++$n;
              $no++;

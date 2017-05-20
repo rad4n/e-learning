@@ -5,7 +5,7 @@ $no = 1;
 if(@$_GET['action'] != 'kerjakansoal') { ?>
 <div class="row">
     <div class="col-md-12">
-        <h4 class="page-head-line">Tugas / Quiz</h4>
+        <h4 class="page-head-line">Ulangan</h4>
     </div>
 </div>
 <?php
@@ -16,7 +16,7 @@ if(@$_GET['action'] == '') { ?>
 	<div class="row">
 	    <div class="col-md-12">
 	        <div class="panel panel-default">
-	            <div class="panel-heading">Data Tugas / Quiz Setiap Mata Pelajaran</div>
+	            <div class="panel-heading">Data ulangan Setiap Mata Pelajaran</div>
 	            <div class="panel-body">
 	                <div class="table-responsive">
 	                    <table class="table table-striped table-bordered table-hover">
@@ -118,7 +118,7 @@ if(@$_GET['action'] == '') { ?>
 						<?php
 						}
 					} else { ?>
-						<div class="alert alert-danger">Data quiz yang berada di kelas ini dengan mapel tersebut tidak ada</div>
+						<div class="alert alert-danger">Data ulangan yang berada di kelas ini dengan mapel tersebut tidak ada</div>
 						<?php
 					} ?>
 					</div>
@@ -131,18 +131,18 @@ if(@$_GET['action'] == '') { ?>
 	<div class="row">
 	    <div class="col-md-12">
 	        <div class="panel panel-default">
-	            <div class="panel-heading">Informasi Tugas / Quiz</div>
+	            <div class="panel-heading">Informasi</div>
 	            <div class="panel-body">
 	            <?php
 	            $sql_nilai = mysqli_query($db, "SELECT * FROM tb_nilai_pilgan WHERE id_tq = '$_GET[id_tq]' AND id_siswa = '$_SESSION[siswa]'") or die ($db->error);
 	            $sql_jwb = mysqli_query($db, "SELECT * FROM tb_jawaban WHERE id_tq = '$_GET[id_tq]' AND id_siswa = '$_SESSION[siswa]'") or die ($db->error);
 	            if(mysqli_num_rows($sql_nilai) > 0 || mysqli_num_rows($sql_jwb) > 0) {
-	            	echo "Anda sudah mengerjakan ujian / test ini";
+	            	echo "Anda sudah mengerjakan soal ini dan nilai sudah terkirim";
 	            } else { ?>
-					1. Baca dengan seksama dan teliti sebelum mengerjakan Tugas / Quiz.<br />
-					2. Pastikan koneksi anda terjamin dan bagus.<br />
-					3. Pilih browser yang versi terbaru.<br />
-					4. Jika mati lampu hubungi pengajar mata pelajaran terkait untuk melakukan jian ulang.
+					1. Pastikan Anda sudah berada di wifi yang sudah ditentukan dan jangan berpindah wifi.<br />
+					2. Pilih browser yang versi terbaru.<br />
+					3. Baca dengan seksama dan teliti sebelum mengerjakan soal.<br />
+					4. Jika terjadi mati lampu atau terputus koneksi wifi hubungi admin/proktor mata pelajaran terkait untuk melakukan ujian ulang.
 					<?php
 				} ?>
 	            </div>

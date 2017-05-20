@@ -153,18 +153,19 @@ if(@$_SESSION['siswa']) { ?>
     <div class="container">
 		<div class="row">
 		    <div class="col-md-12">
-		        <h4 class="page-head-line">Test : <u><?php echo $data_tq['judul']; ?></u><br />Mapel : <u><?php echo $data_tq['mapel']; ?></u></h4>
+		        <h4 class="page-head-line">Penilaian : <?php echo $data_tq['judul']; ?> <span style="float: right;">Mapel : <?php echo $data_tq['mapel']; ?></span></h4>
 		    </div>
+             <div class="panel panel-default">
+                    <div class="panel-heading"><b style="text-align: center; display:block; color: red; font-size: 16px;">Info <small>(Sisa waktu Anda)</small></b></div>
+                    <div class="panel-body">
+                        <h3 align="center"><span id="divwaktu"></span></h3>
+                    </div>
+                </div>
 		</div>
 
 		<div class="row">
-			<div class="col-md-4">
-		        <div class="panel panel-default">
-		            <div class="panel-heading"><b>Info <small>(Sisa waktu Anda)</small></b></div>
-		            <div class="panel-body">
-			            <h3 align="center"><span id="divwaktu"></span></h3>
-		            </div>
-		        </div>
+			<div class="col-md-2">
+		       
                 <?php $sql_soal_sudah_jawab = mysqli_query($db, "SELECT 
                     tb_jawaban_pilgan_temp.id_soal,
                     tb_jawaban_pilgan_temp.jawaban
@@ -175,7 +176,7 @@ if(@$_SESSION['siswa']) { ?>
                     if($soal_sudah_jawab>0) { 
                 ?>
                 <div class="panel panel-default">
-                    <div class="panel-heading"><b>Jawaban Soal sebelumnya</small></b></div>
+                    <div class="panel-heading"><b>Butir Soal</small></b></div>
                     <div class="panel-body">
                         <div class="list-group">
                             <?php $no=1; foreach($sql_soal_sudah_jawab as $soal){?>
@@ -187,7 +188,7 @@ if(@$_SESSION['siswa']) { ?>
                 <?php }?>
 		    </div>
 
-		    <div class="col-md-8">
+		    <div class="col-md-10">
 		    	<form action="inc/proses_soal.php" method="post">
 					<?php
                     $sql_soal_sudah = mysqli_query($db, "SELECT id_soal,jawaban FROM tb_jawaban_pilgan_temp WHERE id_peserta = '".$_SESSION['siswa']."' AND id_tq = '{$id_tq}'") or die ($db->error);

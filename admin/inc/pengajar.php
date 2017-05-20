@@ -207,7 +207,7 @@ if(@$_SESSION['admin']) { ?>
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" name="email" class="form-control" placeholder="Ex. codingyuk@gmail.com" />
+                            <input type="text" name="email" class="form-control" />
                         </div>
                         <div class="form-group">
                             <label>Alamat *</label>
@@ -223,7 +223,7 @@ if(@$_SESSION['admin']) { ?>
                         </div>
                         <div class="form-group">
                             <label>Website</label>
-                            <input type="url" name="web" class="form-control" />
+                            <input type="text" name="web" class="form-control" />
                         </div>
                         <div class="form-group">
                             <label>Username *</label>
@@ -269,17 +269,17 @@ if(@$_SESSION['admin']) { ?>
 		$target = DIR_ASSETS.'img/foto_pengajar/';
 		$nama_gambar = md5($_POST['username'].@$_FILES['gambar']['name']).'.'.pathinfo($_FILES['gambar']['name'], PATHINFO_EXTENSION);
 
-		if($nama_gambar != '') {
-			if(move_uploaded_file($sumber, $target.$nama_gambar)) {
-				mysqli_query($db, "INSERT INTO tb_pengajar VALUES('', '$nip', '$nama_lengkap', '$tempat_lahir', '$tgl_lahir', '$jenis_kelamin', '$agama', '$no_telp', '$email', '$alamat', '$jabatan', '$nama_gambar', '$web', '$username', md5('$password'), '$password', '$status')") or die ($db->error);
-				echo '<script>window.location="?page=pengajar";</script>';
-			} else {
-				echo '<script>alert("Gagal menambah data pengajar, foto gagal diupload, coba lagi!"); window.location="?page=pengajar";</script>';
-			}
-		} else {
+		// if($nama_gambar != '') {
+		// 	if(move_uploaded_file($sumber, $target.$nama_gambar)) {
+		// 		mysqli_query($db, "INSERT INTO tb_pengajar VALUES('', '$nip', '$nama_lengkap', '$tempat_lahir', '$tgl_lahir', '$jenis_kelamin', '$agama', '$no_telp', '$email', '$alamat', '$jabatan', '$nama_gambar', '$web', '$username', md5('$password'), '$password', '$status')") or die ($db->error);
+		// 		echo '<script>window.location="?page=pengajar";</script>';
+		// 	} else {
+		// 		echo '<script>alert("Gagal menambah data pengajar, foto gagal diupload, coba lagi!"); window.location="?page=pengajar";</script>';
+		// 	}
+		// } else {
 			mysqli_query($db, "INSERT INTO tb_pengajar VALUES('', '$nip', '$nama_lengkap', '$tempat_lahir', '$tgl_lahir', '$jenis_kelamin', '$agama', '$no_telp', '$email', '$alamat', '$jabatan', 'anonim.png', '$web', '$username', md5('$password'), '$password', '$status')") or die ($db->error);
 			echo '<script>window.location="?page=pengajar";</script>';
-		}
+		//}
 	} else if(@$_GET['action'] == 'edit') {
 		?>
 		<div class="col-md-6">

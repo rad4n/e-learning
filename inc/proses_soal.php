@@ -50,12 +50,17 @@ $uri = explode("/",$_SERVER['REQUEST_URI']);
           }else {
               $salah++;
           }
+           $json_pre[] = array(
+              'id' => $key['id_soal'],
+              'j' => $key['jawaban']
+          );
       }
+      $json = json_encode($json_pre);
       $jumlah1 = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq'") or die ($db->error);
       $jumlah = mysqli_num_rows($jumlah1);
       $persen = $benar / $jumlah;
       $hasil = $persen * 100;
-      $masuk_tbl_nilai = mysqli_query($db, "INSERT INTO tb_nilai_pilgan VALUES('', '$id_tq', '$_SESSION[siswa]', '$benar', '$salah', '$tidakjawab', '$hasil')") or die ($db->error);
+      $masuk_tbl_nilai = mysqli_query($db, "INSERT INTO tb_nilai_pilgan VALUES('', '$id_tq', '$_SESSION[siswa]', '$benar', '$salah', '$tidakjawab', '$hasil','$json')") or die ($db->error);
       if($masuk_tbl_nilai){
         mysqli_query($db, "DELETE FROM tb_jawaban_pilgan_temp WHERE id_peserta='$_SESSION[siswa]'") or die ($db->error);
         echo "<script>window.location='./../?page=quiz&action=infokerjakan&id_tq=".$id_tq."';</script>";

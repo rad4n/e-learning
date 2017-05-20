@@ -2,8 +2,10 @@
 $GLOBALS['db']= mysqli_connect("localhost", "root", "", "elearning");
 $db = mysqli_connect("localhost", "root", "", "elearning");
 
-if($_SERVER['SERVER_NAME']!="localhost")define('base_url',"https://".$_SERVER['HTTP_HOST'].'/');
-else define('base_url',"http://".$_SERVER['HTTP_HOST']."/e-learning/");
+dirname("/usr/local/lib", 2);
+
+if($_SERVER['SERVER_NAME']!="localhost"){define('base_url',"http://".$_SERVER['HTTP_HOST'].'/'); define('URL_ASSETS',base_url.'e-learning/assets/'); }
+else {define('base_url',"http://".$_SERVER['HTTP_HOST']."/e-learning/"); define('URL_ASSETS',base_url.'assets/'); }
 
 
 define("NAMA_SEKOLAH", "SMA NEGERI 41 JAKARTA");
@@ -15,7 +17,7 @@ define("COMPANY", "Niqsy Media");
 define('DIR_ASSETS', $_SERVER["DOCUMENT_ROOT"].'/e-learning/assets/');
 define('DIR_FOTO_SISWA',DIR_ASSETS.'img/foto_siswa/');
 define('URL_FOTO_SISWA',base_url.'assets/img/foto_siswa/');
-define('URL_ASSETS',base_url.'assets/');
+
 #define("LOGO_SEKOLAH", URL_ASSETS."img/logo.jpg");
 define("LOGO_SEKOLAH", "SMA NEGERI 41");
 
