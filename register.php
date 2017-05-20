@@ -31,7 +31,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="./">
-                    <img src="style/assets/img/logo.png" />
+                    <img src="<?=LOGO_SEKOLAH;?>" style="width: 100px"/>
                 </a>
 
             </div>

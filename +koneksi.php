@@ -6,9 +6,8 @@ if($_SERVER['SERVER_NAME']!="localhost")define('base_url',"https://".$_SERVER['H
 else define('base_url',"http://".$_SERVER['HTTP_HOST']."/e-learning/");
 
 
-define("NAMA_SEKOLAH", "SMA NEGERI 114 JAKARTA");
-define("ALAMAT_SEKOLAH", "Jln. Pedongkelan No. 24, Cilincing, Jakarta");
-define("LOGO_SEKOLAH", "../../style/assets/img/logo2.png");
+define("NAMA_SEKOLAH", "SMA NEGERI 41 JAKARTA");
+define("ALAMAT_SEKOLAH", "Jln. RE Artadinata Jakarta");
 define("TELP_SEKOLAH", "(xxx) xxxxxx");
 define("EMAIL_SEKOLAH", "admin@sman114.sch.id");
 define("KOTA_SEKOLAH", "Jakarta");
@@ -17,6 +16,7 @@ define('DIR_ASSETS', $_SERVER["DOCUMENT_ROOT"].'/e-learning/assets/');
 define('DIR_FOTO_SISWA',DIR_ASSETS.'img/foto_siswa/');
 define('URL_FOTO_SISWA',base_url.'assets/img/foto_siswa/');
 define('URL_ASSETS',base_url.'assets/');
+define("LOGO_SEKOLAH", URL_ASSETS."img/logo.jpg");
 
 
 // //---fungsi2---//
