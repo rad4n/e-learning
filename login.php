@@ -31,7 +31,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="./">
-                    <img src="style/assets/img/logo.png" />
+                    <img src="<?=LOGO_SEKOLAH;?>" />
                 </a>
 
             </div>
@@ -80,7 +80,8 @@
                         if(@$_POST['login']) {
                             $user = @mysqli_real_escape_string($db, $_POST['user']);
                             $pass = @mysqli_real_escape_string($db, $_POST['pass']);
-                            $sql = mysqli_query($db, "SELECT * FROM tb_siswa WHERE username = '$user' AND password = md5('$pass')") or die ($db->error);
+                            
+                            $sql = mysqli_query($db, "SELECT * FROM tb_siswa WHERE username = '$user' AND password = '".md5($pass)."'") or die ($db->error);
                             $data = mysqli_fetch_array($sql);
                             if(mysqli_num_rows($sql) > 0) {
                                 if($data['status'] == 'aktif') {

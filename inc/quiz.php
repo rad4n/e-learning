@@ -137,7 +137,7 @@ if(@$_GET['action'] == '') { ?>
 	            $sql_nilai = mysqli_query($db, "SELECT * FROM tb_nilai_pilgan WHERE id_tq = '$_GET[id_tq]' AND id_siswa = '$_SESSION[siswa]'") or die ($db->error);
 	            $sql_jwb = mysqli_query($db, "SELECT * FROM tb_jawaban WHERE id_tq = '$_GET[id_tq]' AND id_siswa = '$_SESSION[siswa]'") or die ($db->error);
 	            if(mysqli_num_rows($sql_nilai) > 0 || mysqli_num_rows($sql_jwb) > 0) {
-	            	echo "Anda sudah mengerjakan ujian / test ini, silahkan lihat nilai Anda di halaman nilai.";
+	            	echo "Anda sudah mengerjakan ujian / test ini";
 	            } else { ?>
 					1. Baca dengan seksama dan teliti sebelum mengerjakan Tugas / Quiz.<br />
 					2. Pastikan koneksi anda terjamin dan bagus.<br />

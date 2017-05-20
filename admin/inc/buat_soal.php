@@ -52,7 +52,7 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 					</div>
 					<div class="col-md-10">
 						<div class="form-group">
-							<textarea name="pertanyaan" class="form-control incTiny" rows="2" required></textarea>
+							<textarea name="pertanyaan" class="form-control incTiny" rows="2"></textarea>
 						</div>
 					</div>
 
@@ -88,7 +88,7 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 					</div>
 					<div class="col-md-10">
 						<div class="form-group">
-							<textarea name="pilA" class="form-control incTiny" rows="1" required></textarea>
+							<textarea name="pilA" class="form-control incTiny" rows="1"></textarea>
 						</div>
 						<div class="form-group">
 							<input type="file" name="gambar_a" class="form-control" />
@@ -99,7 +99,7 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 					</div>
 					<div class="col-md-10">
 						<div class="form-group">
-							<textarea name="pilB" class="form-control incTiny" rows="1" required></textarea>
+							<textarea name="pilB" class="form-control incTiny" rows="1"></textarea>
 						</div>
 						<div class="form-group">
 							<input type="file" name="gambar_b" class="form-control" />
@@ -110,7 +110,7 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 					</div>
 					<div class="col-md-10">
 						<div class="form-group">
-							<textarea name="pilC" class="form-control incTiny" rows="1" required></textarea>
+							<textarea name="pilC" class="form-control incTiny" rows="1"></textarea>
 						</div>
 						<div class="form-group">
 							<input type="file" name="gambar_c" class="form-control" />
@@ -121,7 +121,7 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 					</div>
 					<div class="col-md-10">
 						<div class="form-group">
-							<textarea name="pilD" class="form-control incTiny" rows="1" required></textarea>
+							<textarea name="pilD" class="form-control incTiny" rows="1"></textarea>
 						</div>
 						<div class="form-group">
 							<input type="file" name="gambar_d" class="form-control" />
@@ -132,7 +132,7 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 					</div>
 					<div class="col-md-10">
 						<div class="form-group">
-							<textarea name="pilE" class="form-control incTiny" rows="1" required></textarea>
+							<textarea name="pilE" class="form-control incTiny" rows="1"></textarea>
 						</div>
 						<div class="form-group">
 							<input type="file" name="gambar_e" class="form-control" />
@@ -177,38 +177,38 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 	            	$kunci = @mysqli_real_escape_string($db, $_POST['kunci']);
 
 	            	$sumber = @$_FILES['gambar']['tmp_name'];
-                    $target = 'img/gambar_soal_pilgan/';
-                    $nama_gambar = @$_FILES['gambar']['name'];
+                    $target = DIR_ASSETS.'gambar_soal_pilgan/';
+                    $nama_gambar = md5($id.$level_group.@$_FILES['gambar']['name']).'.'.pathinfo($_FILES['gambar']['name'], PATHINFO_EXTENSION);
 
                     $sumber2 = @$_FILES['video']['tmp_name'];
-                    $target2 = 'img/video_soal_pilgan/';
-                    $nama_video = @$_FILES['video']['name'];
+                    $target2 = DIR_ASSETS.'video_soal_pilgan/';
+                    $nama_video = md5($id.$level_group.@$_FILES['video']['name']).'.'.pathinfo($_FILES['video']['name'], PATHINFO_EXTENSION);
 
                     $sumber3 = @$_FILES['audio']['tmp_name'];
-                    $target3 = 'img/audio_soal_pilgan/';
-                    $nama_audio = @$_FILES['audio']['name'];
+                    $target3 = DIR_ASSETS.'audio_soal_pilgan/';
+                    $nama_audio = md5($id.$level_group.@$_FILES['audio']['name']).'.'.pathinfo($_FILES['audio']['name'], PATHINFO_EXTENSION);
 
                     #####gambar pilihan soal
 
                     $sumber4 = @$_FILES['gambar_a']['tmp_name'];
-                    $target4 = 'img/gambar_soal_pilgan/';
-                    $nama_gambar_a = @$_FILES['gambar_a']['name'];
+                    $target4 = DIR_ASSETS.'gambar_soal_pilgan/';
+                    $nama_gambar_a = md5($id.$level_group.@$_FILES['gambar_a']['name']).'.'.pathinfo($_FILES['gambar_a']['name'], PATHINFO_EXTENSION);
 
                     $sumber5 = @$_FILES['gambar_b']['tmp_name'];
-                    $target5 = 'img/gambar_soal_pilgan/';
-                    $nama_gambar_b = @$_FILES['gambar_b']['name'];
+                    $target5 = DIR_ASSETS.'gambar_soal_pilgan/';
+                    $nama_gambar_b = md5($id.$level_group.@$_FILES['gambar_b']['name']).'.'.pathinfo($_FILES['gambar_b']['name'], PATHINFO_EXTENSION);
 
                     $sumber6 = @$_FILES['gambar_c']['tmp_name'];
-                    $target6 = 'img/gambar_soal_pilgan/';
-                    $nama_gambar_c = @$_FILES['gambar_c']['name'];
+                    $target6 = DIR_ASSETS.'gambar_soal_pilgan/';
+                    $nama_gambar_c = md5($id.$level_group.@$_FILES['gambar_c']['name']).'.'.pathinfo($_FILES['gambar_c']['name'], PATHINFO_EXTENSION);
 
                     $sumber7 = @$_FILES['gambar_d']['tmp_name'];
-                    $target7 = 'img/gambar_soal_pilgan/';
-                    $nama_gambar_d = @$_FILES['gambar_d']['name'];
+                    $target7 = DIR_ASSETS.'gambar_soal_pilgan/';
+                    $nama_gambar_d = md5($id.$level_group.@$_FILES['gambar_d']['name']).'.'.pathinfo($_FILES['gambar_d']['name'], PATHINFO_EXTENSION);
 
                     $sumber8 = @$_FILES['gambar_e']['tmp_name'];
-                    $target8 = 'img/gambar_soal_pilgan/';
-                    $nama_gambar_e = @$_FILES['gambar_e']['name'];
+                    $target8 = DIR_ASSETS.'gambar_soal_pilgan/';
+                    $nama_gambar_e = md5($id.$level_group.@$_FILES['gambar_e']['name']).'.'.pathinfo($_FILES['gambar_e']['name'], PATHINFO_EXTENSION);
 
                     move_uploaded_file($sumber, $target.$nama_gambar);
                     move_uploaded_file($sumber2, $target2.$nama_video);

@@ -13,7 +13,7 @@ if(@$_GET['hal'] == '') { ?>
         <div class="col-md-12">
             <div class="alert alert-success">
                 Hai, <?php echo $data_terlogin['nama_lengkap']; ?>.<br />
-                Selamat datang di e-learning SMK Indonesia.<br />
+                Selamat datang di e-learning <?=NAMA_SEKOLAH;?><br />
                 Silahkan pilih menu sesuai kebutuhan Anda, jika ada yang kurang jelas silahkan bertanya kepada administrator atau guru yang bersangkutan.
             </div>
         </div>

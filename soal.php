@@ -108,7 +108,7 @@ if(@$_SESSION['siswa']) { ?>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Ujian Online E-Learning SMK Indonesia</title>
+    <title>Ujian Online E-Learning <?=NAMA_SEKOLAH;?></title>
     <link href="style/assets/css/bootstrap.css" rel="stylesheet" />
     <link href="style/assets/css/font-awesome.css" rel="stylesheet" />
     <link href="style/assets/css/style.css" rel="stylesheet" />
@@ -202,15 +202,18 @@ if(@$_SESSION['siswa']) { ?>
                         if(isset($_GET['revisi_soal'])){
                         $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' AND id_pilgan='".$_GET['revisi_soal']."' limit 1 ") or die ($db->error);
                         }else{
-                            $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' AND id_pilgan NOT IN ({$no_sudah}) ORDER BY rand() limit 1 ") or die ($db->error);
+                            $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' 
+                                AND id_pilgan NOT IN ({$no_sudah}) 
+                                AND level_group = '$n'
+                                ORDER BY rand() limit 1 ") or die ($db->error);
                         }
                     }elseif(isset($_GET['revisi_soal'])){
                         $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' AND id_pilgan='".$_GET['revisi_soal']."' limit 1 ") or die ($db->error);
                     }
                     else{
-                        $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' ORDER BY rand() limit 1 ") or die ($db->error);
+                        $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' AND level_group = '$n' ORDER BY rand() limit 1 ") or die ($db->error);
                     }
-					if(mysqli_num_rows($sql_soal_pilgan) > 0) {
+					if(mysqli_num_rows($sql_soal_pilgan) > 0){
                     ?>
                         <div class="panel panel-default">
                             <div class="panel-heading"><b>Soal Pilihan Ganda</b></div>
@@ -228,7 +231,7 @@ if(@$_SESSION['siswa']) { ?>
                                                 <tr>
                                                     <td></td>
                                                     <td>
-                                                        <img width="220px" src="<?=DIR_ASSETS?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gambar']; ?>" />
+                                                        <img width="220px" src="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gambar']; ?>" />
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -262,6 +265,9 @@ if(@$_SESSION['siswa']) { ?>
                                                     <div class="radio mrg-del">
                                                         <label>
                                                             <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="A" /> A. <?php echo $data_soal_pilgan['pil_a']; ?>
+                                                            <?php if($data_soal_pilgan['gbr_a'] != '') { ?><br>
+                                                            <img width="220px" src="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_a']; ?>" />
+                                                            <?php } ?>
                                                         </label>
                                                     </div>
                                                 </td>
@@ -272,6 +278,9 @@ if(@$_SESSION['siswa']) { ?>
                                                     <div class="radio mrg-del">
                                                         <label>
                                                             <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="B" /> B. <?php echo $data_soal_pilgan['pil_b']; ?>
+                                                            <?php if($data_soal_pilgan['gbr_b'] != '') { ?><br>
+                                                            <img width="220px" src="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_b']; ?>" />
+                                                            <?php } ?>
                                                         </label>
                                                     </div>
                                                 </td>
@@ -282,6 +291,9 @@ if(@$_SESSION['siswa']) { ?>
                                                     <div class="radio mrg-del">
                                                         <label>
                                                             <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="C" /> C. <?php echo $data_soal_pilgan['pil_c']; ?>
+                                                            <?php if($data_soal_pilgan['gbr_c'] != '') { ?><br>
+                                                            <img width="220px" src="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_c']; ?>" />
+                                                            <?php } ?>
                                                         </label>
                                                     </div>
                                                 </td>
@@ -292,6 +304,9 @@ if(@$_SESSION['siswa']) { ?>
                                                     <div class="radio mrg-del">
                                                         <label>
                                                             <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="D" /> D. <?php echo $data_soal_pilgan['pil_d']; ?>
+                                                            <?php if($data_soal_pilgan['gbr_d'] != '') { ?><br>
+                                                            <img width="220px" src="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_d']; ?>" />
+                                                            <?php } ?>
                                                         </label>
                                                     </div>
                                                 </td>
@@ -302,21 +317,21 @@ if(@$_SESSION['siswa']) { ?>
                                                     <div class="radio mrg-del">
                                                         <label>
                                                             <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="E" /> E. <?php echo $data_soal_pilgan['pil_e']; ?>
+                                                            <?php if($data_soal_pilgan['gbr_e'] != '') { ?><br>
+                                                            <img width="220px" src="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_e']; ?>" />
+                                                            <?php } ?>
                                                         </label>
                                                     </div>
                                                 </td>
         							        </tr>
         								</table>
                                         <input type="submit" value="selanjutnya">
-                                    <?php
-                                    } ?>
+                                    <?php } ?>
                                     <input type="hidden" name="jumlahsoalpilgan" value="<?php echo mysqli_num_rows($sql_soal_pilgan); ?>" />
     							</div>
     			            </div>
     			        </div>
-                    <?php
-                    }
-
+                    <?php }
                     $sql_soal_essay = mysqli_query($db, "SELECT * FROM tb_soal_essay WHERE id_tq = '$id_tq' ORDER BY rand()") or die ($db->error);
                     if(mysqli_num_rows($sql_soal_essay) > 0) {
                     ?>
@@ -356,15 +371,11 @@ if(@$_SESSION['siswa']) { ?>
             <div class="col-md-12">
                 &copy; <?=date('Y');?> CBT Software | By : <?=COMPANY;?>
             </div>
-
         </div>
     </div>
 </footer>
-
 </body>
 </html>
-
-<?php
-} else {
+<?php } else {
 	echo "<script>window.location='./';</script>";
-} ?>
+}?>
