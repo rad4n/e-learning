@@ -18,20 +18,32 @@
     $excelku->getActiveSheet()->getColumnDimension("C")->setWidth(20);
     $excelku->setActiveSheetIndex(0)->setCellValue("D3","No");
 
-    
+    $analisis_benar = array();
     if($_GET['id_siswa']=='all'){
       $sql_siswa_mengikuti_tes = mysqli_query($db, "SELECT * FROM tb_nilai_pilgan JOIN tb_siswa ON tb_nilai_pilgan.id_siswa = tb_siswa.id_siswa JOIN tb_kelas ON tb_siswa.id_kelas = tb_kelas.id_kelas WHERE id_tq = '$_GET[id_tq]'") or die ($db->error);
       $siswa_ke=4;
+      $rowcount=mysqli_num_rows($sql_siswa_mengikuti_tes);
+
       while($data_siswa_mengikuti_tes = mysqli_fetch_array($sql_siswa_mengikuti_tes)){
-                $jawab = mysqli_query($db,"SELECT tb_jawaban_pilgan_temp.jawaban,
-                                      tb_jawaban_pilgan_temp.id_soal,
+                // $jawab = mysqli_query($db,"SELECT tb_jawaban_pilgan_temp.jawaban,
+                //                       tb_jawaban_pilgan_temp.id_soal,
+                //                       tb_siswa.nama_lengkap,
+                //                       tb_siswa.nis,
+                //                       tb_kelas.nama_kelas
+                //                FROM tb_jawaban_pilgan_temp 
+                //                LEFT JOIN tb_siswa ON tb_siswa.id_siswa = tb_jawaban_pilgan_temp.id_peserta
+                //                LEFT JOIN tb_kelas ON tb_kelas.id_kelas = tb_siswa.id_kelas
+                //                WHERE tb_jawaban_pilgan_temp.id_peserta='$data_siswa_mengikuti_tes[id_siswa]'
+                //                AND  id_tq = '$_GET[id_tq]'");
+                $jawab = mysqli_query($db,"SELECT tb_nilai_pilgan.uraian,
+                                      #tb_jawaban_pilgan_temp.id_soal,
                                       tb_siswa.nama_lengkap,
                                       tb_siswa.nis,
                                       tb_kelas.nama_kelas
-                               FROM tb_jawaban_pilgan_temp 
-                               LEFT JOIN tb_siswa ON tb_siswa.id_siswa = tb_jawaban_pilgan_temp.id_peserta
+                               FROM tb_nilai_pilgan 
+                               LEFT JOIN tb_siswa ON tb_siswa.id_siswa = tb_nilai_pilgan.id_siswa
                                LEFT JOIN tb_kelas ON tb_kelas.id_kelas = tb_siswa.id_kelas
-                               WHERE tb_jawaban_pilgan_temp.id_peserta='$data_siswa_mengikuti_tes[id_siswa]'
+                               WHERE tb_nilai_pilgan.id_siswa='$data_siswa_mengikuti_tes[id_siswa]'
                                AND  id_tq = '$_GET[id_tq]'");
 
                   $r = mysqli_fetch_assoc($jawab);
@@ -44,50 +56,87 @@
 
                   $excelku->setActiveSheetIndex(0)->setCellValue("C".$siswa_ke,$r['nis']);
 
-                  $excelku->setActiveSheetIndex(0)->setCellValue("D".$siswa_ke,"Skor");
+                  $excelku->setActiveSheetIndex(0)->setCellValue("D".$siswa_ke,"Jawaban");
                   
-                  $jawab = mysqli_query($db,"SELECT tb_jawaban_pilgan_temp.jawaban,
-                                                    tb_jawaban_pilgan_temp.id_soal,
-                                                    tb_siswa.nama_lengkap,
-                                                    tb_siswa.nis,
-                                                    tb_kelas.nama_kelas
-                                             FROM tb_jawaban_pilgan_temp 
-                                             LEFT JOIN tb_siswa ON tb_siswa.id_siswa = tb_jawaban_pilgan_temp.id_peserta
-                                             LEFT JOIN tb_kelas ON tb_kelas.id_kelas = tb_siswa.id_kelas
-                                             WHERE tb_jawaban_pilgan_temp.id_peserta='$data_siswa_mengikuti_tes[id_siswa]'
-                                             AND  id_tq = '$_GET[id_tq]'");
-                  while($r = mysqli_fetch_assoc($jawab)){
-                    $cek = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_pilgan = '".$r['id_soal']."'") or die ($db->error);
-                    while($c = mysqli_fetch_array($cek)) {
-                            $jawaban = $c['kunci'];
+                  // $jawab = mysqli_query($db,"SELECT tb_jawaban_pilgan_temp.jawaban,
+                  //                                   tb_jawaban_pilgan_temp.id_soal,
+                  //                                   tb_siswa.nama_lengkap,
+                  //                                   tb_siswa.nis,
+                  //                                   tb_kelas.nama_kelas
+                  //                            FROM tb_jawaban_pilgan_temp 
+                  //                            LEFT JOIN tb_siswa ON tb_siswa.id_siswa = tb_jawaban_pilgan_temp.id_peserta
+                  //                            LEFT JOIN tb_kelas ON tb_kelas.id_kelas = tb_siswa.id_kelas
+                  //                            WHERE tb_jawaban_pilgan_temp.id_peserta='$data_siswa_mengikuti_tes[id_siswa]'
+                  //                            AND  id_tq = '$_GET[id_tq]'");
+
+                   $jawab = mysqli_query($db,"SELECT tb_nilai_pilgan.uraian,
+                                      #tb_jawaban_pilgan_temp.id_soal,
+                                      tb_siswa.nama_lengkap,
+                                      tb_siswa.nis,
+                                      tb_kelas.nama_kelas
+                               FROM tb_nilai_pilgan 
+                               LEFT JOIN tb_siswa ON tb_siswa.id_siswa = tb_nilai_pilgan.id_siswa
+                               LEFT JOIN tb_kelas ON tb_kelas.id_kelas = tb_siswa.id_kelas
+                               WHERE tb_nilai_pilgan.id_siswa='$data_siswa_mengikuti_tes[id_siswa]'
+                               AND  id_tq = '$_GET[id_tq]'"); 
+
+                    $rr=mysqli_fetch_array($jawab,MYSQLI_ASSOC);
+                    $rr1 = json_decode($rr['uraian']);
+                    $rr2 = json_decode($rr['uraian'], true);
+                    
+                    foreach ($rr2 as $key => $r) {
+                        $cek = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_pilgan = '".$r['id']."'") or die ($db->error);
+                        while($c = mysqli_fetch_array($cek)) {
+                                $jawaban = $c['kunci'];
+                            }
+                       
+
+                         
+                        if($siswa_ke==4)$excelku->setActiveSheetIndex(0)->setCellValue($n."3",$no);
+                        // $excelku->setActiveSheetIndex(0)->setCellValue($n."4",$r['jawaban']);
+                         $excelku->setActiveSheetIndex(0)->setCellValue($n.$siswa_ke,$r['j']);
+                         if($r['j']!=$jawaban) {
+                               $excelku->getActiveSheet()
+                            ->getStyle($n.$siswa_ke)
+                            ->getFill()
+                            ->setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+                            ->getStartColor()
+                            ->setARGB('#FF0000');
+                        }else{
+                          if($siswa_ke==4){
+                           // $analisis_benar[$r['id']] = 1;
+                            $analisis_benar[$r['id']]= array(
+                                    'count'   => 1,
+                                    'cell' => $n
+                              );
+                          }else{
+                            $analisis_benar[$r['id']]['count']++;
+                          }
                         }
-                    if($r['jawaban']==$jawaban) $h = 1;
-                    else $h=0;
-                     
-                    if($siswa_ke==4)$excelku->setActiveSheetIndex(0)->setCellValue($n."3",$no);
-                    // $excelku->setActiveSheetIndex(0)->setCellValue($n."4",$r['jawaban']);
-                     $excelku->setActiveSheetIndex(0)->setCellValue($n.$siswa_ke,$h);
-                     if($siswa_ke==4)$excelku->getActiveSheet()->getColumnDimension($n)->setWidth(5);
+                         if($siswa_ke==4)$excelku->getActiveSheet()->getColumnDimension($n)->setWidth(5);
 
 
-                     ++$n;
-                     $no++;
+                         ++$n;
+                         $no++;
                   }
 
                   $sql_cek_nilai_pilgan = mysqli_query($db, "SELECT * FROM tb_nilai_pilgan  WHERE id_siswa = '$data_siswa_mengikuti_tes[id_siswa]' AND  id_tq = '$_GET[id_tq]'") or die ($db->error);
 
                   $data_nilai_pilgan = mysqli_fetch_array($sql_cek_nilai_pilgan);
-                    if($siswa_ke==4){
+                    if($siswa_ke==4){//print_r(++$n.$siswa_ke); exit;
                       $excelku->setActiveSheetIndex(0)->setCellValue(++$n."3","Benar");
-                      $excelku->setActiveSheetIndex(0)->setCellValue(++$n."3","Salah");
-                      $excelku->setActiveSheetIndex(0)->setCellValue(++$n."3","Kosong");
-                      $excelku->setActiveSheetIndex(0)->setCellValue(++$n."3","Nilai");
                       $excelku->setActiveSheetIndex(0)->setCellValue($n.$siswa_ke,$data_nilai_pilgan['benar']);
+
+                      $excelku->setActiveSheetIndex(0)->setCellValue(++$n."3","Salah");
                       $excelku->setActiveSheetIndex(0)->setCellValue($n.$siswa_ke,$data_nilai_pilgan['salah']);
+
+                      $excelku->setActiveSheetIndex(0)->setCellValue(++$n."3","Kosong");
                       $excelku->setActiveSheetIndex(0)->setCellValue($n.$siswa_ke,$data_nilai_pilgan['tidak_dikerjakan']);
+
+                      $excelku->setActiveSheetIndex(0)->setCellValue(++$n."3","Nilai");
                       $excelku->setActiveSheetIndex(0)->setCellValue($n.$siswa_ke,$data_nilai_pilgan['presentase']);
-                    }
-                    else{
+                   }
+                   else{
                     $excelku->setActiveSheetIndex(0)->setCellValue(++$n.$siswa_ke,$data_nilai_pilgan['benar']);
                     $excelku->setActiveSheetIndex(0)->setCellValue(++$n.$siswa_ke,$data_nilai_pilgan['salah']);
                     $excelku->setActiveSheetIndex(0)->setCellValue(++$n.$siswa_ke,$data_nilai_pilgan['tidak_dikerjakan']);
@@ -95,9 +144,15 @@
                   }
                   
                   $siswa_ke++;
+                  if($rowcount == $siswa_ke-4){
+                    foreach ($analisis_benar as $key => $v) {//print_r($v['cell']); exit;
+                    $excelku->setActiveSheetIndex(0)->setCellValue("D".$siswa_ke,"Analisis Soal");
+                      $excelku->setActiveSheetIndex(0)->setCellValue($v['cell'].$siswa_ke,$v['count']);
+                    }
+                  }
       }
-    }
-    else{
+      
+    }else{
       $jawab = mysqli_query($db,"SELECT tb_nilai_pilgan.uraian,
                                       tb_siswa.nama_lengkap,
                                       tb_siswa.nis,
@@ -119,7 +174,7 @@
 
           $excelku->setActiveSheetIndex(0)->setCellValue("C4",$r['nis']);
 
-          $excelku->setActiveSheetIndex(0)->setCellValue("D4","Skor");
+          $excelku->setActiveSheetIndex(0)->setCellValue("D4","Jawaban");
           
           $jawab = mysqli_query($db,"SELECT tb_nilai_pilgan.uraian,
                                             tb_siswa.nama_lengkap,
@@ -196,7 +251,8 @@
           )
         )
     );
-   $excelku->getActiveSheet()->getStyle('A3:'.$n.'4')->applyFromArray($style);
+   if($_GET['id_siswa']=='all') {$siswa_ke= $siswa_ke-1; $excelku->getActiveSheet()->getStyle('A3:'.$n.$siswa_ke)->applyFromArray($style);}
+   else $excelku->getActiveSheet()->getStyle('A3:'.$n.'4')->applyFromArray($style);
     
     $objWriter = PHPExcel_IOFactory::createWriter($excelku, 'Excel5');
     header('Content-Type: application/vnd.ms-excel');
