@@ -146,7 +146,7 @@
                             $thn_masuk = @mysqli_real_escape_string($db, $_POST['thn_masuk']);
                             $user = @mysqli_real_escape_string($db, $_POST['user']);
                             $pass = @mysqli_real_escape_string($db, $_POST['pass']);
-                            $pass = md5('$pass');
+                            $pass = md5($pass);
 
                             $sumber = @$_FILES['gambar']['tmp_name'];
                             $target = DIR_ASSETS.'img/foto_siswa/';
@@ -217,6 +217,7 @@
                                                                 alamat,
                                                                 id_kelas,
                                                                 thn_masuk,
+                                                                foto,
                                                                 username,
                                                                 password,
                                                                 pass,
