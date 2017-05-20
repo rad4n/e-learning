@@ -108,6 +108,11 @@ if(@$_GET['action'] == '') {
     mysqli_query($db, "UPDATE tb_siswa SET status = 'tidak aktif' WHERE id_siswa = '$id'") or die ($db->error);
     echo "<script>window.location='?page=siswa';</script>";
 } else if(@$_GET['action'] == 'hapus') {
+    $data = mysqli_query($db, "SELECT * FROM tb_siswa WHERE id_siswa = '$id'") or die ($db->error);
+    $d = mysqli_fetch_array($data,MYSQLI_ASSOC);
+    if($r AND !empty($d['foto'])){
+        unlink(DIR_FOTO_SISWA.$d['foto']);
+    }
     mysqli_query($db, "DELETE FROM tb_siswa WHERE id_siswa = '$id'") or die ($db->error);
     echo "<script>window.location='?page=siswa';</script>";
 } else if(@$_GET['action'] == 'detail') {

@@ -73,15 +73,16 @@ if(@$_SESSION['admin']) {
         $d = mysqli_fetch_array($r,MYSQLI_ASSOC);
         
         //kirim email
-        $to = $d['email'];
-        $subject = "Akun Genius Ploes Anda sudah Aktif";
-        $message = "Akun Genius Ploes Anda sudah Aktif, silahkan login dengan user dan password yang telah didaftarkan sebelumnya<br>";
-        $headers = "From: admin@geniusploes.com" . "\r\n";
-        $headers .= "MIME-Version: 1.0" . "\r\n";
-        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        // $to = $d['email'];
+        // $subject = "Akun Genius Ploes Anda sudah Aktif";
+        // $message = "Akun Genius Ploes Anda sudah Aktif, silahkan login dengan user dan password yang telah didaftarkan sebelumnya<br>";
+        // $headers = "From: admin@geniusploes.com" . "\r\n";
+        // $headers .= "MIME-Version: 1.0" . "\r\n";
+        // $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-        $mail = mail($to,$subject,$message,$headers);
-        if($mail) echo "<script>window.location='?page=siswaregistrasi';</script>";
+        // $mail = mail($to,$subject,$message,$headers);
+        // if($mail) 
+        echo "<script>window.location='?page=siswaregistrasi';</script>";
     } else if(@$_GET['action'] == 'hapus') {
         $data = mysqli_query($db, "SELECT * FROM tb_siswa WHERE id_siswa = '$id'") or die ($db->error);
         $d = mysqli_fetch_array($data,MYSQLI_ASSOC);
