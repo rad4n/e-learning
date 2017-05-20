@@ -8,13 +8,13 @@ $pdf = new FPDF('L','mm','A4');
 $pdf->SetMargins(15,20,15);
 $pdf->AddPage();
 
-$pdf->Image('../../../img/a.png',15,18,16);
+//$pdf->Image('../../../img/a.png',15,18,16);
 
 $pdf->SetFont('Arial','B',18);
-$pdf->Cell(0,5,'Genius PLoes','0','1','C',false);
+$pdf->Cell(0,5,NAMA_SEKOLAH,'0','1','C',false);
 $pdf->SetFont('Arial','i',8);
-$pdf->Cell(0,5,'Alamat : Jln. Sumur Batu Raya, Jakarta, Indonesia','0','1','C',false);
-$pdf->Cell(0,2,'Telp : (021) 424 6832 - Email : admin@geniusploes.com','0','1','C',false);
+$pdf->Cell(0,5,'Alamat :'.ALAMAT_SEKOLAH,'0','1','C',false);
+//$pdf->Cell(0,2,'Telp : (021) 424 6832 - Email : admin@geniusploes.com','0','1','C',false);
 $pdf->Ln(3);
 $pdf->Cell(265,0.6,'','0','1','C',true);
 $pdf->Ln(5);
