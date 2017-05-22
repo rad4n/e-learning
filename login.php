@@ -108,7 +108,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="alert alert-danger col-md-12">
-                            Untuk menggunakan layanan e-learning ini kalian harus login terlebih dahulu.
+                            Untuk menggunakan aplikasi ini Anda harus login terlebih dahulu.
                         </div>
                     </div>
                 </div>

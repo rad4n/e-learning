@@ -176,48 +176,73 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 	            	$pilE = @mysqli_real_escape_string($db, $_POST['pilE']);
 	            	$kunci = @mysqli_real_escape_string($db, $_POST['kunci']);
 
-	            	$sumber = @$_FILES['gambar']['tmp_name'];
-                    $target = DIR_ASSETS.'gambar_soal_pilgan/';
-                    $nama_gambar = md5($id.$level_group.@$_FILES['gambar']['name']).'.'.pathinfo($_FILES['gambar']['name'], PATHINFO_EXTENSION);
+	            	$nama_gambar = '';
+	            	$nama_video  = '';
+	            	$nama_audio  = '';
+	            	$nama_gambar_a ='';
+	            	$nama_gambar_b ='';
+	            	$nama_gambar_c ='';
+	            	$nama_gambar_d ='';
+	            	$nama_gambar_e ='';
 
-                    $sumber2 = @$_FILES['video']['tmp_name'];
-                    $target2 = DIR_ASSETS.'video_soal_pilgan/';
-                    $nama_video = md5($id.$level_group.@$_FILES['video']['name']).'.'.pathinfo($_FILES['video']['name'], PATHINFO_EXTENSION);
+	            	if(!empty($_FILES['gambar']['tmp_name'])){
+		            	$sumber = @$_FILES['gambar']['tmp_name'];
+	                    $target = DIR_ASSETS.'gambar_soal_pilgan/';
+	                    $nama_gambar = md5($id.$level_group.@$_FILES['gambar']['name']).'.'.pathinfo($_FILES['gambar']['name'], PATHINFO_EXTENSION);
+                    	move_uploaded_file($sumber, $target.$nama_gambar);
+	                }
 
-                    $sumber3 = @$_FILES['audio']['tmp_name'];
-                    $target3 = DIR_ASSETS.'audio_soal_pilgan/';
-                    $nama_audio = md5($id.$level_group.@$_FILES['audio']['name']).'.'.pathinfo($_FILES['audio']['name'], PATHINFO_EXTENSION);
+                    if(!empty($_FILES['video']['tmp_name'])){
+	                    $sumber2 = @$_FILES['video']['tmp_name'];
+	                    $target2 = DIR_ASSETS.'video_soal_pilgan/';
+	                    $nama_video = md5($id.$level_group.@$_FILES['video']['name']).'.'.pathinfo($_FILES['video']['name'], PATHINFO_EXTENSION);
+                    	move_uploaded_file($sumber2, $target2.$nama_video);
+	                }
+
+                    if(!empty($_FILES['audio']['tmp_name'])){
+	                    $sumber3 = @$_FILES['audio']['tmp_name'];
+	                    $target3 = DIR_ASSETS.'audio_soal_pilgan/';
+	                    $nama_audio = md5($id.$level_group.@$_FILES['audio']['name']).'.'.pathinfo($_FILES['audio']['name'], PATHINFO_EXTENSION);
+                    	move_uploaded_file($sumber3, $target3.$nama_audio);
+	                }
 
                     #####gambar pilihan soal
 
-                    $sumber4 = @$_FILES['gambar_a']['tmp_name'];
-                    $target4 = DIR_ASSETS.'gambar_soal_pilgan/';
-                    $nama_gambar_a = md5($id.$level_group.@$_FILES['gambar_a']['name']).'.'.pathinfo($_FILES['gambar_a']['name'], PATHINFO_EXTENSION);
+                    if(!empty($_FILES['gambar_a']['tmp_name'])){
+	                    $sumber4 = @$_FILES['gambar_a']['tmp_name'];
+	                    $target4 = DIR_ASSETS.'gambar_soal_pilgan/';
+	                    $nama_gambar_a = md5($id.$level_group.@$_FILES['gambar_a']['name']).'.'.pathinfo($_FILES['gambar_a']['name'], PATHINFO_EXTENSION);
+                    	move_uploaded_file($sumber4, $target4.$nama_gambar_a);
+	                }
 
-                    $sumber5 = @$_FILES['gambar_b']['tmp_name'];
-                    $target5 = DIR_ASSETS.'gambar_soal_pilgan/';
-                    $nama_gambar_b = md5($id.$level_group.@$_FILES['gambar_b']['name']).'.'.pathinfo($_FILES['gambar_b']['name'], PATHINFO_EXTENSION);
+                    if(!empty($_FILES['gambar_b']['tmp_name'])){
+	                    $sumber5 = @$_FILES['gambar_b']['tmp_name'];
+	                    $target5 = DIR_ASSETS.'gambar_soal_pilgan/';
+	                    $nama_gambar_b = md5($id.$level_group.@$_FILES['gambar_b']['name']).'.'.pathinfo($_FILES['gambar_b']['name'], PATHINFO_EXTENSION);
+                    	move_uploaded_file($sumber5, $target5.$nama_gambar_b);
+	                }
 
-                    $sumber6 = @$_FILES['gambar_c']['tmp_name'];
-                    $target6 = DIR_ASSETS.'gambar_soal_pilgan/';
-                    $nama_gambar_c = md5($id.$level_group.@$_FILES['gambar_c']['name']).'.'.pathinfo($_FILES['gambar_c']['name'], PATHINFO_EXTENSION);
+                    if(!empty($_FILES['gambar_c']['tmp_name'])){
+	                    $sumber6 = @$_FILES['gambar_c']['tmp_name'];
+	                    $target6 = DIR_ASSETS.'gambar_soal_pilgan/';
+	                    $nama_gambar_c = md5($id.$level_group.@$_FILES['gambar_c']['name']).'.'.pathinfo($_FILES['gambar_c']['name'], PATHINFO_EXTENSION);
+                    	move_uploaded_file($sumber6, $target6.$nama_gambar_c);
+	                }
 
-                    $sumber7 = @$_FILES['gambar_d']['tmp_name'];
-                    $target7 = DIR_ASSETS.'gambar_soal_pilgan/';
-                    $nama_gambar_d = md5($id.$level_group.@$_FILES['gambar_d']['name']).'.'.pathinfo($_FILES['gambar_d']['name'], PATHINFO_EXTENSION);
+                    if(!empty($_FILES['gambar_d']['tmp_name'])){
+	                    $sumber7 = @$_FILES['gambar_d']['tmp_name'];
+	                    $target7 = DIR_ASSETS.'gambar_soal_pilgan/';
+	                    $nama_gambar_d = md5($id.$level_group.@$_FILES['gambar_d']['name']).'.'.pathinfo($_FILES['gambar_d']['name'], PATHINFO_EXTENSION);
+                    	move_uploaded_file($sumber7, $target7.$nama_gambar_d);
+	                }
 
-                    $sumber8 = @$_FILES['gambar_e']['tmp_name'];
-                    $target8 = DIR_ASSETS.'gambar_soal_pilgan/';
-                    $nama_gambar_e = md5($id.$level_group.@$_FILES['gambar_e']['name']).'.'.pathinfo($_FILES['gambar_e']['name'], PATHINFO_EXTENSION);
+                    if(!empty($_FILES['gambar_e']['tmp_name'])){
+                    	$sumber8 = @$_FILES['gambar_e']['tmp_name'];
+                    	$target8 = DIR_ASSETS.'gambar_soal_pilgan/';
+                    	$nama_gambar_e = md5($id.$level_group.@$_FILES['gambar_e']['name']).'.'.pathinfo($_FILES['gambar_e']['name'], PATHINFO_EXTENSION);
+                   		 move_uploaded_file($sumber8, $target8.$nama_gambar_e);
+                    }
 
-                    move_uploaded_file($sumber, $target.$nama_gambar);
-                    move_uploaded_file($sumber2, $target2.$nama_video);
-                    move_uploaded_file($sumber3, $target3.$nama_audio);
-                    move_uploaded_file($sumber4, $target4.$nama_gambar_a);
-                    move_uploaded_file($sumber5, $target5.$nama_gambar_b);
-                    move_uploaded_file($sumber6, $target6.$nama_gambar_c);
-                    move_uploaded_file($sumber7, $target7.$nama_gambar_d);
-                    move_uploaded_file($sumber8, $target8.$nama_gambar_e);
                    // print_r($r); exit;
                     mysqli_query($db, "INSERT INTO tb_soal_pilgan (
 		                    	id_tq,

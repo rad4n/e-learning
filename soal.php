@@ -191,12 +191,23 @@ if(@$_SESSION['siswa']) { ?>
 		    <div class="col-md-10">
 		    	<form action="inc/proses_soal.php" method="post">
 					<?php
-                    $sql_soal_sudah = mysqli_query($db, "SELECT id_soal,jawaban FROM tb_jawaban_pilgan_temp WHERE id_peserta = '".$_SESSION['siswa']."' AND id_tq = '{$id_tq}'") or die ($db->error);
+                    $sql_soal_sudah = mysqli_query($db, "SELECT 
+                                                            tb_jawaban_pilgan_temp.id_soal,
+                                                            tb_jawaban_pilgan_temp.jawaban,
+                                                            tb_soal_pilgan.level_group
+                                                         FROM tb_jawaban_pilgan_temp 
+                                                         JOIN tb_soal_pilgan ON tb_soal_pilgan.id_pilgan = tb_jawaban_pilgan_temp.id_soal
+                                                         WHERE tb_jawaban_pilgan_temp.id_peserta = '".$_SESSION['siswa']."' AND tb_jawaban_pilgan_temp.id_tq = '{$id_tq}'") or die ($db->error);
                     $no_sudah="";
+                    $group_sudah = "";
                     $n=1;
                     while($soal_sudah = mysqli_fetch_assoc($sql_soal_sudah)) {
-                        if($n>1)$no_sudah .= ",";        
+                        if($n>1){
+                            $no_sudah .= ","; 
+                            $group_sudah .= ",";
+                        }       
                         $no_sudah .= $soal_sudah["id_soal"];
+                        $group_sudah .= $soal_sudah["level_group"];
                         $jawaban = $soal_sudah["jawaban"];
                         $n++;
                     }
@@ -206,14 +217,18 @@ if(@$_SESSION['siswa']) { ?>
                         }else{
                             $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' 
                                 AND id_pilgan NOT IN ({$no_sudah}) 
-                                AND level_group = '$n'
+                                #AND level_group = '$n'
+                                AND level_group NOT IN ({$group_sudah}) 
                                 ORDER BY rand() limit 1 ") or die ($db->error);
                         }
                     }elseif(isset($_GET['revisi_soal'])){
                         $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' AND id_pilgan='".$_GET['revisi_soal']."' limit 1 ") or die ($db->error);
                     }
                     else{
-                        $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id_tq' AND level_group = '$n' ORDER BY rand() limit 1 ") or die ($db->error);
+                        $sql_soal_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan 
+                                                              WHERE id_tq = '$id_tq' 
+                                                             # AND level_group = '$n' 
+                                                              ORDER BY rand() limit 1 ") or die ($db->error);
                     }
 					if(mysqli_num_rows($sql_soal_pilgan) > 0){
                     ?>
