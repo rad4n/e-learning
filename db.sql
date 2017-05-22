@@ -254,7 +254,8 @@ CREATE TABLE IF NOT EXISTS `tb_nilai_pilgan` (
 DELETE FROM `tb_nilai_pilgan`;
 /*!40000 ALTER TABLE `tb_nilai_pilgan` DISABLE KEYS */;
 INSERT INTO `tb_nilai_pilgan` (`id`, `id_tq`, `id_siswa`, `benar`, `salah`, `tidak_dikerjakan`, `presentase`, `uraian`) VALUES
-	(14, 50, 4, 2, 1, 0, 67, '[{"id":"7818","j":"A"},{"id":"7819","j":"C"},{"id":"7820","j":"E"}]');
+	(14, 50, 4, 2, 1, 0, 67, '[{"id":"7818","j":"A"},{"id":"7819","j":"C"},{"id":"7820","j":"E"}]'),
+	(19, 54, 287, 0, 2, 0, 0, '[{"id":"7830","j":"A"},{"id":"7831","j":"E"}]');
 /*!40000 ALTER TABLE `tb_nilai_pilgan` ENABLE KEYS */;
 
 -- membuang struktur untuk table elearning.tb_pengajar
@@ -631,7 +632,10 @@ INSERT INTO `tb_siswa` (`id_siswa`, `nis`, `nama_lengkap`, `tgl_lahir`, `jenis_k
 	(284, '10245', 'EGA RIFQI ARDANA', '2000-01-18', 'L', 'Islam', 'HERI SUSANTO', 'PAWIT SUYATMI', '082115151590', 'egarifqi18@gmail.com', 'Jln. Sunter bentengan 3 rt02/05 no.73', '25', 2015, 'd9fcdeb6e355549f07212c8fa2845bfa.jpg', 'egaaasoy', '233d7d554048e5da23e742c66970d212', '6508429l', 'aktif', 'JAKARTA'),
 	(285, '10280', 'Intan Azzahra', '2000-05-27', 'P', 'Islam', 'Rudi Hence', 'Endang Puji Nitasari', '085813939177', 'intanazzahra27@gmail.com', 'Jl.untan panjang III no.12 rt.9/07 kemayoran, jakarta pusat', '25', 2015, '6a3bf9b6d315564f98852904d0eba9f4.jpg', 'Inaz_27', '1aef0a62ed84bb165989ab32f0ba56c2', 'barbie', 'aktif', 'Jakarta'),
 	(286, '10211', 'Bagus Setiawan Muharom', '2001-03-26', 'L', 'Islam', 'Slamet', 'Wasriah', '081322596215', 'godlucifer79@gmail.com', 'Jl kemayoran gempol Rt 08/ Rw 05', '25', 2015, 'anonim.png', 'Bagus SM', '15a1db7c1f8f829c76617a01727c10ea', 'berapa59', 'aktif', 'Tegal'),
-	(287, '1', '1', '2017-05-11', 'L', 'Islam', '1', '1', '1', 'aminsawedi@gmail.com', 'rew', '16', 2015, 'anonim.png', 'amin', '67a95c52d87dcfabe6878fe37c155e3e', 'amin1234', 'aktif', '1');
+	(288, '10291', 'khodijatil kubroo hasanah', '1999-10-09', 'P', 'Islam', 'steppanus', 'Elis Listiani', '087888275655', 'atil.kubro@gmail.com', 'Jl.sunteruara 4 rt3 rw 5 no 32', '25', 2015, 'anonim.png', 'Atilajah', '3e61a463290f4afd34e7247920609578', 'khodi123', 'aktif', 'JAKARTA'),
+	(289, '10260', 'Fernanda Affandi Habbibullah', '2000-09-14', 'L', 'Islam', 'Marjuki', 'Sri Wahyuni', '081318736900', 'praabuuu16@gmail.com', 'Jl.  Kemayoran Gempol RT 008/005 No.  16, Kelurahan Kebon Kosong,  Kecamatan Kemayoran, Jakarta Pusat,  10630, DKI Jakarta. ', '25', 2015, 'anonim.png', 'praabuuu16', '0e2357ec0fecfaf5397e36e9c0b7e9de', 'Isyadina23', 'aktif', 'Sukoharjo'),
+	(290, '10386', 'Yuda Afriansyah', '2000-04-21', 'L', 'Islam', 'Inen sutriana', 'Sugi', '089653114753', 'yudaafriansyah7@gmail.com', 'Jl.Swadaya no 35 Rt/Rw 03/06 kel.kebon kosong kec.kemayoran Jakarta pusat', '25', 2015, 'anonim.png', 'Yuda Afriansyah', '1e96d34c5e13a9246df2f191d609f1d5', 'arsenal1886', 'aktif', 'Jakarta'),
+	(291, '10336', 'Novy', '2000-07-23', 'P', 'Islam', 'Caim', 'Ropiah', '089653819394', 'Novyaeshter@gmai.com', 'Jl.remaja 2 rt005 rw 08 kelurahan cempaka baru, kecamatan Kemayoran', '25', 2015, 'anonim.png', 'Novy', 'bc94a0899e350a6df009df9e90e04c4a', 'aesther', 'aktif', 'Cirebon');
 /*!40000 ALTER TABLE `tb_siswa` ENABLE KEYS */;
 
 -- membuang struktur untuk table elearning.tb_soal_essay
