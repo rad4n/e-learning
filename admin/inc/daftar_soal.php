@@ -1,3 +1,12 @@
+<script>tinymce.init({ 
+	selector:'.incTiny',
+	plugins:[
+		"advlist autolink lists link image charmap print preview anchor",
+		"searchreplace visualblocks code fullscreen",
+		"insertdatetime media table contextmenu paste imagetools tiny_mce_wiris"
+	],
+	toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | tiny_mce_wiris_formulaEditor"
+	});</script>
 <?php
 
 $sql_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id'") or die ($db->error);
@@ -424,7 +433,7 @@ if(@$_GET['hal'] == "pilgan") { ?>
 
 						<div class="form-group">
 
-							<textarea name="pertanyaan" class="form-control" rows="2"><?php echo $data_pilgan_id['pertanyaan']; ?></textarea>
+							<textarea name="pertanyaan" class="form-control incTiny" rows="2"><?php echo $data_pilgan_id['pertanyaan']; ?></textarea>
 
 						</div>
 
@@ -452,7 +461,7 @@ if(@$_GET['hal'] == "pilgan") { ?>
 
 									<div style="margin-top:5px;">
 
-										<img width="150px" src="../admin/img/gambar_soal_pilgan/<?php echo $data_pilgan_id['gambar']; ?>" />
+										<img width="150px" src="<?=URL_ASSETS?>img/gambar_soal_pilgan/<?php echo $data_pilgan_id['gambar']; ?>" />
 
 										<br /> <small><a href="?page=quiz&action=daftarsoal&hal=editsoalpilgan&id=<?php echo $id; ?>&idsoal=<?php echo $data_pilgan_id['id_pilgan']; ?>&ke=<?php echo $ke; ?>&gbr=del">Hapus Gambar</a></small>
 
@@ -471,7 +480,7 @@ if(@$_GET['hal'] == "pilgan") { ?>
 					</div>
 					<div class="col-md-10">
 						<div class="form-group">
-							<textarea name="pilA" class="form-control" rows="1"><?php echo $data_pilgan_id['pil_a']; ?></textarea>
+							<textarea name="pilA" class="form-control incTiny" rows="1"><?php echo $data_pilgan_id['pil_a']; ?></textarea>
 						</div>
 						<div class="form-group">
 							
@@ -483,7 +492,7 @@ if(@$_GET['hal'] == "pilgan") { ?>
 
 									<div style="margin-top:5px;">
 
-										<img width="150px" src="../admin/img/gambar_soal_pilgan/<?php echo $data_pilgan_id['gbr_a']; ?>" />
+										<img width="150px" src="<?=URL_ASSETS?>img/gambar_soal_pilgan/<?php echo $data_pilgan_id['gbr_a']; ?>" />
 
 										<br /> Jika ingin mengganti gambar silahkan upload pada field dibawah ini
 
@@ -503,7 +512,7 @@ if(@$_GET['hal'] == "pilgan") { ?>
 					</div>
 					<div class="col-md-10">
 						<div class="form-group">
-							<textarea name="pilB" class="form-control" rows="1"><?php echo $data_pilgan_id['pil_b']; ?></textarea>
+							<textarea name="pilB" class="form-control incTiny" rows="1"><?php echo $data_pilgan_id['pil_b']; ?></textarea>
 						</div>
 						<div class="form-group">
 							<?php
@@ -514,7 +523,7 @@ if(@$_GET['hal'] == "pilgan") { ?>
 
 									<div style="margin-top:5px;">
 
-										<img width="150px" src="../admin/img/gambar_soal_pilgan/<?php echo $data_pilgan_id['gbr_b']; ?>" />
+										<img width="150px" src="<?=URL_ASSETS?>img/gambar_soal_pilgan/<?php echo $data_pilgan_id['gbr_b']; ?>" />
 
 										<br /> Jika ingin mengganti gambar silahkan upload pada field dibawah ini
 
@@ -533,7 +542,7 @@ if(@$_GET['hal'] == "pilgan") { ?>
 					</div>
 					<div class="col-md-10">
 						<div class="form-group">
-							<textarea name="pilC" class="form-control" rows="1"><?php echo $data_pilgan_id['pil_c']; ?></textarea>
+							<textarea name="pilC" class="form-control incTiny" rows="1"><?php echo $data_pilgan_id['pil_c']; ?></textarea>
 						</div>
 						<div class="form-group">
 							<?php
@@ -544,7 +553,7 @@ if(@$_GET['hal'] == "pilgan") { ?>
 
 									<div style="margin-top:5px;">
 
-										<img width="150px" src="../admin/img/gambar_soal_pilgan/<?php echo $data_pilgan_id['gbr_c']; ?>" />
+										<img width="150px" src="<?=URL_ASSETS?>img/gambar_soal_pilgan/<?php echo $data_pilgan_id['gbr_c']; ?>" />
 
 										<br /> Jika ingin mengganti gambar silahkan upload pada field dibawah ini
 
@@ -563,7 +572,7 @@ if(@$_GET['hal'] == "pilgan") { ?>
 					</div>
 					<div class="col-md-10">
 						<div class="form-group">
-							<textarea name="pilD" class="form-control" rows="1"><?php echo $data_pilgan_id['pil_d']; ?></textarea>
+							<textarea name="pilD" class="form-control incTiny" rows="1"><?php echo $data_pilgan_id['pil_d']; ?></textarea>
 						</div>
 						<div class="form-group">
 							<?php
@@ -574,7 +583,7 @@ if(@$_GET['hal'] == "pilgan") { ?>
 
 									<div style="margin-top:5px;">
 
-										<img width="150px" src="../admin/img/gambar_soal_pilgan/<?php echo $data_pilgan_id['gbr_d']; ?>" />
+										<img width="150px" src="<?=URL_ASSETS?>img/gambar_soal_pilgan/<?php echo $data_pilgan_id['gbr_d']; ?>" />
 
 										<br /> Jika ingin mengganti gambar silahkan upload pada field dibawah ini
 
@@ -593,7 +602,7 @@ if(@$_GET['hal'] == "pilgan") { ?>
 					</div>
 					<div class="col-md-10">
 						<div class="form-group">
-							<textarea name="pilE" class="form-control" rows="1"><?php echo $data_pilgan_id['pil_e']; ?></textarea>
+							<textarea name="pilE" class="form-control incTiny" rows="1"><?php echo $data_pilgan_id['pil_e']; ?></textarea>
 						</div>
 						<div class="form-group">
 							
@@ -605,7 +614,7 @@ if(@$_GET['hal'] == "pilgan") { ?>
 
 									<div style="margin-top:5px;">
 
-										<img width="150px" src="../admin/img/gambar_soal_pilgan/<?php echo $data_pilgan_id['gbr_e']; ?>" />
+										<img width="150px" src="<?=URL_ASSETS?>img/gambar_soal_pilgan/<?php echo $data_pilgan_id['gbr_e']; ?>" />
 
 										<br /> Jika ingin mengganti gambar silahkan upload pada field dibawah ini
 
