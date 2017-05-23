@@ -9,7 +9,7 @@ else {define('base_url',"http://".$_SERVER['HTTP_HOST']."/e-learning/"); define(
 
 
 define("NAMA_SEKOLAH", "SMA NEGERI 41 JAKARTA");
-define("ALAMAT_SEKOLAH", "Jln. Laks R.E Artadinata Jakarta");
+define("ALAMAT_SEKOLAH", "Jln. Laks R.E Martadinata Jakarta");
 define("TELP_SEKOLAH", "(xxx) xxxxxx");
 define("EMAIL_SEKOLAH", "admin@sman114.sch.id");
 define("KOTA_SEKOLAH", "Jakarta");

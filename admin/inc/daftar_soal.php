@@ -156,7 +156,7 @@ if(@$_GET['hal'] == "pilgan") { ?>
 
 												if($data_pilgan['gambar'] != '') {
 
-													echo '<img src="'.base_url.'assets/gambar_soal_pilgan/'.$data_pilgan['gambar'].'" width="200px" />';
+													echo '<img src="'.URL_ASSETS.'gambar_soal_pilgan/'.$data_pilgan['gambar'].'" width="200px" />';
 
 												} else {
 
@@ -176,7 +176,7 @@ if(@$_GET['hal'] == "pilgan") { ?>
 
 											<td><?php
 												if($data_pilgan['gbr_a'] != '') {
-															echo '<img src="'.base_url.'assets/gambar_soal_pilgan/'.$data_pilgan['gbr_a'].'" width="200px" />';
+															echo '<img src="'.URL_ASSETS.'gambar_soal_pilgan/'.$data_pilgan['gbr_a'].'" width="200px" />';
 												} 
 												echo $data_pilgan['pil_a']; 
 														?>
@@ -191,7 +191,7 @@ if(@$_GET['hal'] == "pilgan") { ?>
 
 											<td><?php 
 											if($data_pilgan['gbr_b'] != '') {
-															echo '<img src="'.base_url.'assets/gambar_soal_pilgan/'.$data_pilgan['gbr_b'].'" width="200px" />';
+															echo '<img src="'.URL_ASSETS.'gambar_soal_pilgan/'.$data_pilgan['gbr_b'].'" width="200px" />';
 												} 
 												echo $data_pilgan['pil_b']; ?></td>
 
@@ -205,7 +205,7 @@ if(@$_GET['hal'] == "pilgan") { ?>
 
 											<td><?php 
 											if($data_pilgan['gbr_c'] != '') {
-															echo '<img src="'.base_url.'assets/gambar_soal_pilgan/'.$data_pilgan['gbr_c'].'" width="200px" />';
+															echo '<img src="'.URL_ASSETS.'gambar_soal_pilgan/'.$data_pilgan['gbr_c'].'" width="200px" />';
 												} 
 											echo $data_pilgan['pil_c']; ?></td>
 
@@ -219,7 +219,7 @@ if(@$_GET['hal'] == "pilgan") { ?>
 
 											<td><?php 
 											if($data_pilgan['gbr_d'] != '') {
-															echo '<img src="'.base_url.'assets/gambar_soal_pilgan/'.$data_pilgan['gbr_d'].'" width="200px" />';
+															echo '<img src="'.URL_ASSETS.'gambar_soal_pilgan/'.$data_pilgan['gbr_d'].'" width="200px" />';
 												} 
 											echo $data_pilgan['pil_d']; ?></td>
 
@@ -233,7 +233,7 @@ if(@$_GET['hal'] == "pilgan") { ?>
 
 											<td><?php 
 												if($data_pilgan['gbr_e'] != '') {
-															echo '<img src="'.base_url.'assets/gambar_soal_pilgan/'.$data_pilgan['gbr_e'].'" width="200px" />';
+															echo '<img src="'.URL_ASSETS.'gambar_soal_pilgan/'.$data_pilgan['gbr_e'].'" width="200px" />';
 												} 
 											echo $data_pilgan['pil_e']; ?></td>
 
