@@ -393,7 +393,7 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 					$sql = substr($sql,0,-1);
 
 					mysqli_query($db,$sql)or die ($db->error); 
-
+					unlink(DIR_ASSETS.basename($_FILES["soal"]["name"]));
 	            	if(!$db->error)echo '<script>window.location="?page=quiz&action=daftarsoal&hal=pilgan&id='.$id.'"</script>';
 	        	} 
 	        ?>
