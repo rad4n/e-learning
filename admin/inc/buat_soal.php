@@ -301,10 +301,9 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 			</div>
 			<?php
 	            if(@$_POST['upload']){
-	            	$target_dir = DIR_ASSETS."img/";
+	            	$target_dir = DIR_ASSETS;
 					$target_file = $target_dir . basename($_FILES["soal"]["name"]);
 					move_uploaded_file($_FILES['soal']['tmp_name'],$target_file); 
-
 					require 'inc/PHPExcel.php';
 					require_once 'inc/PHPExcel/IOFactory.php';
 					$objPHPExcel = PHPExcel_IOFactory::load($target_file);
@@ -392,8 +391,9 @@ if(@$_GET['hal'] == "soalpilgan") { ?>
 							   ),";
 					}
 					$sql = substr($sql,0,-1);
-					mysqli_query($db,$sql)or die ($db->error); 
 
+					mysqli_query($db,$sql)or die ($db->error); 
+					unlink(DIR_ASSETS.basename($_FILES["soal"]["name"]));
 	            	if(!$db->error)echo '<script>window.location="?page=quiz&action=daftarsoal&hal=pilgan&id='.$id.'"</script>';
 	        	} 
 	        ?>
