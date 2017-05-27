@@ -9,8 +9,8 @@ ob_start();
          border: 1px solid #000;
       }
       .header td{
-         border-bottom: 1px solid #000;
-      }
+         
+      }   
       .box td{
          padding: 5px 10px;
       }
@@ -32,7 +32,7 @@ while($r = mysqli_fetch_array($query)){
 		
    echo"<td class='box' width='335'>
 
-<table width='100%' style='width: 330px' cellspacing='0'>
+<table width='100%' style='width: 330px; margin-left:-6px;' cellspacing='0'>
    
 <tr class='header'>
    <td width='60' align='center'>
@@ -44,7 +44,7 @@ while($r = mysqli_fetch_array($query)){
     //."<span style='font-size:12px;'>".ALAMAT_SEKOLAH."</span>"
    ."</td>
 </tr>
-				
+<hr style='margin-top:26px;'>	
 <tr><td>Nama</td><td>: $r[nama_lengkap]</td></tr>
 <tr><td>Kelas</td><td>: $kls[nama_kelas]</td></tr>
 <tr><td>Username</td><td>: <b>$r[username]</b></td></tr>
@@ -66,7 +66,7 @@ echo "</tr></table>";
 <?php
 require_once('html2pdf/html2pdf.class.php');
 $content = ob_get_clean();
-$html2pdf = new HTML2PDF('P','A4','en');
+$html2pdf = new HTML2PDF('P','A4','en',true, 'UTF-8', array(0, 0, 0, 0));
 $html2pdf->WriteHTML($content);
 $html2pdf->Output('Kartu Peserta.pdf');
 ?>
