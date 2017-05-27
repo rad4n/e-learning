@@ -10,6 +10,7 @@ $data_tq = mysqli_fetch_array($sql_tq);
 ?>
 <script src="style/assets/js/jquery-1.11.1.js"></script>
 <script src="style/assets/js/bootstrap.js"></script>
+<script src="assets/js/jquery.magnific-popup.js"></script>
 <script>
 var waktunya;
 waktunya = <?php echo $data_tq['waktu_soal']; ?>;
@@ -112,6 +113,7 @@ if(@$_SESSION['siswa']) { ?>
     <link href="style/assets/css/bootstrap.css" rel="stylesheet" />
     <link href="style/assets/css/font-awesome.css" rel="stylesheet" />
     <link href="style/assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/magnific-popup.css" rel="stylesheet" />
     <style type="text/css">
     .mrg-del {
         margin: 0;
@@ -248,7 +250,9 @@ if(@$_SESSION['siswa']) { ?>
                                                 <tr>
                                                     <td></td>
                                                     <td>
-                                                        <img width="220px" src="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gambar']; ?>" />
+                                                        <a class="img-soal" href="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gambar']; ?>">
+                                                            <img width="220px" src="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gambar']; ?>" />
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -283,7 +287,9 @@ if(@$_SESSION['siswa']) { ?>
                                                         <label>
                                                             <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="A" /> A. <?php echo $data_soal_pilgan['pil_a']; ?>
                                                             <?php if($data_soal_pilgan['gbr_a'] != '') { ?><br>
-                                                            <img width="220px" src="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_a']; ?>" />
+                                                            <a class="img-soal" href="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_a']; ?>">
+                                                                <img width="220px" src="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_a']; ?>" />
+                                                            </a>
                                                             <?php } ?>
                                                         </label>
                                                     </div>
@@ -296,7 +302,9 @@ if(@$_SESSION['siswa']) { ?>
                                                         <label>
                                                             <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="B" /> B. <?php echo $data_soal_pilgan['pil_b']; ?>
                                                             <?php if($data_soal_pilgan['gbr_b'] != '') { ?><br>
-                                                            <img width="220px" src="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_b']; ?>" />
+                                                            <a class="img-soal" href="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_b']; ?>">
+                                                                <img width="220px" src="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_b']; ?>" />
+                                                            </a>
                                                             <?php } ?>
                                                         </label>
                                                     </div>
@@ -309,7 +317,9 @@ if(@$_SESSION['siswa']) { ?>
                                                         <label>
                                                             <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="C" /> C. <?php echo $data_soal_pilgan['pil_c']; ?>
                                                             <?php if($data_soal_pilgan['gbr_c'] != '') { ?><br>
-                                                            <img width="220px" src="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_c']; ?>" />
+                                                            <a class="img-soal" href="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_c']; ?>">
+                                                                <img width="220px" src="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_c']; ?>" />
+                                                            </a>
                                                             <?php } ?>
                                                         </label>
                                                     </div>
@@ -322,7 +332,9 @@ if(@$_SESSION['siswa']) { ?>
                                                         <label>
                                                             <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="D" /> D. <?php echo $data_soal_pilgan['pil_d']; ?>
                                                             <?php if($data_soal_pilgan['gbr_d'] != '') { ?><br>
-                                                            <img width="220px" src="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_d']; ?>" />
+                                                            <a class="img-soal" href="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_d']; ?>">
+                                                                 <img width="220px" src="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_d']; ?>" />
+                                                            </a>
                                                             <?php } ?>
                                                         </label>
                                                     </div>
@@ -335,7 +347,9 @@ if(@$_SESSION['siswa']) { ?>
                                                         <label>
                                                             <input type="radio" name="soal_pilgan[<?php echo $data_soal_pilgan['id_pilgan']; ?>]" value="E" /> E. <?php echo $data_soal_pilgan['pil_e']; ?>
                                                             <?php if($data_soal_pilgan['gbr_e'] != '') { ?><br>
-                                                            <img width="220px" src="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_e']; ?>" />
+                                                            <a class="img-soal" href="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_e']; ?>">
+                                                                <img width="220px" src="<?=URL_ASSETS;?>gambar_soal_pilgan/<?php echo $data_soal_pilgan['gbr_e']; ?>" />
+                                                            </a>
                                                             <?php } ?>
                                                         </label>
                                                     </div>
@@ -391,6 +405,22 @@ if(@$_SESSION['siswa']) { ?>
         </div>
     </div>
 </footer>
+<script type="text/javascript">
+    $('.img-soal').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        closeBtnInside: false,
+        fixedContentPos: true,
+        mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+        image: {
+            verticalFit: true
+        },
+        zoom: {
+            enabled: true,
+            duration: 300 // don't foget to change the duration also in CSS
+        }
+    });
+</script>
 </body>
 </html>
 <?php } else {

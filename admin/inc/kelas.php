@@ -18,7 +18,10 @@ if(@$_SESSION[admin]) {
     if(@$_GET['action'] == '') { ?>
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading"><a href="?page=kelas&action=tambah" class="btn btn-primary btn-sm">Tambah Data</a> &nbsp; <a href="./laporan/cetak.php?data=kelas" target="_blank" class="btn btn-default btn-sm">Cetak</a></div>
+                <div class="panel-heading"><a href="?page=kelas&action=tambah" class="btn btn-primary btn-sm">Tambah Data</a> &nbsp; 
+                <!-- <a href="./laporan/cetak.php?data=kelas" target="_blank" class="btn btn-default btn-sm">Cetak Semua Kartu Ujian</a> -->
+                <a href="./laporan/pdf_kartu.php?kelas=all" target="_blank" class="btn btn-default btn-sm">Cetak Semua Kartu Ujian</a>
+                </div>
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
@@ -58,6 +61,7 @@ if(@$_SESSION[admin]) {
                                         echo "<td><i>Belum diatur</i></td>";
                                     } ?>
                                     <td align="center" width="200px">
+                                        <a  target="_blank" href="./laporan/pdf_kartu.php?kelas=<?php echo $data_kelas['id_kelas']; ?>" class="badge" style="background-color:green;">Cetak Kartu Ujian</a>
                                         <a href="?page=kelas&action=edit&id=<?php echo $data_kelas['id_kelas']; ?>" class="badge" style="background-color:#f60;">Edit</a>
                                         <a onclick="return confirm('Yakin akan menghapus data?');" href="?page=kelas&action=hapus&id=<?php echo $data_kelas['id_kelas']; ?>" class="badge" style="background-color:#f00;">Hapus</a>
                                         <a href="?page=siswa&IDkelas=<?php echo $data_kelas['id_kelas']; ?>&kelas=<?php echo $data_kelas['nama_kelas']; ?>" class="badge">Lihat Siswa</a>
