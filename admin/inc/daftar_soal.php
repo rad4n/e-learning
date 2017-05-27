@@ -286,7 +286,13 @@ if(@$_GET['hal'] == "pilgan") { ?>
 					</table> -->
 						<tr>
 							<td><?=$no++;?></td>
-							<td><?php echo $data_pilgan['pertanyaan']; ?></td>
+							<td>
+								<?php echo $data_pilgan['pertanyaan']; 
+								if($data_pilgan['gambar'] != '') {
+													echo '<br><img src="'.URL_ASSETS.'gambar_soal_pilgan/'.$data_pilgan['gambar'].'" width="200px" />';
+												}
+								?>
+							</td>
 							<td><?php echo $data_pilgan['kunci']; ?></td>
 							<td><?php echo $data_pilgan['level_group']; ?></td>
 							<td>
