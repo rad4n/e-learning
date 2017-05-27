@@ -64,11 +64,11 @@ if(@$_GET['action'] == '') { ?>
                                         } ?>
                                         <td><?php echo $data_topik['waktu_soal'] / 60 ." menit"; ?></td>
                                         <td><?php echo $data_topik['info']; ?></td>
+                                        <td align="center"><?php echo ucfirst($data_topik['status']); ?></td>
                                         <td>
                                             <?php $sql_pilgan = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '".$data_topik['id_tq']."'") or die ($db->error);?>
                                             <?php echo mysqli_num_rows($sql_pilgan); ?> Soal
                                         </td>
-                                        <td align="center"><?php echo ucfirst($data_topik['status']); ?></td>
                                         <td align="center">
                                             <a href="?page=quiz&action=edit&id=<?php echo $data_topik['id_tq']; ?>" class="badge" style="background-color:#f60;">Edit</a>
                                             <a onclick="return confirm('Hati-hati saat menghapus topik quiz karena Anda akan menghapus semua data yang berhubungan dengan topik ini, termasuk data soal dan nilai. Apakah Anda tetap yakin akan menghapus topik ini?');" href="?page=quiz&action=hapus&id_tq=<?php echo $data_topik['id_tq']; ?>" class="badge" style="background-color:#f00;">Hapus</a>

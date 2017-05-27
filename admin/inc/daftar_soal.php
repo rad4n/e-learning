@@ -119,7 +119,10 @@ if(@$_GET['hal'] == "pilgan") { ?>
 
 		<div class="panel panel-default">
 
-			<div class="panel-heading">Soal Pilihan Ganda &nbsp; <a href="?page=quiz&action=buatsoal&hal=soalpilgan&id=<?php echo $id; ?>" class="btn btn-primary btn-sm">Tambah Soal Pilihan Ganda</a></div>
+			<div class="panel-heading">Soal Pilihan Ganda &nbsp; 
+				<a href="?page=quiz&action=buatsoal&hal=soalpilgan&id=<?php echo $id; ?>" class="btn btn-primary btn-sm">Tambah Soal Pilihan Ganda</a>
+				<a href="?page=quiz&action=daftarsoal&hal=hapussoalpilganall&id=<?php echo $id; ?>" class="btn btn-danger btn-sm pull-right">Hapus Semua Soal</a>
+			</div>
 
 			<div class="panel-body">
 
@@ -127,12 +130,19 @@ if(@$_GET['hal'] == "pilgan") { ?>
 
 				<?php
 
-				if(mysqli_num_rows($sql_pilgan) > 0) {
-
-					while($data_pilgan = mysqli_fetch_array($sql_pilgan)) { ?>
-					<table width="100%">
+				if(mysqli_num_rows($sql_pilgan) > 0) {?>
+					<table width="100%" class="table table-striped">
 						<tr>
-							<td valign="top">Soal no. ( <?php echo $no++; ?> )</td>
+							<th>#</th>
+							<th>Pertanyaan</th>
+							<th>Kunci</th>
+							<th>Group Soal</th>
+							<th>Aksi</th>
+						</tr>
+					<?php $no=1; while($data_pilgan = mysqli_fetch_array($sql_pilgan)) { ?>
+					<!-- <table width="100%">
+						<tr>
+							<td valign="top">Soal no. ( <?php //echo $no++; ?> )</td>
 							<td>
 								<table class="table">
 									<thead>
@@ -273,12 +283,21 @@ if(@$_GET['hal'] == "pilgan") { ?>
 
 						</tr>
 
+					</table> -->
+						<tr>
+							<td><?=$no++;?></td>
+							<td><?php echo $data_pilgan['pertanyaan']; ?></td>
+							<td><?php echo $data_pilgan['kunci']; ?></td>
+							<td><?php echo $data_pilgan['level_group']; ?></td>
+							<td>
+								<a href="?page=quiz&action=daftarsoal&hal=editsoalpilgan&id=<?php echo $id; ?>&idsoal=<?php echo $data_pilgan['id_pilgan']; ?>&ke=<?php echo $k++; ?>" class="badge" style="background-color:#f60;">Edit</a>
+
+								<a onclick="return confirm('Yakin akan menghapus data?');" href="?page=quiz&action=daftarsoal&hal=hapussoalpilgan&id=<?php echo $id; ?>&idsoal=<?php echo $data_pilgan['id_pilgan']; ?>" class="badge" style="background-color:#f00;">Hapus</a>
+							</td>
+						</tr>
+					<?php } //end while ?>
 					</table>
-					<?php
-
-					}
-
-				} else { ?>
+				<?php } else { ?>
 
 					<div class="alert alert-danger">Data soal pilihan ganda tidak ditemukan</div>
 
@@ -815,7 +834,24 @@ if(@$_GET['hal'] == "pilgan") { ?>
 
 	echo "<script>window.location='?page=quiz&action=daftarsoal&hal=pilgan&id=".$id."';</script>";
 
-} else if(@$_GET['hal'] == "editsoalessay") { ?>
+} else if(@$_GET['hal'] == "hapussoalpilganall") {
+
+	$i = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_tq = '$id'") or die ($db->error);
+	//$r = mysqli_fetch_array($i,MYSQLI_ASSOC);
+	$r = mysqli_fetch_assoc($i);
+	//echo "<pre>"; print_r($r); exit;
+	if(!empty($r['gambar'])) unlink(DIR_ASSETS."gambar_soal_pilgan/".$r['gambar']);
+	if(!empty($r['gbr_a'])) unlink(DIR_ASSETS."gambar_soal_pilgan/".$r['gbr_a']);
+	if(!empty($r['gbr_b'])) unlink(DIR_ASSETS."gambar_soal_pilgan/".$r['gbr_b']);
+	if(!empty($r['gbr_c'])) unlink(DIR_ASSETS."gambar_soal_pilgan/".$r['gbr_c']);
+	if(!empty($r['gbr_d'])) unlink(DIR_ASSETS."gambar_soal_pilgan/".$r['gbr_d']);
+	if(!empty($r['gbr_e'])) unlink(DIR_ASSETS."gambar_soal_pilgan/".$r['gbr_e']);
+	
+	mysqli_query($db, "DELETE FROM tb_soal_pilgan WHERE id_tq = '$id'") or die ($db->error);
+
+	echo "<script>window.location='?page=quiz&action=daftarsoal&hal=pilgan&id=".$id."';</script>";
+
+}else if(@$_GET['hal'] == "editsoalessay") { ?>
 
 	<div class="row">
 
