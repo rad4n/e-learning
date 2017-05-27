@@ -23,7 +23,10 @@
       $sql_siswa_mengikuti_tes = mysqli_query($db, "SELECT * FROM tb_nilai_pilgan JOIN tb_siswa ON tb_nilai_pilgan.id_siswa = tb_siswa.id_siswa JOIN tb_kelas ON tb_siswa.id_kelas = tb_kelas.id_kelas WHERE id_tq = '$_GET[id_tq]'") or die ($db->error);
       $siswa_ke=4;
       $rowcount=mysqli_num_rows($sql_siswa_mengikuti_tes);
-
+      function method1($a,$b) 
+                    {
+                      return ($a["id"] <= $b["id"]) ? -1 : 1;
+                    }
       while($data_siswa_mengikuti_tes = mysqli_fetch_array($sql_siswa_mengikuti_tes)){
                 // $jawab = mysqli_query($db,"SELECT tb_jawaban_pilgan_temp.jawaban,
                 //                       tb_jawaban_pilgan_temp.id_soal,
@@ -83,7 +86,14 @@
                     $rr=mysqli_fetch_array($jawab,MYSQLI_ASSOC);
                     $rr1 = json_decode($rr['uraian']);
                     $rr2 = json_decode($rr['uraian'], true);
-                    
+                    //echo '<pre>'; print_r($rr2); exit;
+                     
+                    usort($rr2, "method1");
+                    //echo '<pre>'; print_r($rr2); exit;
+                    // foreach ($rr2 as $key => $v) {
+                    //   $sort['id'] = $v['id']; 
+                    // } echo '<pre>'; print_r($sort); exit;
+
                     foreach ($rr2 as $key => $r) {
                         $cek = mysqli_query($db, "SELECT * FROM tb_soal_pilgan WHERE id_pilgan = '".$r['id']."'") or die ($db->error);
                         while($c = mysqli_fetch_array($cek)) {
@@ -103,14 +113,23 @@
                             ->getStartColor()
                             ->setARGB('#FF0000');
                         }else{
+                          //print_r($siswa_ke); exit;
                           if($siswa_ke==4){
                            // $analisis_benar[$r['id']] = 1;
+
+                            // $analisis_benar[$r['id']]['count'] = isset($r['id']['count']) ? 1 : null;
+                            // $analisis_benar[$r['id']]['cell'] = isset($r['id']['cell']) ? $n : null;
+
                             $analisis_benar[$r['id']]= array(
                                     'count'   => 1,
                                     'cell' => $n
                               );
                           }else{
-                            $analisis_benar[$r['id']]['count']++;
+                            if(isset($analisis_benar[$r['id']]['count'])) $analisis_benar[$r['id']]['count']++;
+                            else {$analisis_benar[$r['id']]= array(
+                                    'count'   => 1,
+                                    'cell' => $n);
+                                  }
                           }
                         }
                          if($siswa_ke==4)$excelku->getActiveSheet()->getColumnDimension($n)->setWidth(5);
